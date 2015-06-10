@@ -4,14 +4,14 @@
 
   angular.module('myApp.signin')
 
-  .controller('SigninCtrl', ['$rootScope', '$scope', 'Auth', '$location', 'fbutil', 'apiService', 
+  .controller('SigninCtrl', ['$rootScope', '$scope', 'Auth', '$location', 'fbutil', 'apiService',
     function($rootScope, $scope, Auth, $location, fbutil, api) {
-    
+
     // Redirect signed-in users
     if ($rootScope.signedIn) {
       $location.path('/');
     }
-    
+
     $scope.email = null;
     $scope.pass = null;
     $scope.confirm = null;
@@ -34,7 +34,7 @@
 
     $scope.signin = function(email, pass) {
       $scope.err = null;
-      Auth.$authWithPassword({ email: email, password: pass }, {rememberMe: true})
+      Auth.$authWithPassword({ email: $scope.email, password: $scope.pass }, {rememberMe: true})
         .then(function() {
           $location.path('/');
         }, function(err) {

@@ -1,5 +1,4 @@
-
-<div ng-if="!signedIn" id="signin-container" class="center rounded border jumbotron panel panel-sm">
+<div ng-show="!signedIn" id="signin-container">
   <div class="header">
     <h2>Sign in</h2>
   </div>
@@ -17,12 +16,12 @@
         <span>confirm pass</span>
         <input type="password" ng-model="confirm" />
       </label>
-      <button class="btn" ng-click="signin(email, pass)" ng-hide="createMode">Sign In</button>
+      <button class="btn" ng-click="signin()" ng-hide="createMode">Sign In</button>
       <button class="btn" ng-click="createMode = true" ng-hide="createMode">Register</button>
       <button class="btn" ng-cloak ng-show="createMode" ng-click="createAccount()">Create Account</button>
       <button class="btn" ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
 
       <p ng-show="err" class="error">{{err}}</p>
     </form>
-</div>
+  </div>
 </div>
