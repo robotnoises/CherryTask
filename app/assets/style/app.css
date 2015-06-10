@@ -2,7 +2,7 @@
 
 html, body {
   /* Background */
-  background-color: #fafafa;
+  background-color: #f7f7f7;
 
   /* Fonts */
   font-size: 16px;
@@ -136,9 +136,15 @@ li.brand-darkblue  {
 .pure-menu-link:active {
   color: #444;
   font-weight: 700;
-  background-color: #fafafa;
+  background-color: #f7f7f7;
 }
 
 .pure-g-r {
   display: flex;
+}
+
+/* Helpers */
+
+::selection:not(input) {
+  background-color: transparent;
 }
