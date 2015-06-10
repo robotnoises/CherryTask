@@ -16,17 +16,7 @@ html(lang='en', ng-app='myApp')
     include ./partials/navigation.jade
     = '\n'
     //Main
-    div(class='wrapper middle')
-      div(class='container')
-        div(class='row')
-          context-menu(ng-show='signedIn')
-          div(ng-view, ng-class="{'col lg-9': signedIn}")
-    = '\n'
-    //Footer
-    //div(class='wrapper bottom')
-    //  div(class='container')
-    //    div(class='row')
-    //      include ./partials/footer.jade
+    div(ng-view, class='pure-g')
     = '\n'
     //Library
     script(src='bower_components/angular/angular.js')

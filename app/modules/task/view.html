@@ -1,9 +1,12 @@
-<h2>hello, world!</h2>
-<p>This is the task pane</p>
-
-<div>
-  <h3>Task Junk</h3>
-  <p>Title is {{task.title}}</p>
+<div class="pure-u-2-3">
+  <div class="content">
+    <h2>{{task.title}}</h2>
+    <p>This is the task pane</p>
+  </div>
 </div>
 
-<task-chat taskId='{{task.id}}'></task-chat>
+<div class="pure-u-1-3 messages">
+  <div class="content">
+    <task-chat taskId='{{task.id}}'></task-chat>
+  </div>
+</div>

@@ -1,6 +1,9 @@
 /* Base styles */
 
 html, body {
+  /* Background */
+  background-color: #fafafa;
+
   /* Fonts */
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
@@ -13,7 +16,7 @@ html, body {
 }
 
 body {
-  padding-top: 4em;
+  padding-top: 5em;
 }
 
 h1 {
@@ -50,6 +53,12 @@ h6 {
   font-weight: 700; /* bold */
 }
 
+/* Layout */
+
+.content {
+  padding: 0 2em;
+}
+
 /* Nav */
 
 nav .user {
@@ -57,30 +66,42 @@ nav .user {
   right: 0;
 }
 
+/* Messages */
+div.messages {
+  position: fixed;
+  top: 5em;
+  bottom: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
 /* Brand */
 
 .brand-red {
-  color: #e07574;
+  color: #e74c3c;
 }
 
 .brand-blue {
-  color: #559ccc;
+  color: #3498db;
 }
 
 .brand-darkblue {
-  color: #2c4a5e;
+  color: #2980b9;
 }
 
-div.brand-red {
-  background-color: #e07574;
+div.brand-red,
+li.brand-red {
+  background-color: #e74c3c;
 }
 
-div.brand-blue {
-  background-color: #559ccc;
+div.brand-blue,
+li.brand-blue  {
+  background-color: #3498db;
 }
 
-div.brand-darkblue {
-  background-color: #2c4a5e;
+div.brand-darkblue,
+li.brand-darkblue  {
+  background-color: #2980b9;
 }
 
 /* Pure css overrides */
@@ -105,8 +126,19 @@ div.brand-darkblue {
   font-weight: 700;
 }
 
+.pure-menu-link,
+.pure-menu-disabled,
+.pure-menu-heading {
+  padding: .5em 2em;
+}
+
 .pure-menu-link:hover,
 .pure-menu-link:active {
   color: #444;
   font-weight: 700;
+  background-color: #fafafa;
+}
+
+.pure-g-r {
+  display: flex;
 }
