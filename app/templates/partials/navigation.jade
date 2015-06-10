@@ -1,0 +1,11 @@
+div(ng-cloak, class='wrapper top fixed brand-background')
+  div(class='container')
+    div(class='row')
+      nav
+        ul(class='menu')
+          li(ng-if='signedIn')
+            a(href='#/') home
+          li(ng-if='signedIn', class='pull-right')
+            a(href='#/account') account
+          li(ng-hide='signedIn', class='pull-right')
+            a(href='#/signin') signin

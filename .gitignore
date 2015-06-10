@@ -1,0 +1,38 @@
+#############
+# Application
+#############
+# Note: this should be built from a jade template at runtime
+app/index.html
+
+#############
+# Config
+#############
+
+# app/config/
+# firebase.json
+
+#############
+# 3rd-party Libs
+#############
+
+node_modules/
+app/bower_components
+
+#############
+# Logs
+#############
+*.log
+
+#############
+# Windows Stuff
+#############
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/

@@ -1,0 +1,69 @@
+doctype html
+html(lang='en', ng-app='myApp')
+  head
+    include ./partials/meta.jade
+    = '\n'
+    //Style
+    link(rel='stylesheet', href='//cdn.jsdelivr.net/pure/0.6.0/pure-min.css')
+    link(rel='stylesheet', href='assets/style/app.css')
+    //Fonts & icons
+    link(rel='stylesheet' href='bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css')
+    = '\n'
+  body
+    = '\n'
+    div(id='tip-top', class='ruler thick brand-background')
+    = '\n'
+    //Navigation
+    include ./partials/navigation.jade
+    = '\n'
+    //Main
+    div(class='wrapper middle')
+      div(class='container')
+        div(class='row')
+          context-menu(ng-show='signedIn')
+          div(ng-view, ng-class="{'col lg-9': signedIn}")
+    = '\n'
+    //Footer
+    //div(class='wrapper bottom')
+    //  div(class='container')
+    //    div(class='row')
+    //      include ./partials/footer.jade
+    = '\n'
+    //Library
+    script(src='bower_components/angular/angular.js')
+    script(src='bower_components/angular-route/angular-route.js')
+    script(src='bower_components/firebase/firebase.js')
+    script(src='bower_components/angularfire/dist/angularfire.js')
+    = '\n'
+    //Application
+    script(src='app.js')
+    = '\n'
+    //Globals
+    script(src='global/dependencies.js')
+    script(src='global/services/api.js')
+    script(src='global/services/auth.js')
+    script(src='global/services/firebase.utils.js')
+    script(src='global/directives/appversion-directive.js')
+    script(src='global/directives/context-menu-directive.js')
+    script(src='global/directives/chat-directive.js')
+    = '\n'
+    //Configuration
+    script(src='config/config.js')
+    script(src='config/ngcloak-decorator.js')
+    script(src='config/security.js')
+    = '\n'
+    //Register module dependencies
+    script(src='modules/dependencies.js')
+    = '\n'
+    //Account
+    script(src='modules/account/routes.js')
+    script(src='modules/account/controllers.js')
+    = '\n'
+    //Sign in
+    script(src='modules/signin/routes.js')
+    script(src='modules/signin/controllers.js')
+    = '\n'
+    //Task
+    script(src='modules/task/routes.js')
+    script(src='modules/task/services.js')
+    script(src='modules/task/controllers.js')

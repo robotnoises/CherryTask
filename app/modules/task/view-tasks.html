@@ -1,0 +1,13 @@
+<h2>All tasks</h2>
+
+<form ng-submit="addTask()">
+  <input type="text" ng-model="taskModel.title" />
+  <input type="submit" value="Add Task" />
+</form>
+
+<h3>All Tasks for this tenant</h3>
+<ol ng-repeat="task in tasks | orderBy: '-dateCreated'">
+  <li>
+    <a href="#/task/{{task.id}}">{{task.title}}</a>
+  </li>
+</ol>
