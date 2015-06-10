@@ -1,11 +1,9 @@
-div(ng-cloak, class='wrapper top fixed brand-background')
-  div(class='container')
-    div(class='row')
-      nav
-        ul(class='menu')
-          li(ng-if='signedIn')
-            a(href='#/') home
-          li(ng-if='signedIn', class='pull-right')
-            a(href='#/account') account
-          li(ng-hide='signedIn', class='pull-right')
-            a(href='#/signin') signin
+div(ng-cloak, class='pure-menu pure-menu-horizontal pure-menu-fixed brand-blue')
+  nav
+    ul(class='pure-menu-list')
+      li(ng-if='signedIn' class='pure-menu-item')
+        a(href='#/' class='pure-menu-link') home
+      li(ng-if='signedIn', class='pull-right pure-menu-item')
+        a(href='#/account' class='pure-menu-link') account
+      li(ng-hide='signedIn', class='pull-right pure-menu-item')
+        a(href='#/signin' class='pure-menu-link') signin

@@ -1,0 +1,98 @@
+/* Base styles */
+
+html, body {
+  /* Fonts */
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+  font-weight: 400;
+
+  /* Margins and Padding */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 4em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+h4 {
+  font-size: 1.12em;
+}
+
+h5 {
+  font-size: .83em;
+}
+
+h6 {
+  font-size: .75em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1em 0;
+  font-weight: 700; /* bold */
+}
+
+/* Brand */
+
+.brand-red {
+  color: #e07574;
+}
+
+.brand-blue {
+  color: #559ccc;
+}
+
+.brand-darkblue {
+  color: #2c4a5e;
+}
+
+div.brand-red {
+  background-color: #e07574;
+}
+
+div.brand-blue {
+  background-color: #559ccc;
+}
+
+div.brand-darkblue {
+  background-color: #2c4a5e;
+}
+
+/* Pure css overrides */
+
+.pure-menu-horizontal .pure-menu-list {
+  display: inline-flex;
+}
+
+.pure-menu-item {
+  line-height: 4em;
+}
+
+.pure-menu-link {
+  color: #fff;
+  font-weight: 700;
+}
+
+.pure-menu-link:hover,
+.pure-menu-link:active {
+  color: #444;
+  font-weight: 700;
+}
