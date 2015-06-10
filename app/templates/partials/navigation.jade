@@ -1,9 +1,7 @@
-div(ng-cloak, class='pure-menu pure-menu-horizontal pure-menu-fixed brand-blue')
+div(ng-hide='!signedIn', ng-cloak, class='pure-menu pure-menu-horizontal pure-menu-fixed brand-blue')
   nav
     ul(class='pure-menu-list')
       li(ng-if='signedIn' class='pure-menu-item')
-        a(href='#/' class='pure-menu-link') home
-      li(ng-if='signedIn', class='pull-right pure-menu-item')
-        a(href='#/account' class='pure-menu-link') account
-      li(ng-hide='signedIn', class='pull-right pure-menu-item')
-        a(href='#/signin' class='pure-menu-link') signin
+        a(href='#/' class='pure-menu-link') CherryTask
+      li(ng-if='signedIn', class='pure-menu-item user')
+        a(href='#/account' class='pure-menu-link') Account

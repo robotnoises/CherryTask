@@ -50,6 +50,13 @@ h6 {
   font-weight: 700; /* bold */
 }
 
+/* Nav */
+
+nav .user {
+  position: absolute;
+  right: 0;
+}
+
 /* Brand */
 
 .brand-red {
@@ -78,8 +85,15 @@ div.brand-darkblue {
 
 /* Pure css overrides */
 
+.pure-menu-horizontal .pure-menu-heading,
+.pure-menu-horizontal .pure-menu-separator,
+.pure-menu-horizontal .pure-menu-item,
 .pure-menu-horizontal .pure-menu-list {
   display: inline-flex;
+}
+
+.pure-menu-list {
+  width: 100%;
 }
 
 .pure-menu-item {
