@@ -7,11 +7,14 @@
       <input type="submit" value="Add Task" />
     </form>
 
-    <h3>All Tasks for this tenant</h3>
-    <ol ng-repeat="task in tasks | orderBy: '-dateCreated'">
-      <li>
-        <a href="#/task/{{task.id}}">{{task.title}}</a>
-      </li>
-    </ol>
-</div>
+    <div>
+      <h3>All Tasks for this tenant</h3>
+      <pretty-loader loaded="tasks.$last"></pretty-loader>
+      <ol ng-repeat="task in tasks | orderBy: '-dateCreated'">
+        <li>
+          <a href="#/task/{{task.id}}">{{task.title}}</a>
+        </li>
+      </ol>
+    </div>
+  </div>
 </div>
