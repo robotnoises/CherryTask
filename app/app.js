@@ -6,9 +6,7 @@
       'myApp.config',
       'myApp.global',
       'myApp.security',
-      'myApp.dashboard',
       'myApp.account',
-      'myApp.chat',
       'myApp.signin',
       'myApp.task',
       'myApp.global'

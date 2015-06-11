@@ -3,8 +3,8 @@
   'use strict';
 
   // TODO: move this into getTenant
-  var currentUser;
   var tenantId;
+  var currentUser;
 
   angular.module('myApp.global')
 

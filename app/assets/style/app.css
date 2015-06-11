@@ -59,6 +59,11 @@ h6 {
   padding: 0 2em;
 }
 
+/*.main > .content {
+  margin: auto;
+  max-width: 1200px;
+}*/
+
 /* Nav */
 
 nav .user {
@@ -66,7 +71,33 @@ nav .user {
   right: 0;
 }
 
+nav li > i.icon {
+  line-height: 2.5em;
+  transition: background-color 300ms;
+  /*border-right: 2px solid rgba(0,0,0,0.1);
+  border-left: 2px solid rgba(0,0,0,0.1);*/
+}
+
+nav li > i.icon:hover,
+nav li > i.icon:active {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.navigation > .slide-out-menu {
+  height: 0px;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.1);
+  transition: height 300ms;
+}
+
+.navigation > .slide-out-menu.show {
+  height: 200px;
+}
+
 /* Messages */
+
 div.messages {
   position: fixed;
   top: 5em;
@@ -101,7 +132,8 @@ li.brand-blue  {
 
 div.brand-darkblue,
 li.brand-darkblue  {
-  background-color: #2980b9;
+  /*background-color: #2980b9;*/
+  background-color: rgba(0,0,0,0.1);
 }
 
 /* Pure css overrides */
@@ -124,6 +156,7 @@ li.brand-darkblue  {
 .pure-menu-link {
   color: #fff;
   font-weight: 700;
+  transition: background-color 300ms;
 }
 
 .pure-menu-link,
@@ -134,19 +167,41 @@ li.brand-darkblue  {
 
 .pure-menu-link:hover,
 .pure-menu-link:active {
-  color: #444;
+  /*color: #444;*/
   font-weight: 700;
-  background-color: #f7f7f7;
+  /*background-color: #f7f7f7;*/
+  background-color: rgba(0,0,0,0.1);
 }
 
 .pure-g-r {
   display: flex;
 }
 
+/* Icons */
+
+i.icon-sm {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+i.icon-md {
+  font-size : 2em;
+  font-weight: 700;
+}
+
+i.icon-lg {
+  font-size: 3em;
+  font-weight: 700;
+}
+
 /* Helpers */
 
 ::selection:not(input) {
   background-color: transparent;
+}
+
+.white {
+  color: #fff;
 }
 
 /* Loading */

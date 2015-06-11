@@ -4,26 +4,12 @@
 
   'use strict';
 
-  // Dashboard
-  angular.module('myApp.dashboard', [
-    'firebase',
-    'firebase.auth',
-    'firebase.utils',
-    'ngRoute'
-  ]);
-
   // Account
   angular.module('myApp.account', [
     'firebase',
     'firebase.auth',
     'firebase.utils',
     'ngRoute'
-  ]);
-
-  // Chat
-  angular.module('myApp.chat', [
-    'firebase',
-    'firebase.utils'
   ]);
 
   // Signin

@@ -3,13 +3,14 @@ html(lang='en', ng-app='myApp')
   head
     include ./partials/meta.jade
     = '\n'
+    //Fonts & icons
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css')
+    link(rel='stylesheet' href='bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css')
+    = '\n'
     //Style
     link(rel='stylesheet', href='//cdn.jsdelivr.net/pure/0.6.0/pure-min.css')
     link(rel='stylesheet' href='//yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css')
     link(rel='stylesheet', href='assets/style/app.css')
-    //Fonts & icons
-    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css')
-    link(rel='stylesheet' href='bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css')
     = '\n'
   body
     = '\n'
@@ -17,7 +18,8 @@ html(lang='en', ng-app='myApp')
     include ./partials/navigation.jade
     = '\n'
     //Main
-    div(ng-view, class='pure-g')
+    div(class='main')
+      div(ng-view, class='pure-g')
     = '\n'
     //Library
     script(src='bower_components/angular/angular.js')
@@ -37,6 +39,7 @@ html(lang='en', ng-app='myApp')
     script(src='global/directives/context-menu-directive.js')
     script(src='global/directives/chat-directive.js')
     script(src='global/directives/pretty-loader.js')
+    script(src='global/controllers/navigation.js')
     = '\n'
     //Configuration
     script(src='config/config.js')

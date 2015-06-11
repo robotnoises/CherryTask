@@ -9,7 +9,7 @@
 
     <div>
       <h3>All Tasks for this tenant</h3>
-      <pretty-loader loaded="tasks.$last"></pretty-loader>
+      <!-- <pretty-loader loaded="tasks.$last"></pretty-loader> -->
       <ol ng-repeat="task in tasks | orderBy: '-dateCreated'">
         <li>
           <a href="#/task/{{task.id}}">{{task.title}}</a>
