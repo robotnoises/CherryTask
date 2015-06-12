@@ -4,8 +4,8 @@
 
   angular.module('myApp.task')
 
-  .factory('taskService', ['$firebaseObject', 'fbutil', '$firebaseArray', '$q', 'apiService',
-    function($firebaseObject, fbutil, $firebaseArray, $q, api) {
+  .factory('taskService', ['$firebaseObject', 'fbutil', '$q', 'apiService',
+    function($firebaseObject, fbutil, $q, api) {
 
       var _taskService = {};
 

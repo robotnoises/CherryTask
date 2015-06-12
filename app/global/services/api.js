@@ -35,9 +35,6 @@
       getTenant(function (tenant) {
         var ref = fbutil.ref(tenant + loc).limitToLast(limit);
         return callback($firebaseArray(ref));
-        // ref.on('value', function () {
-        //   return callback($firebaseArray(ref));
-        // });
       });
     };
 
