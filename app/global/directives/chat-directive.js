@@ -16,7 +16,7 @@
       controller: ['$scope', '$rootScope', 'fbutil', 'apiService',
       function taskChatController ($scope, $rootScope, fbutil, api) {
         var loc = 'tasks/' + $scope.taskId + '/messages';
-        api.get(loc, 10, function (messages) {
+        api.list(loc, 10, function (messages) {
           $scope.messages = messages;
         });
         $scope.addMessage = function(newMessage) {

@@ -19,6 +19,12 @@
     'ngRoute'
   ]);
 
+  // Project
+  angular.module('myApp.project', [
+    'firebase.auth',
+    'ngRoute'
+  ]);
+
   // Task
   angular.module('myApp.task', [
     'firebase',

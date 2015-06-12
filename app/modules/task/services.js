@@ -13,12 +13,12 @@
 
       var _get = function (key, callback) {
         var loc = 'tasks/';
-        api.getSingle(loc, key, function (task) {
+        api.get(loc, key, function (task) {
           return callback(task);
         });
       };
 
-      var _add = function (task, user, callback) {
+      var _add = function (task, callback) {
         var loc = 'tasks/';
         task.dateCreated = new Date().getTime();
         api.create(loc, task, function (createdTask) {
@@ -31,9 +31,9 @@
         api.update(loc, task);
       };
 
-      var _list = function (user, callback) {
+      var _list = function (callback) {
         var loc = 'tasks/';
-        api.get(loc, 10, function (tasks) {
+        api.list(loc, 10, function (tasks) {
           callback(tasks);
         });
       };

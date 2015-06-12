@@ -4,12 +4,11 @@
 
   // TODO: move this into getTenant
   var tenantId;
-  var currentUser;
 
   angular.module('myApp.global')
 
-  .factory('apiService', ['$rootScope', 'fbutil', '$firebaseArray', '$q',
-    function($rootScope, fbutil, $firebaseArray, $q) {
+  .factory('apiService', ['fbutil', '$firebaseArray', '$q', 'chUser',
+    function(fbutil, $firebaseArray, $q, chUser) {
 
     var pub = {};
 
@@ -17,25 +16,36 @@
 
     var getTenant = function (callback) {
       // If a tenantId has already been fetched...
-      if (tenantId) return callback('tenants/' + tenantId + '/');
-
-      var user = currentUser = (currentUser) ? currentUser : $rootScope.user;
-
-      // Else, go get it.
-      var ref = fbutil.ref('users', user.uid, 'authorization');
-      ref.on('value', function (data) {
-        return callback('tenants/' + data.val().tenant + '/');
-      });
+      if (tenantId) {
+        return callback('tenants/' + tenantId + '/');
+      } else {
+        // Else, go get it.
+        chUser.get(function (user) {
+          var ref = fbutil.ref('users', user.uid, 'authorization');
+          ref.on('value', function (data) {
+            return callback('tenants/' + data.val().tenant + '/');
+          });
+        });
+      }
     };
 
     // Public
 
-    var _get = function (loc, limit, callback) {
+    var _getList = function (loc, limit, callback) {
       getTenant(function (tenant) {
         var ref = fbutil.ref(tenant + loc).limitToLast(limit);
-        ref.on('value', function () {
-          callback($firebaseArray(ref));
-        });
+        return callback($firebaseArray(ref));
+        // ref.on('value', function () {
+        //   return callback($firebaseArray(ref));
+        // });
+      });
+    };
+
+    var _getListBy = function (loc, key, value, limit, callback) {
+      getTenant(function (tenant) {
+        var ref = fbutil.ref(tenant + loc);
+        var query = ref.orderByChild(key).equalTo(value).limitToLast(limit);
+        return callback($firebaseArray(query));
       });
     };
 
@@ -43,7 +53,7 @@
       getTenant(function (tenant) {
         var ref = fbutil.ref(tenant + loc + key).orderByKey();
         ref.on('value', function (snapshot) {
-          return callback(snapshot);
+          return callback(snapshot.val());
         });
       });
     };
@@ -53,22 +63,26 @@
         var ref = fbutil.ref(tenant + loc);
         ref.push(data);
         ref.on('child_added', function (snapshot) {
-          // val() for value
-          // key() for pushId
           return callback(snapshot);
         });
       });
     };
 
-    var _update = function (loc, data) {
+    var _update = function (loc, data, priority) {
       getTenant(function (tenant) {
         var ref = fbutil.ref(tenant + loc);
-        ref.set(data);
+        ref.setWithPriority(data, priority, function (err) {
+          if (err) {
+            console.log(err);
+          }
+        });
+        // ref.set(data);
       });
     };
 
-    pub.get = _get;
-    pub.getSingle = _getSingle;
+    pub.list = _getList;
+    pub.listBy = _getListBy;
+    pub.get = _getSingle;
     pub.create = _create;
     pub.update = _update;
 

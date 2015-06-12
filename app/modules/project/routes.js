@@ -2,15 +2,15 @@
 
   'use strict';
 
-  angular.module('myApp.task')
+  angular.module('myApp.project')
 
   .config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
 
-    .whenAuthenticated('/tasks', {
-      controller: 'allTasksController',
-      templateUrl: 'modules/task/views/view-all.html',
+    .whenAuthenticated('/', {
+      controller: 'allProjectsController',
+      templateUrl: 'modules/project/views/view-all.html',
       resolve: {
         user: ['Auth', function (Auth) {
           return Auth.$waitForAuth();
@@ -18,15 +18,16 @@
       }
     })
 
-    .whenAuthenticated('/tasks/:id', {
-      controller: 'taskController',
-      templateUrl: 'modules/task/views/view.html',
+    .whenAuthenticated('/projects/:id', {
+      controller: 'projectController',
+      templateUrl: 'modules/project/views/view.html',
       resolve: {
         user: ['Auth', function (Auth) {
           return Auth.$waitForAuth();
         }]
       }
     });
+
   }]);
 
 })(angular);

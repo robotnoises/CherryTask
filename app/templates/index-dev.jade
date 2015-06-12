@@ -4,7 +4,7 @@ html(lang='en', ng-app='myApp')
     include ./partials/meta.jade
     = '\n'
     //Fonts & icons
-    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css')
     link(rel='stylesheet' href='bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css')
     = '\n'
     //Style
@@ -32,6 +32,7 @@ html(lang='en', ng-app='myApp')
     = '\n'
     //Globals
     script(src='global/dependencies.js')
+    script(src='global/services/user.js')
     script(src='global/services/api.js')
     script(src='global/services/auth.js')
     script(src='global/services/firebase.utils.js')
@@ -48,6 +49,9 @@ html(lang='en', ng-app='myApp')
     = '\n'
     //Register module dependencies
     script(src='modules/dependencies.js')
+    //Task
+    script(src='modules/project/routes.js')
+    script(src='modules/project/controllers.js')
     = '\n'
     //Account
     script(src='modules/account/routes.js')

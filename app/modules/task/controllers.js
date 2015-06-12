@@ -4,8 +4,8 @@
 
   angular.module('myApp.task')
 
-  .controller('allTasksController', ['$scope', '$routeParams', 'user', 'taskService', 'apiService',
-    function ($scope, $routeParams, user, taskService, api) {
+  .controller('allTasksController', ['$scope', '$routeParams', 'taskService',
+    function ($scope, $routeParams, taskService) {
 
       $scope.taskModel = {
         title: '',
@@ -17,32 +17,32 @@
         priority: '',
         estimation: '',
         elapsed: '',
-        id: ''
+        id: '',
+        projectId: ''
         // tags: [],
         // watchers: [],
         // attachments: [],
         // messages:
       };
 
-      taskService.list(user, function (tasks) {
+      taskService.list(function (tasks) {
         $scope.tasks = tasks;
       });
 
       $scope.addTask = function () {
-        taskService.add($scope.taskModel, user, function (task) {
+        taskService.add($scope.taskModel, function (task) {
           var t = task.val();
           t.id = task.key();
-          angular.copy(t, $scope.taskModel);
           taskService.update(t);
         });
       };
     }])
 
-  .controller('taskController', ['$scope', '$routeParams', 'user', 'taskService',
-    function ($scope, $routeParams, user, taskService) {
+  .controller('taskController', ['$scope', '$routeParams', 'taskService',
+    function ($scope, $routeParams, taskService) {
       var taskId = $routeParams.id;
       taskService.get(taskId, function (task) {
-        $scope.task = task.val();
+        $scope.task = task;
       });
     }]);
 

@@ -1,0 +1,12 @@
+<div class="pure-u">
+  <p>All the projects</p>
+  <button ng-click="addProject()">Make a new random project!</button>
+  <div>
+    <div ng-repeat="project in projects" style="border: 1px solid #ccc; margin: 5px;">
+      <p>Title: {{project.title}}</p>
+      <p>Description: {{project.description}}</p>
+      <p>Timestamp: {{project.dateCreated}}</p>
+      <a href="#/projects/{{project.id}}">Go to project</a>
+    </div>
+  </div>
+</div>

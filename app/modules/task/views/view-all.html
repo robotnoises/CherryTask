@@ -12,7 +12,7 @@
       <!-- <pretty-loader loaded="tasks.$last"></pretty-loader> -->
       <ol ng-repeat="task in tasks | orderBy: '-dateCreated'">
         <li>
-          <a href="#/task/{{task.id}}">{{task.title}}</a>
+          <a href="#/tasks/{{task.id}}">{{task.title}}</a>
         </li>
       </ol>
     </div>

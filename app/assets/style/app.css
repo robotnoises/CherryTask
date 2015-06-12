@@ -50,7 +50,7 @@ h4,
 h5,
 h6 {
   margin: 1em 0;
-  font-weight: 700; /* bold */
+  font-weight: 600; /* bold */
 }
 
 /* Layout */
@@ -136,6 +136,11 @@ li.brand-darkblue  {
   background-color: rgba(0,0,0,0.1);
 }
 
+div.brand-black,
+li.brand-black  {
+  background-color: #555;
+}
+
 /* Pure css overrides */
 
 .pure-menu-horizontal .pure-menu-heading,
@@ -155,7 +160,7 @@ li.brand-darkblue  {
 
 .pure-menu-link {
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
   transition: background-color 300ms;
 }
 
@@ -168,7 +173,7 @@ li.brand-darkblue  {
 .pure-menu-link:hover,
 .pure-menu-link:active {
   /*color: #444;*/
-  font-weight: 700;
+  font-weight: 600;
   /*background-color: #f7f7f7;*/
   background-color: rgba(0,0,0,0.1);
 }
@@ -186,12 +191,12 @@ i.icon-sm {
 
 i.icon-md {
   font-size : 2em;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 i.icon-lg {
   font-size: 3em;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* Helpers */

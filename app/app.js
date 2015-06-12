@@ -9,13 +9,12 @@
       'myApp.account',
       'myApp.signin',
       'myApp.task',
-      'myApp.global'
+      'myApp.project'
     ])
 
     .run(['$rootScope', 'Auth', 'fbutil', function($rootScope, Auth, fbutil) {
       Auth.$onAuth(function(user) {
         $rootScope.signedIn = !!user;
-        $rootScope.user = user;
       });
     }]);
 
