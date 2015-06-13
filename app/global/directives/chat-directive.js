@@ -6,19 +6,20 @@
 
   angular.module('myApp')
 
-  .directive('taskChat', ['$rootScope' , function($rootScope) {
+  .directive('taskChat', function() {
     return {
       restrict: 'E',
-      scope: {
-        taskId: '@taskid'
-      },
       templateUrl: 'templates/directives/taskChat.html',
-      controller: ['$scope', '$rootScope', 'fbutil', 'apiService', 'chUser',
-      function taskChatController ($scope, $rootScope, fbutil, api, chUser) {
-        var loc = 'tasks/' + $scope.taskId + '/messages';
+      controller: ['$scope', '$routeParams', 'fbutil', 'apiService', 'chUser',
+      function taskChatController ($scope, $routeParams, fbutil, api, chUser) {
+        
+        var taskId = $routeParams.id;
+        var loc = 'tasks/' + taskId + '/messages';
+        
         api.list(loc, 10, function (messages) {
           $scope.messages = messages;
         });
+        
         $scope.addMessage = function(newMessage) {
           if (newMessage) {
             chUser.getFull(function (currentUser) {
@@ -28,11 +29,10 @@
                 timeStamp: new Date().getTime()
               });
             });
-            
           }
         };
       }]
     };
-  }]);
+  });
 
 })(angular);
