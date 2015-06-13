@@ -22,7 +22,7 @@
         // Else, go get it.
         chUser.get(function (user) {
           var ref = fbutil.ref('users', user.uid, 'authorization');
-          ref.on('value', function (data) {
+          ref.once('value', function (data) {
             return callback('tenants/' + data.val().tenant + '/');
           });
         });
@@ -49,7 +49,7 @@
     var _getSingle = function (loc, key, callback) {
       getTenant(function (tenant) {
         var ref = fbutil.ref(tenant + loc + key).orderByKey();
-        ref.on('value', function (snapshot) {
+        ref.once('value', function (snapshot) {
           return callback(snapshot.val());
         });
       });
@@ -59,7 +59,7 @@
       getTenant(function (tenant) {
         var ref = fbutil.ref(tenant + loc);
         ref.push(data);
-        ref.on('child_added', function (snapshot) {
+        ref.once('child_added', function (snapshot) {
           return callback(snapshot);
         });
       });
@@ -70,7 +70,7 @@
         var ref = fbutil.ref(tenant + loc);
         ref.setWithPriority(data, priority, function (err) {
           if (err) {
-            console.log(err);
+            // TODO: error
           }
         });
       });

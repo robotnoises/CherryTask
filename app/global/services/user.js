@@ -36,7 +36,7 @@
     var _getFull = function (callback) {
       getUserFromFirebase(function (user) {
         var ref = fbutil.ref('users', user.uid);
-        ref.on('value', function (snapshot) {
+        ref.once('value', function (snapshot) {
           return callback(snapshot.val());  
         });
       });
