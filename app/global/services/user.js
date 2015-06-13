@@ -6,7 +6,7 @@
 
   angular.module('myApp.global')
 
-  .factory('chUser', [ 'Auth', function(Auth) {
+  .factory('chUser', [ 'fbutil', '$firebaseObject', 'Auth', function(fbutil, $firebaseObject, Auth) {
 
     var pub = {};
 
@@ -32,9 +32,19 @@
         return callback(user);
       });
     };
+    
+    var _getFull = function (callback) {
+      getUserFromFirebase(function (user) {
+        var ref = fbutil.ref('users', user.uid);
+        ref.on('value', function (snapshot) {
+          return callback(snapshot.val());  
+        });
+      });
+    };
 
     pub.get = _get;
-
+    pub.getFull = _getFull;
+    
     return pub;
   }]);
 
