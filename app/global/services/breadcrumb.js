@@ -54,8 +54,8 @@
         removeAll();
         return;
       } else if (type === 'projects') {
-        removeTask();
         addProject();
+        removeTask();
       } else {
         addTask();
       }
