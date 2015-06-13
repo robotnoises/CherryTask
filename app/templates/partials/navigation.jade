@@ -4,6 +4,11 @@ div(ng-hide='!signedIn', ng-cloak, class='navigation pure-menu pure-menu-horizon
       li(ng-if='signedIn' class='pure-menu-item')
         a(href='#/' class='pure-menu-link') CherryTask
         i(ng-click='toggleMenu()', class='icon icon-md white pe-7s-angle-down')
+      li(ng-if='breadcrumbs.project.showing' class='pure-menu-item')
+        a(href='#/projects/{{breadcrumbs.project.value.id}}' class='pure-menu-link') {{breadcrumbs.project.value.title}}
+        i(ng-click='toggleMenu()', class='icon icon-md white pe-7s-angle-down')
+      li(ng-if='breadcrumbs.task.showing' class='pure-menu-item')
+        a(href='#/tasks/{{breadcrumbs.task.value.id}}' class='pure-menu-link') {{breadcrumbs.task.value.title}}
       li(ng-if='signedIn', class='pure-menu-item user brand-darkblue')
         a(href='#/account' class='pure-menu-link') Account
   div(class='slide-out-menu' ng-class='{ show : showMenu }')
