@@ -33,10 +33,8 @@
     var addProject = function (projectId) {
       var id = projectId || $routeParams.id;
       api.get('projects/', id, function (task) {
-        $timeout(function () {
-          breadcrumbs.project.showing = true;
-          breadcrumbs.project.value = task;
-        },0);
+        breadcrumbs.project.showing = true;
+        breadcrumbs.project.value = task;
       });
     };
     
@@ -46,10 +44,8 @@
         if (!breadcrumbs.project.showing) {
           addProject(task.projectId);
         }
-        $timeout(function () {
-          breadcrumbs.task.showing = true;
-          breadcrumbs.task.value = task;
-        },0);
+        breadcrumbs.task.showing = true;
+        breadcrumbs.task.value = task;
       });
     };
     
