@@ -27,11 +27,11 @@
           dateCreated: new Date().getTime()
         };
 
-        api.create(loc, temp, function (project) {
-          var p = project.val();
-          p.id = project.key();
-          var projectLoc = loc + p.id;
-          api.update(projectLoc, p, p.id);
+        $scope.projects.$add(temp).then(function(project) {
+          var key = project.key();
+          var rec = $scope.projects.$getRecord(key);
+          rec.id = key;
+          $scope.projects.$save(rec);
         });
       };
 
@@ -76,11 +76,11 @@
 
       // Scope methods
       $scope.addTask = function () {
-        api.create('tasks/', $scope.task, function (task) {
-          var t = task.val();
-          t.id = task.key();
-          var taskLoc = 'tasks/' + t.id;
-          api.update(taskLoc, t, $routeParams.id);
+        $scope.tasks.$add($scope.task).then(function(task) {
+          var key = task.key();
+          var rec = $scope.tasks.$getRecord(key);
+          rec.id = key;
+          $scope.tasks.$save(rec);
         });
       };
     }]);
