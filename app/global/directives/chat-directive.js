@@ -1,5 +1,3 @@
-/* global angular */
-
 (function (angular) {
 
   'use strict';

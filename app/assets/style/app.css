@@ -199,6 +199,34 @@ i.icon-lg {
   font-weight: 600;
 }
 
+/* Card */
+
+.card {
+  height: 300px;
+  width: 300px;
+  margin: 10px;
+  background-color: #fff;
+}
+
+.card .card-header,
+.card .card-body, 
+.card .card-footer {
+  padding: 10px;
+}
+
+.card .card-header {
+  
+}
+
+.card .card-body {
+  
+}
+
+.card .card-footer {
+  
+}
+
+
 /* Helpers */
 
 ::selection:not(input) {
