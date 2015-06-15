@@ -50,15 +50,14 @@
     };
     
     var _add = function (type) {
-      if (!type) { 
-        removeAll();
-        return;
-      } else if (type === 'projects') {
+      if (type === 'projects') {
         addProject();
         removeTask();
-      } else {
+      } else if (type === 'tasks') {
         addTask();
-      }
+      } else {
+        removeAll();
+      };
     };
     
     pub.add = _add;
