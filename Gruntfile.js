@@ -1,5 +1,5 @@
 var config = function (grunt) {
-
+  
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
@@ -7,9 +7,10 @@ var config = function (grunt) {
     clean: ['app/dist'],
 
     // Compile Jade templates
-
+    // Ex: grunt jade --[dev, production]
+    
     jade: {
-
+      
       //Target: dev
       dev : {
         options: {
@@ -35,10 +36,12 @@ var config = function (grunt) {
           'app/index.html': 'app/templates/index-production.jade'
         }
       }
+      
     },
 
     // Minify CSS
-
+    //Ex: grunt cssmin
+    
     cssmin: {
 
       // Target: production
@@ -52,7 +55,8 @@ var config = function (grunt) {
     },
 
     // Minify JS
-
+    // Ex: grunt uglify
+    
     uglify: {
 
       // Options
@@ -78,13 +82,31 @@ var config = function (grunt) {
           }
         ]
       }
+    },
+    
+    // Watch for file changes
+    
+    watch: {
+      script: {
+        files: ['app/templates/*.jade', 'app/templates/partials/*.jade'],
+        tasks: ['rebuild'],
+        options: {
+          spawn: false,
+          reload: true
+        }
+      }  
     }
+    
   });
 
-  // Load Tasks
+  // Load tasks
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  
+  // Register tasks
+  grunt.registerTask('rebuild', ['jade']);
 };
 
 module.exports = config;
