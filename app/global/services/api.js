@@ -7,8 +7,8 @@
 
   angular.module('myApp.global')
 
-  .factory('apiService', ['fbutil', '$firebaseArray', '$q', 'chUser',
-    function(fbutil, $firebaseArray, $q, chUser) {
+  .factory('apiService', ['fbutil', '$firebaseObject', '$firebaseArray', '$q', 'chUser',
+    function(fbutil, $firebaseObject, $firebaseArray, $q, chUser) {
 
     var pub = {};
 
@@ -49,9 +49,10 @@
     var _getSingle = function (loc, key, callback) {
       getTenant(function (tenant) {
         var ref = fbutil.ref(tenant + loc + key).orderByKey();
-        ref.once('value', function (snapshot) {
-          return callback(snapshot.val());
-        });
+        return callback($firebaseObject(ref));
+        // ref.once('value', function (snapshot) {
+        //   return callback(snapshot.val());
+        // });
       });
     };
 

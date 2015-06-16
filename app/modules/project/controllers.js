@@ -28,13 +28,15 @@
         };
 
         $scope.projects.$add(temp).then(function(project) {
-          var key = project.key();
-          var rec = $scope.projects.$getRecord(key);
-          rec.id = key;
-          $scope.projects.$save(rec);
+          $scope.projects.$loaded().then(function ($snapshot) {
+            var key = project.key();
+            var idx = $snapshot.$indexFor(key);
+            $snapshot[idx].id = key;
+            $snapshot.$save(idx);  
+          });
         });
       };
-
+      
       $scope.addProject = _addProject;
 
     }])
@@ -68,19 +70,17 @@
         elapsed: '',
         id: '',
         projectId: $routeParams.id
-        // tags: [],
-        // watchers: [],
-        // attachments: [],
-        // messages:
       };
 
       // Scope methods
       $scope.addTask = function () {
         $scope.tasks.$add($scope.task).then(function(task) {
-          var key = task.key();
-          var rec = $scope.tasks.$getRecord(key);
-          rec.id = key;
-          $scope.tasks.$save(rec);
+          $scope.tasks.$loaded().then(function ($snapshot) {
+            var key = task.key();
+            var idx = $snapshot.$indexFor(key);
+            $snapshot[idx].id = key;
+            $snapshot.$save(idx);  
+          });
         });
       };
     }]);
