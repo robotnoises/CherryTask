@@ -201,10 +201,12 @@ i.icon-lg {
 /* Card */
 
 .card {
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  width: 350px;
   margin: 10px;
   background-color: #fff;
+  border-right: 2px solid rgba(0,0,0,0.1);
+  border-bottom: 2px solid rgba(0,0,0,0.2);
 }
 
 .card .card-header,
