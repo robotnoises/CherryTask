@@ -42,7 +42,9 @@
       var id = $routeParams.id;
       api.get('tasks/', id, function (task) {
         if (!breadcrumbs.project.showing) {
-          addProject(task.projectId);
+          task.$loaded(function ($snapshot) {
+            addProject($snapshot.projectId);  
+          });
         }
         breadcrumbs.task.showing = true;
         breadcrumbs.task.value = task;
