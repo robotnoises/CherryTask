@@ -6,8 +6,8 @@
 
   angular.module('myApp.project')
 
-  .controller('allProjectsController', ['$scope', '$routeParams', 'apiService',
-    function ($scope, $routeParams, api) {
+  .controller('allProjectsController', ['$scope', '$routeParams', '$timeout', 'apiService',
+    function ($scope, $routeParams, $timeout, api) {
 
       $scope.projectModel = {
         title: '',
@@ -27,13 +27,17 @@
           dateCreated: new Date().getTime()
         };
 
-        $scope.projects.$add(temp).then(function(project) {
-          $scope.projects.$loaded().then(function ($snapshot) {
-            var key = project.key();
-            var idx = $snapshot.$indexFor(key);
-            $snapshot[idx].id = key;
-            $snapshot.$save(idx);  
-          });
+        $scope.projects.$add(temp).then(function update (project) {
+          var key = project.key();
+          $timeout(function () {
+            try {
+              var idx = $scope.projects.$indexFor(key);
+              $scope.projects[idx].id = key;
+              $scope.projects.$save(idx);  
+            } catch (ex) {
+              if (idx < 0) update(project);
+            }
+          },1);
         });
       };
       
@@ -74,13 +78,17 @@
 
       // Scope methods
       $scope.addTask = function () {
-        $scope.tasks.$add($scope.task).then(function(task) {
-          $scope.tasks.$loaded().then(function ($snapshot) {
-            var key = task.key();
-            var idx = $snapshot.$indexFor(key);
-            $snapshot[idx].id = key;
-            $snapshot.$save(idx);  
-          });
+        $scope.tasks.$add($scope.task).then(function update (task) {
+          var key = task.key();
+          $timeout(function () {
+            try {
+              var idx = $scope.tasks.$indexFor(key);
+              $scope.tasks[idx].id = key;
+              $scope.tasks.$save(idx);  
+            } catch (ex) {
+              if (idx < 0) update(task);
+            }
+          },1);
         });
       };
     }]);
