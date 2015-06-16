@@ -2,7 +2,7 @@
 
 html, body {
   /* Background */
-  background-color: #f7f7f7;
+  background-color: #f7f7ff;
 
   /* Fonts */
   font-size: 16px;
@@ -109,31 +109,30 @@ div.messages {
 /* Brand */
 
 .brand-red {
-  color: #e74c3c;
+  color: #eb5b5b;
 }
 
 .brand-blue {
-  color: #3498db;
+  color: #77C5F7;
 }
 
 .brand-darkblue {
-  color: #2980b9;
+  color: #354458;
 }
 
 div.brand-red,
 li.brand-red {
-  background-color: #e74c3c;
+  background-color: #eb5b5b;
 }
 
 div.brand-blue,
 li.brand-blue  {
-  background-color: #3498db;
+  background-color: #77C5F7;
 }
 
 div.brand-darkblue,
 li.brand-darkblue  {
-  /*background-color: #2980b9;*/
-  background-color: rgba(0,0,0,0.1);
+  background-color: #354458;
 }
 
 div.brand-black,
