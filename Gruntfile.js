@@ -95,6 +95,19 @@ var config = function (grunt) {
           reload: true
         }
       }  
+    },
+    
+    jshint: {
+      files: {
+        src: [
+          'app.js',
+          'app/config/*.js',
+          'app/modules/*.js',
+          'app/modules/**/*.js',
+          'app/global/*.js',
+          'app/global/**/*.js'
+        ]
+      }
     }
     
   });
@@ -104,6 +117,7 @@ var config = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   
   // Register tasks
   grunt.registerTask('rebuild', ['jade']);
