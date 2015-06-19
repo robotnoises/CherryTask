@@ -67,11 +67,16 @@ var config = function (grunt) {
         files: [
           {
             src: [
-              'app/app.js',                               // main module
-              'app/config/config.js',                     // app config
-              'app/globals/**/*.js',                   // various components and directives
-              'app/modules/dependencies.js',              // register module dependencies
-              'app/modules/**/*.js'                       // app modules
+              // main module
+              'app/app.js',
+              // app config stuff                
+              'app/config/*.js',
+              // global controllers/directives/services
+              'app/global/*.js',
+              'app/global/**/*.js',
+              // app modules                           
+              'app/modules/*.js',           
+              'app/modules/**/*.js'                    
             ],
             dest: 'app/dist/app.min.js'
           }
@@ -130,8 +135,8 @@ var config = function (grunt) {
   // Register custom tasks
   grunt.registerTask('rebuild', ['sass', 'jade']);
   grunt.registerTask('cssminify', ['sass', 'cssmin:production']);
-  
-  
+  grunt.registerTask('prepare', ['sass', 'cssmin:production', 'jade:production', 'uglify:production']);
+    
 };
 
 module.exports = config;
