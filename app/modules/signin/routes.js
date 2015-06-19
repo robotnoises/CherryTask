@@ -11,7 +11,8 @@
     .when('/signin', {
       controller: 'SigninCtrl',
       templateUrl: 'modules/signin/view.html'
-    })
+    });
+    
   }]);
 
 })(angular);

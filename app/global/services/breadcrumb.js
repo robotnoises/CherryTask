@@ -59,7 +59,7 @@
         addTask();
       } else {
         removeAll();
-      };
+      }
     };
     
     pub.add = _add;

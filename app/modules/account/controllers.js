@@ -35,7 +35,7 @@
               $scope.msg = 'Password changed';
             }, function(err) {
               $scope.err = err;
-            })
+            });
         }
       };
 
