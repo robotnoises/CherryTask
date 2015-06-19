@@ -3,6 +3,7 @@
 #############
 # Note: this should be built from a jade template at runtime
 app/index.html
+app/dist/
 
 #############
 # Config
@@ -12,7 +13,7 @@ app/index.html
 # firebase.json
 
 #############
-# 3rd-party Libs
+# 3rd-party libs
 #############
 
 node_modules/
@@ -24,7 +25,16 @@ app/bower_components
 *.log
 
 #############
-# Windows Stuff
+# Sass 
+#############
+
+.sass-cache/
+app/assets/style/compiled/
+
+#############
+
+#############
+# Windows stuff
 #############
 
 # Windows image file caches

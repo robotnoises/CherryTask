@@ -4,7 +4,7 @@ var config = function (grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
-    clean: ['app/dist'],
+    // clean: ['app/dist'],
 
     // Compile Jade templates
     // Ex: grunt jade --[dev, production]
@@ -46,11 +46,8 @@ var config = function (grunt) {
 
       // Target: production
       production: {
-        expand: true,
-        cwd: 'app/assets/style/',
-        src: ['*.css'],
-        dest: 'app/dist/',
-        ext: '.min.css'
+        src: 'app/assets/style/compiled/app.css',
+        dest: 'app/dist/app.min.css',
       }
     },
 
@@ -70,11 +67,9 @@ var config = function (grunt) {
         files: [
           {
             src: [
-              'app/bower_components/skyblue/js/ie/*.js',  // skyblue ie shiv
               'app/app.js',                               // main module
               'app/config/config.js',                     // app config
-              'app/routes.js',                            // app routing
-              'app/components/**/*.js',                   // various components and directives
+              'app/globals/**/*.js',                   // various components and directives
               'app/modules/dependencies.js',              // register module dependencies
               'app/modules/**/*.js'                       // app modules
             ],
@@ -85,7 +80,7 @@ var config = function (grunt) {
     },
     
     // Watch for file changes
-    
+    // Ex: grunt watch <- does not currently work
     watch: {
       script: {
         files: ['app/templates/*.jade', 'app/templates/partials/*.jade'],
@@ -108,6 +103,18 @@ var config = function (grunt) {
           'app/global/**/*.js'
         ]
       }
+    },
+    
+    sass: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'app/assets/style',
+          src: ['*.scss'],
+          dest: 'app/assets/style/compiled',
+          ext: '.css'
+        }]
+      }
     }
     
   });
@@ -118,9 +125,13 @@ var config = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   
-  // Register tasks
-  grunt.registerTask('rebuild', ['jade']);
+  // Register custom tasks
+  grunt.registerTask('rebuild', ['sass', 'jade']);
+  grunt.registerTask('cssminify', ['sass', 'cssmin:production']);
+  
+  
 };
 
 module.exports = config;

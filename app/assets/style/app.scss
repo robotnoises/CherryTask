@@ -1,13 +1,17 @@
+// app.scss 
+
+@import 'vars';
+
 /* Base styles */
 
 html, body {
   /* Background */
-  background-color: #eee;
+  background-color: $brand-grey;
 
   /* Fonts */
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
-  color: #444;
+  color: $brand-black;
   font-weight: 400;
 
   /* Margins and Padding */
@@ -111,35 +115,35 @@ div.messages {
 /* Brand */
 
 .brand-red {
-  color: #eb5b5b;
+  color: $brand-red;
 }
 
 .brand-blue {
-  color: #77C5F7;
+  color: $brand-blue;
 }
 
 .brand-darkblue {
-  color: #354458;
+  color: $brand-darkblue;
 }
 
 div.brand-red,
 li.brand-red {
-  background-color: #eb5b5b;
+  background-color: $brand-red;
 }
 
 div.brand-blue,
 li.brand-blue  {
-  background-color: #77C5F7;
+  background-color: $brand-blue;
 }
 
 div.brand-darkblue,
 li.brand-darkblue  {
-  background-color: #354458;
+  background-color: $brand-darkblue;
 }
 
 div.brand-black,
 li.brand-black  {
-  background-color: #555;
+  background-color: $brand-black;
 }
 
 /* Pure css overrides */
