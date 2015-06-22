@@ -34,6 +34,12 @@ app/assets/style/compiled/
 #############
 
 #############
+# OSX stuff
+#############
+
+.DS_Store
+
+#############
 # Windows stuff
 #############
 
