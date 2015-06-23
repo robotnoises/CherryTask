@@ -145,3 +145,10 @@ perspective effects (not including the modals and the overlay).
 	transform: scale(1);
 	opacity: 1;
 }
+
+.scrollable {
+    white-space: pre-line;
+    height: 500px;
+    overflow-y: hidden;
+    position: relative;
+}

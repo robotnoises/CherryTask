@@ -10,6 +10,7 @@ html(lang='en', ng-app='myApp')
     //Style
     link(rel='stylesheet', href='//cdn.jsdelivr.net/pure/0.6.0/pure-min.css')
     link(rel='stylesheet' href='//yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css')
+    link(rel='stylesheet' href='bower_components/perfect-scrollbar/min/perfect-scrollbar.min.css')
     link(rel='stylesheet', href='assets/style/compiled/app.css')
     link(rel='stylesheet', href='assets/style/compiled/app.css.map')
     = '\n'
@@ -27,21 +28,24 @@ html(lang='en', ng-app='myApp')
       = '\n'
       //Modal
       div(class='md-modal md-effect-full' id='modal-full')
-        div(class='md-content')
-          h3 Modal Dialog
-            div
-              p This is a modal window. You can do the following things with it:</p>
-            
-              button(class='md-close') Close me!
+        button(class='md-close') Close me!
+        perfect-scrollbar(class='scrollable', wheel-propagation='true', wheel-speed='50')
+          div(class='md-content')
+            h3 Modal Dialog
+              div
+                p This is a modal window. You can do the following things with it:</p>  
       = '\n'
       //Modal Overlay
       div(class='md-overlay')
     = '\n'
     //Library
+    script(src='bower_components/jquery/dist/jquery.min.js')
     script(src='bower_components/angular/angular.js')
     script(src='bower_components/angular-route/angular-route.js')
     script(src='bower_components/firebase/firebase.js')
     script(src='bower_components/angularfire/dist/angularfire.js')
+    script(src='bower_components/perfect-scrollbar/min/perfect-scrollbar.min.js')
+    script(src='bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js')
     = '\n'
     //Application
     script(src='app.js')
@@ -63,6 +67,7 @@ html(lang='en', ng-app='myApp')
     script(src='global/directives/chat-directive.js')
     script(src='global/directives/pretty-loader.js')
     script(src='global/controllers/breadcrumb.js')
+    script(src='global/controllers/modals.js')
     = '\n'
     //Configuration
     script(src='config/config.js')

@@ -9,7 +9,8 @@
       'myApp.account',
       'myApp.signin',
       'myApp.task',
-      'myApp.project'
+      'myApp.project',
+      'perfect_scrollbar'
     ])
 
     .run(['$rootScope', 'Auth', 'fbutil', function($rootScope, Auth, fbutil) {
