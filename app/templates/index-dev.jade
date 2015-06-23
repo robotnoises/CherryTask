@@ -20,7 +20,20 @@ html(lang='en', ng-app='myApp')
     = '\n'
     //Main
     div(class='main')
+      
+      button(class='md-trigger', data-modal='modal-12') Launch Modal
+      
       div(ng-view, class='pure-g')
+      
+      div(class='md-modal md-effect-12' id='modal-12')
+        div(class='md-content')
+          h3 Modal Dialog
+            div
+              p This is a modal window. You can do the following things with it:</p>
+            
+              button(class='md-close') Close me!
+              
+      div(class='md-overlay')
     = '\n'
     //Library
     script(src='bower_components/angular/angular.js')
@@ -30,6 +43,10 @@ html(lang='en', ng-app='myApp')
     = '\n'
     //Application
     script(src='app.js')
+    = '\n'
+    //Lib
+    script(src='assets/js/lib/classie.js')
+    script(src='assets/js/lib/modalEffects.js')
     = '\n'
     //Globals
     script(src='global/dependencies.js')
