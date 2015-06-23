@@ -76,7 +76,9 @@ var config = function (grunt) {
               'app/global/**/*.js',
               // app modules                           
               'app/modules/*.js',           
-              'app/modules/**/*.js'                    
+              'app/modules/**/*.js',
+              // any additional lib files not managed by bower
+              'app/assets/js/lib/*.js'                  
             ],
             dest: 'app/dist/app.min.js'
           }

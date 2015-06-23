@@ -117,8 +117,8 @@ perspective effects (not including the modals and the overlay).
 
 /* 3d Effect */
 
-/* Effect 12:  Just me */
-.md-effect-12 .md-content {
+/* Effect Full */
+.md-effect-full .md-content {
 	-webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
 	-ms-transform: scale(0.8);
@@ -129,16 +129,16 @@ perspective effects (not including the modals and the overlay).
 	transition: all 0.3s;
 }
 
-.md-show.md-effect-12 ~ .md-overlay {
+.md-show.md-effect-full ~ .md-overlay {
 	background: $brand-grey;
 } 
 
-.md-effect-12 .md-content h3,
-.md-effect-12 .md-content {
+.md-effect-full .md-content h3,
+.md-effect-full .md-content {
 	background: transparent;
 }
 
-.md-show.md-effect-12 .md-content {
+.md-show.md-effect-full .md-content {
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
 	-ms-transform: scale(1);

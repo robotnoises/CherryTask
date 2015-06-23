@@ -21,18 +21,20 @@ html(lang='en', ng-app='myApp')
     //Main
     div(class='main')
       
-      button(class='md-trigger', data-modal='modal-12') Launch Modal
+      button(class='md-trigger', data-modal='modal-full') Launch Modal
       
       div(ng-view, class='pure-g')
-      
-      div(class='md-modal md-effect-12' id='modal-12')
+      = '\n'
+      //Modal
+      div(class='md-modal md-effect-full' id='modal-full')
         div(class='md-content')
           h3 Modal Dialog
             div
               p This is a modal window. You can do the following things with it:</p>
             
               button(class='md-close') Close me!
-              
+      = '\n'
+      //Modal Overlay
       div(class='md-overlay')
     = '\n'
     //Library
