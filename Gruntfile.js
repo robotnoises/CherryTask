@@ -87,11 +87,15 @@ var config = function (grunt) {
     },
     
     // Watch for file changes
-    // Ex: grunt watch <- does not currently work
+    // Ex: grunt watch
     watch: {
       script: {
-        files: ['app/templates/*.jade', 'app/templates/partials/*.jade'],
-        tasks: ['rebuild'],
+        files: [
+          'app/templates/*.jade', 
+          'app/templates/partials/*.jade', 
+          'app/assets/style/*.scss'
+        ],
+        tasks: ['build-dev'],
         options: {
           spawn: false,
           reload: true
@@ -125,7 +129,7 @@ var config = function (grunt) {
     }
     
   });
-
+  
   // Load tasks
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -135,9 +139,8 @@ var config = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   
   // Register custom tasks
-  grunt.registerTask('rebuild', ['sass', 'jade']);
-  grunt.registerTask('cssminify', ['sass', 'cssmin:production']);
-  grunt.registerTask('prepare', ['sass', 'cssmin:production', 'jade:production', 'uglify:production']);
+  grunt.registerTask('build-dev', ['sass', 'jade:dev']);
+  grunt.registerTask('build-prod', ['sass', 'cssmin:production', 'jade:production', 'uglify:production']);
     
 };
 
