@@ -13,6 +13,7 @@
     "firebase": "2.2.2",
     "angularfire": "~1.0.0",
     "mockfirebase": "~0.10.3",
-    "pixeden-stroke-7-icon": "~1.2.2"
+    "pixeden-stroke-7-icon": "~1.2.2",
+    "angular-perfect-scrollbar": "~0.0.4"
   }
 }
