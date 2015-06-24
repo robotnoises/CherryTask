@@ -11,7 +11,8 @@
       'myApp.task',
       'myApp.project',
       'perfect_scrollbar',
-      'ngMaterial'
+      'ngMaterial',
+      'ngMessages'
     ])
 
     .run(['$rootScope', 'Auth', 'fbutil', function($rootScope, Auth, fbutil) {

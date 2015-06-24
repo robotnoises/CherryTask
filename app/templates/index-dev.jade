@@ -21,38 +21,20 @@ html(lang='en', ng-app='myApp')
     //Main
     div(class='main')
       
-      button(class='md-trigger', data-modal='modal-full') Launch Modal
+      button(class='modal-trigger', data-modal='modal-full') Launch Modal
       
       div(ng-view)
       = '\n'
       //Modal
-      div(class='md-modal md-effect-full' id='modal-full')
-        perfect-scrollbar(class='md-content scrollable', wheel-propagation='true', wheel-speed='1')
-          div(layout='column')
-            md-content(layout-padding)
-              form(name='fooForm')
-                md-input-container
-                  label Description
-                  input(md-maxlength='30', required='', name='description', ng-model='project.description')
-                  div(ng-messages='projectForm.description.$error')
-                    div(ng-message='required') This is required.
-                    div(ng-message='md-maxlength') The name has to be less than 30 characters long.
-                md-input-container
-                  label Client Name
-                  input(required='', name='clientName', ng-model='project.clientName')
-                  div(ng-messages='projectForm.clientName.$error')
-                    div(ng-message='required') This is required.
+      include ./partials/modal.jade
       = '\n'
-      //Modal Overlay
-      div(class='md-overlay')
-        button(class='md-close') Close Me!
-    = '\n'
     //Library
     script(src='bower_components/jquery/dist/jquery.min.js')
     script(src='bower_components/angular/angular.js')
     script(src='bower_components/angular-animate/angular-animate.js')
     script(src='bower_components/angular-aria/angular-aria.js')
     script(src='bower_components/angular-material/angular-material.js')
+    script(src='bower_components/angular-messages/angular-messages.js')
     script(src='bower_components/angular-route/angular-route.js')
     script(src='bower_components/firebase/firebase.js')
     script(src='bower_components/angularfire/dist/angularfire.js')

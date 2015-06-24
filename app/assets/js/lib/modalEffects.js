@@ -12,33 +12,33 @@ var ModalEffects = (function() {
 
 	function init() {
 
-		var overlay = document.querySelector( '.md-overlay' );
+		var overlay = document.querySelector( '.modal-overlay' );
 
-		[].slice.call( document.querySelectorAll( '.md-trigger' ) ).forEach( function( el, i ) {
+		[].slice.call( document.querySelectorAll( '.modal-trigger' ) ).forEach( function( el, i ) {
 
 			var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
-				close = overlay.querySelector( '.md-close' ),
+				close = overlay.querySelector( '.modal-close' ),
 				body = document.getElementsByTagName('body')[0];
 
 			function removeModal( hasPerspective ) {
-				classie.remove( modal, 'md-show' );
+				classie.remove( modal, 'modal-show' );
 				classie.remove( body, 'no-scroll');
 				
 				if( hasPerspective ) {
-					classie.remove( document.documentElement, 'md-perspective' );
+					classie.remove( document.documentElement, 'modal-perspective' );
 				}
 			}
 
 			function removeModalHandler() {
-				removeModal( classie.has( el, 'md-setperspective' ) ); 
+				removeModal( classie.has( el, 'modal-setperspective' ) ); 
 			}
 
 			el.addEventListener( 'click', function( ev ) {
-				classie.add( modal, 'md-show' );
+				classie.add( modal, 'modal-show' );
 
-				if( classie.has( el, 'md-setperspective' ) ) {
+				if( classie.has( el, 'modal-setperspective' ) ) {
 					setTimeout( function() {
-						classie.add( document.documentElement, 'md-perspective' );
+						classie.add( document.documentElement, 'modal-perspective' );
 					}, 25 );
 				}
 				
