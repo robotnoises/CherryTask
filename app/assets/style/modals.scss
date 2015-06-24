@@ -179,6 +179,10 @@ perspective effects (not including the modals and the overlay).
   animation: spin 1s infinite linear;
 }
 
+.ital {
+  font-style: italic;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
