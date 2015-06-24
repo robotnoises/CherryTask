@@ -57,9 +57,9 @@ perspective effects (not including the modals and the overlay).
 	z-index: 1000;
 	opacity: 0;
 	background: $brand-grey;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
 }
 
 .modal-show ~ .modal-overlay {
@@ -149,6 +149,7 @@ perspective effects (not including the modals and the overlay).
 .submit-overlay {
   display: none;
   opacity: 0;
+  visibility: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -156,12 +157,13 @@ perspective effects (not including the modals and the overlay).
   left: 0;
   z-index: 2;
   background-color: $brand-grey;
-  transition: opacity 500ms;
+  transition: all 500ms;
 }
 
 .submit-overlay.show {
   display: block;
   opacity: 1;
+  visibility: visible;
 }
 
 .submit-overlay .icon-container {
