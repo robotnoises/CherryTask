@@ -1,6 +1,27 @@
 @import 'vars';
 
+/* Material Overrides */
+
+cherry-form {
+  white-space: normal;
+}
+
+md-input-container textarea.md-input {
+  height: auto;
+  min-height: 0;
+}
+
 md-content {
   background-color: transparent;
   color: $brand-black;
+}
+
+md-content form h1 {
+  white-space: normal;
+  font-weight: 500;
+}
+
+.md-button {
+  margin: 26px 0 6px;
+  background-color: rgba(0,0,0,0.03);
 }

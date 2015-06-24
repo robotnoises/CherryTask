@@ -50,9 +50,6 @@
       getTenant(function (tenant) {
         var ref = fbutil.ref(tenant + loc + key).orderByKey();
         return callback($firebaseObject(ref));
-        // ref.once('value', function (snapshot) {
-        //   return callback(snapshot.val());
-        // });
       });
     };
 

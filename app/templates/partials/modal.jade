@@ -2,19 +2,8 @@ div(class='modal-main modal-effect-full' id='modal-full')
   perfect-scrollbar(class='md-content scrollable', wheel-propagation='true', wheel-speed='1')
     div(layout='column')
       md-content(layout-padding)
-        form(name='fooForm')
-          md-input-container
-            label Description
-            input(md-maxlength='30', required, name='description', ng-model='project.description')
-            div(ng-messages='projectForm.description.$error')
-              div(ng-message='required') This is required.
-              div(ng-message='md-maxlength') The name has to be less than 30 characters long.
-          md-input-container
-            label Client Name
-            input(required, name='clientName', ng-model='project.clientName')
-            div(ng-messages='projectForm.clientName.$error')
-              div(ng-message='required') This is required.
+        cherry-form
 ='\n'
 //Modal Overlay
 div(class='modal-overlay')
-  i(class='icon icon-lg pe-7s-close modal-close')
+  i(class='icon icon-md pe-7s-close modal-close')

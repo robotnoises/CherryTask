@@ -42,7 +42,6 @@
       };
       
       $scope.addProject = _addProject;
-
     }])
 
   .controller('projectController', ['$scope', '$routeParams', '$timeout', 'apiService',

@@ -29,6 +29,7 @@ perspective effects (not including the modals and the overlay).
 	top: 100px;
 	left: 50%;
 	width: 80%;
+	max-width: 800px;
 	min-width: 320px;
 	height: auto;
 	z-index: 2000;
@@ -146,15 +147,13 @@ perspective effects (not including the modals and the overlay).
 }
 
 i.modal-close {
-  font-weight: 300;
   cursor: pointer;
-  transition: color 500ms;
+  transition: color 300ms;
 }
 
 i.modal-close:hover,
 i.modal-close:active {
-  color: $brand-white;
-  text-shadow: 0px 0px 1px rgba(0,0,0,0.1)
+  color: #000;
 }
 
 .scrollable {
