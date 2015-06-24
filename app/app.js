@@ -10,7 +10,8 @@
       'myApp.signin',
       'myApp.task',
       'myApp.project',
-      'perfect_scrollbar'
+      'perfect_scrollbar',
+      'ngMaterial'
     ])
 
     .run(['$rootScope', 'Auth', 'fbutil', function($rootScope, Auth, fbutil) {

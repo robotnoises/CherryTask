@@ -8,9 +8,8 @@ html(lang='en', ng-app='myApp')
     link(rel='stylesheet' href='bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css')
     = '\n'
     //Style
-    link(rel='stylesheet', href='//cdn.jsdelivr.net/pure/0.6.0/pure-min.css')
-    link(rel='stylesheet' href='//yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css')
     link(rel='stylesheet' href='bower_components/perfect-scrollbar/min/perfect-scrollbar.min.css')
+    link(rel='stylesheet' href='bower_components/angular-material/angular-material.css')
     link(rel='stylesheet', href='assets/style/compiled/app.css')
     link(rel='stylesheet', href='assets/style/compiled/app.css.map')
     = '\n'
@@ -24,25 +23,39 @@ html(lang='en', ng-app='myApp')
       
       button(class='md-trigger', data-modal='modal-full') Launch Modal
       
-      div(ng-view, class='pure-g')
+      div(ng-view)
       = '\n'
       //Modal
       div(class='md-modal md-effect-full' id='modal-full')
-        button(class='md-close') Close me!
-        perfect-scrollbar(class='scrollable', wheel-propagation='true', wheel-speed='50')
-          div(class='md-content')
-            h3 Modal Dialog
-              div
-                p This is a modal window. You can do the following things with it:</p>  
+        perfect-scrollbar(class='md-content scrollable', wheel-propagation='true', wheel-speed='1')
+          div(layout='column')
+            md-content(layout-padding)
+              form(name='fooForm')
+                md-input-container
+                  label Description
+                  input(md-maxlength='30', required='', name='description', ng-model='project.description')
+                  div(ng-messages='projectForm.description.$error')
+                    div(ng-message='required') This is required.
+                    div(ng-message='md-maxlength') The name has to be less than 30 characters long.
+                md-input-container
+                  label Client Name
+                  input(required='', name='clientName', ng-model='project.clientName')
+                  div(ng-messages='projectForm.clientName.$error')
+                    div(ng-message='required') This is required.
       = '\n'
       //Modal Overlay
       div(class='md-overlay')
+        button(class='md-close') Close Me!
     = '\n'
     //Library
     script(src='bower_components/jquery/dist/jquery.min.js')
     script(src='bower_components/angular/angular.js')
+    script(src='bower_components/angular-animate/angular-animate.js')
+    script(src='bower_components/angular-aria/angular-aria.js')
+    script(src='bower_components/angular-material/angular-material.js')
     script(src='bower_components/angular-route/angular-route.js')
     script(src='bower_components/firebase/firebase.js')
+    script(src='bower_components/angularfire/dist/angularfire.js')
     script(src='bower_components/angularfire/dist/angularfire.js')
     script(src='bower_components/perfect-scrollbar/min/perfect-scrollbar.min.js')
     script(src='bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js')

@@ -1,25 +1,24 @@
-div(ng-hide='!signedIn', ng-cloak, class='navigation pure-menu pure-menu-horizontal pure-menu-fixed brand-red', ng-controller='breadcrumbController')
-  nav
-    ul(class='pure-menu-list')
-      li(ng-if='signedIn' class='pure-menu-item')
-        a(href='#/' class='pure-menu-link') CherryTask
-        i(ng-if='breadcrumbs.project.showing', 
-          ng-mouseenter='homeHover = true',
-          ng-mouseleave='homeHover = false',
-          ng-class='homeHover ? "pe-7s-angle-down" : "pe-7s-angle-right"',
-          ng-click='toggleMenu()', 
-          class='icon icon-md white pe-7s-angle-right')
-      li(ng-if='breadcrumbs.project.showing' class='pure-menu-item')
-        a(href='#/projects/{{breadcrumbs.project.value.id}}' class='pure-menu-link') {{breadcrumbs.project.value.title}}
-        i(ng-if='breadcrumbs.task.showing', 
-          ng-mouseenter='projHover = true',
-          ng-mouseleave='projHover = false',
-          ng-class='projHover ? "pe-7s-angle-down" : "pe-7s-angle-right"',
-          ng-click='toggleMenu()',  
-          class='icon icon-md white pe-7s-angle-right')
-      li(ng-if='breadcrumbs.task.showing' class='pure-menu-item')
-        a(href='#/tasks/{{breadcrumbs.task.value.id}}' class='pure-menu-link') {{breadcrumbs.task.value.title}}
-      li(ng-if='signedIn', class='pure-menu-item user')
-        a(href='#/account' class='pure-menu-link') Account
-  div(class='slide-out-menu' ng-class='{ show : showMenu }')
-    div
+div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start center', class='navigation fixed brand-red', ng-controller='breadcrumbController')
+  div
+    a(href='#/' class='pure-menu-link') CherryTask
+    i(ng-if='breadcrumbs.project.showing', 
+      ng-mouseenter='homeHover = true',
+      ng-mouseleave='homeHover = false',
+      ng-class='homeHover ? "pe-7s-angle-down" : "pe-7s-angle-right"',
+      ng-click='toggleMenu()', 
+      class='icon icon-md white pe-7s-angle-right')
+  div(ng-if='breadcrumbs.project.showing' class='pure-menu-item')
+    a(href='#/projects/{{breadcrumbs.project.value.id}}' class='pure-menu-link') {{breadcrumbs.project.value.title}}
+    i(ng-if='breadcrumbs.task.showing', 
+      ng-mouseenter='projHover = true',
+      ng-mouseleave='projHover = false',
+      ng-class='projHover ? "pe-7s-angle-down" : "pe-7s-angle-right"',
+      ng-click='toggleMenu()',  
+      class='icon icon-md white pe-7s-angle-right')
+  div(ng-if='breadcrumbs.task.showing' class='pure-menu-item')
+    a(href='#/tasks/{{breadcrumbs.task.value.id}}' class='pure-menu-link') {{breadcrumbs.task.value.title}}
+  
+  div(ng-if='signedIn', class='pure-menu-item user')
+    a(href='#/account' class='pure-menu-link') Account
+div(layout='row', class='slide-out-menu' ng-class='{ show : showMenu }')
+  div

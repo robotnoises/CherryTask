@@ -2,6 +2,7 @@
 
 @import 'vars';
 @import 'modals';
+@import 'overrides';
 
 /* Base styles */
 
@@ -108,6 +109,12 @@ nav li > i.icon:active {
 
 .navigation > .slide-out-menu.show {
   height: 200px;
+}
+
+.navigation.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 /* Messages */
