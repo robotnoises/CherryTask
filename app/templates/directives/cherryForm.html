@@ -1,6 +1,6 @@
 <div layout="column">
   <md-content layout-padding>
-    <form name="cherryForm">
+    <form name="cherryForm" ng-submit="submit()">
       
       <h1>Add a new {{formType == 'new_project' ? 'Project' : 'Task'}}</h1>
       
@@ -23,7 +23,7 @@
           <div ng-message="md-maxlength">The Description must be less than 100 characters.</div>
         </div> 
       </md-input-container>
-      <md-button ng-click="submit()">Create Project</md-button>
+      <md-button class="submit-button" role="submit">Create Project</md-button>
     </form>
   </md-content>
 </div>
