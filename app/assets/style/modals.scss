@@ -57,9 +57,9 @@ perspective effects (not including the modals and the overlay).
 	z-index: 1000;
 	opacity: 0;
 	background: $brand-grey;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	transition: all 0.5s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 .modal-show ~ .modal-overlay {
@@ -88,7 +88,7 @@ perspective effects (not including the modals and the overlay).
 	border-radius: 3px 3px 0 0;
 }
 
-.modal-content > div {
+.modal-content > div:first-child {
 	padding: 15px 40px 30px;
 	margin: 0;
 	font-weight: 300;
