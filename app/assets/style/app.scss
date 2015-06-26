@@ -3,6 +3,8 @@
 @import 'vars';
 @import 'modals';
 @import 'overrides';
+@import 'card';
+@import 'card-board';
 
 /* Base styles */
 
@@ -197,37 +199,6 @@ i.icon-lg {
   font-size: 3em;
   font-weight: 600;
 }
-
-/* Card */
-
-.card {
-  height: 300px;
-  width: 300px;
-  margin: 10px;
-  background: rgba(255, 255, 255, 0.75);
-  /* box-shadow: 0 0 1px 1px rgba(80, 84, 92, 0.05), 0 1px 2px rgba(80, 84, 92, 0.4); */
-  border-top: 2px solid #fff;
-  border-right: 1px solid rgba(0,0,0,0.1);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  border-left: 12x solid #fff;
-}
-
-.card > div {
-  padding: 10px;
-}
-
-.card .card-title {
-  font-weight: 600;  
-}
-
-.card .card-body {
-  font-size: 0.75em;
-}
-
-/*.card .card-footer {
-  
-}*/
-
 
 /* Helpers */
 
