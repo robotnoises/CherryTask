@@ -16,7 +16,7 @@
       function cherryCardController ($scope, $location, $timeout, $q, $routeParams, api) {
         
         $scope.show = function () {
-          $location.path('projects/' + $scope.project.id);
+          $location.path($scope.card.type + 's/' + $scope.card.id);
         };
               
       }]

@@ -11,17 +11,12 @@
       controller: ['$scope', '$location', '$timeout', '$q', '$routeParams', 'apiService',
       function cherryFormController ($scope, $location, $timeout, $q, $routeParams, api) {
         
-        var template = Object.freeze({
-          NEW_PROJECT: '',
-          NEW_TASK: 'projects'
-        });
-        
-        var getFormType = function (mod) {
+        var getFormType = function (uri) {
           var $deferred = $q.defer();
-          if (mod == template.NEW_PROJECT) {
-            $deferred.resolve({ key: 'new_project', apiLoc: 'projects/' });
-          } else if (mod == template.NEW_TASK ) {
-            $deferred.resolve({ key: 'new_task', apiLoc: 'tasks/', projectId: $routeParams.id });
+          if (uri == '') {
+            $deferred.resolve({ key: 'project', apiLoc: 'projects/' });
+          } else if (uri == 'projects' ) {
+            $deferred.resolve({ key: 'task', apiLoc: 'tasks/', projectId: $routeParams.id });
           } else {
             $deferred.reject();
           }
@@ -34,7 +29,7 @@
           
           $promise.then(function (formData) {
             $timeout(function () {
-              $scope.formType = formData.key;
+              $scope.form.type = $scope.formType = formData.key;
               $scope.formData = formData;
             },0);
           });
@@ -91,7 +86,7 @@
           api.create($scope.formData.apiLoc, $scope.form, function (snapshot) {
             var obj = angular.copy(snapshot.val());
             obj.id = snapshot.key();
-            if (matchesFormType('new_task')) {
+            if (matchesFormType('task')) {
               obj.projectId = $scope.formData.projectId;
             }
             api.update($scope.formData.apiLoc + snapshot.key(), obj, obj.id);

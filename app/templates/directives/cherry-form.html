@@ -2,11 +2,11 @@
   <md-content layout-padding>
     <form name="cherryForm" ng-submit="submit()">
       
-      <h1>Add a new {{formType == 'new_project' ? 'Project' : 'Task'}}</h1>
+      <h1>Add a new {{formType == 'project' ? 'Project' : 'Task'}}</h1>
       
       <!-- Title for new Task or new Project -->
-      <md-input-container ng-if="matchesFormType(['new_task','new_project'])">
-        <label>New {{formType == 'new_project' ? 'Project' : 'Task'}} Title</label>
+      <md-input-container ng-if="matchesFormType(['task','project'])">
+        <label>New {{formType == 'project' ? 'Project' : 'Task'}} Title</label>
         <input md-maxlength="100" required name="title" ng-model="form.title">
         <div ng-messages="cherryForm.title.$error">
           <div ng-message="required">Title is required.</div>
@@ -15,15 +15,15 @@
       </md-input-container>
       
       <!-- Brief description of new Task or new Project -->
-      <md-input-container ng-if="matchesFormType(['new_task','new_project'])">
-        <label>Description of the {{formType == 'new_project' ? 'Project' : 'Task'}}</label>
+      <md-input-container ng-if="matchesFormType(['task','project'])">
+        <label>Description of the {{formType == 'project' ? 'Project' : 'Task'}}</label>
         <textarea rows="1" md-maxlength="500" required name="description" ng-model="form.description"></textarea>
         <div ng-messages="cherryForm.description.$error">
           <div ng-message="required">Description is required.</div>
           <div ng-message="md-maxlength">The Description must be less than 100 characters.</div>
         </div> 
       </md-input-container>
-      <md-button class="submit-button" role="submit">Create {{formType == 'new_project' ? 'Project' : 'Task'}}</md-button>
+      <md-button class="submit-button" role="submit">Create {{formType == 'project' ? 'Project' : 'Task'}}</md-button>
     </form>
   </md-content>
 </div>
