@@ -7,7 +7,7 @@
   .directive('cherryForm', function() {
     return {
       restrict: 'E',
-      templateUrl: 'templates/directives/cherryForm.html',
+      templateUrl: 'templates/directives/cherry-form.html',
       controller: ['$scope', '$location', '$timeout', '$q', '$routeParams', 'apiService',
       function cherryFormController ($scope, $location, $timeout, $q, $routeParams, api) {
         

@@ -72,31 +72,27 @@ h6 {
   padding: 0 2em;
 }
 
-/*.main > .content {
-  margin: auto;
-  max-width: 1200px;
-}*/
-
 /* Nav */
 
-nav .user {
+.navigation .user {
   position: absolute;
   right: 0;
 }
 
-nav li > i.icon {
+.navigation li > i.icon {
   line-height: 2.5em;
   transition: background-color 300ms;
 }
 
-nav li > i.icon:hover,
-nav li > i.icon:active {
+.navigation li > i.icon:hover,
+.navigation li > i.icon:active {
   cursor: pointer;
   background-color: rgba(0,0,0,0.1);
 }
 
 .navigation {
-  box-shadow: 0 0 1px 1px rgba(80,84,92,0.1),0 1px 2px rgba(80,84,92,0.5); 
+  // box-shadow: 0 0 1px 1px rgba(80,84,92,0.1),0 1px 2px rgba(80,84,92,0.5);
+  border-bottom: 1px solid rgba(0,0,0,0.15);
 }
 
 .navigation > .slide-out-menu {
@@ -115,6 +111,26 @@ nav li > i.icon:active {
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+.pure-menu-item {
+  line-height: 4em;
+}
+
+.pure-menu-link {
+  color: #fff;
+  font-weight: 600;
+  transition: background-color 300ms;
+}
+
+.pure-menu-link,
+.pure-menu-disabled,
+.pure-menu-heading {
+  padding: .5em 2em;
+}
+
+.navigation a {
+  text-decoration: none;
 }
 
 /* Messages */
@@ -165,47 +181,6 @@ div.brand-white {
   background-color: $brand-white;
 }
 
-/* Pure css overrides */
-
-.pure-menu-horizontal .pure-menu-heading,
-.pure-menu-horizontal .pure-menu-separator,
-.pure-menu-horizontal .pure-menu-item,
-.pure-menu-horizontal .pure-menu-list {
-  display: inline-flex;
-}
-
-.pure-menu-list {
-  width: 100%;
-}
-
-.pure-menu-item {
-  line-height: 4em;
-}
-
-.pure-menu-link {
-  color: #fff;
-  font-weight: 600;
-  transition: background-color 300ms;
-}
-
-.pure-menu-link,
-.pure-menu-disabled,
-.pure-menu-heading {
-  padding: .5em 2em;
-}
-
-.pure-menu-link:hover,
-.pure-menu-link:active {
-  /*color: #444;*/
-  font-weight: 600;
-  /*background-color: #f7f7f7;*/
-  background-color: rgba(0,0,0,0.1);
-}
-
-.pure-g-r {
-  display: flex;
-}
-
 /* Icons */
 
 i.icon-sm {
@@ -226,29 +201,30 @@ i.icon-lg {
 /* Card */
 
 .card {
-  height: 350px;
-  width: 350px;
+  height: 300px;
+  width: 300px;
   margin: 10px;
-  background: rgba(255,255,255,0.8);
-  border-radius: 2px;
-  box-shadow: 0 0 1px 1px rgba(80,84,92,0.1),0 1px 2px rgba(80,84,92,0.7);
+  background: rgba(255, 255, 255, 0.75);
+  /* box-shadow: 0 0 1px 1px rgba(80, 84, 92, 0.05), 0 1px 2px rgba(80, 84, 92, 0.4); */
+  border-top: 2px solid #fff;
+  border-right: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-left: 12x solid #fff;
 }
 
-.card .card-header,
-.card .card-body, 
-.card .card-footer {
+.card > div {
   padding: 10px;
 }
 
-/*.card .card-header {
-  
+.card .card-title {
+  font-weight: 600;  
 }
 
 .card .card-body {
-  
+  font-size: 0.75em;
 }
 
-.card .card-footer {
+/*.card .card-footer {
   
 }*/
 

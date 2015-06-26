@@ -1,6 +1,7 @@
-div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start center', class='navigation fixed brand-white', ng-controller='breadcrumbController')
-  div
+div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start center', class='navigation fixed brand-red', ng-controller='breadcrumbController')
+  div(class='pure-menu-item')
     a(href='#/' class='pure-menu-link') CherryTask
+  div
     i(ng-if='breadcrumbs.project.showing', 
       ng-mouseenter='homeHover = true',
       ng-mouseleave='homeHover = false',
@@ -9,6 +10,7 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start center', cl
       class='icon icon-md white pe-7s-angle-right')
   div(ng-if='breadcrumbs.project.showing' class='pure-menu-item')
     a(href='#/projects/{{breadcrumbs.project.value.id}}' class='pure-menu-link') {{breadcrumbs.project.value.title}}
+  div
     i(ng-if='breadcrumbs.task.showing', 
       ng-mouseenter='projHover = true',
       ng-mouseleave='projHover = false',
