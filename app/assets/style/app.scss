@@ -4,7 +4,6 @@
 @import 'modals';
 @import 'overrides';
 @import 'card';
-@import 'card-board';
 
 /* Base styles */
 
@@ -66,12 +65,6 @@ h5,
 h6 {
   margin: 1em 0;
   font-weight: 600; /* bold */
-}
-
-/* Layout */
-
-.content {
-  padding: 0 2em;
 }
 
 /* Nav */
@@ -229,3 +222,5 @@ i.icon-lg {
     -webkit-transform: scaleY(1.0);
   }
 }
+
+@import 'media';
