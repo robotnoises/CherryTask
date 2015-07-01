@@ -14,7 +14,7 @@
 }
 
 .card > div {
-  padding: 10px;
+  padding: 5px;
 }
 
 .card .card-title {
@@ -25,9 +25,23 @@
   font-size: 0.75em;
 }
 
-/*.card .card-footer {
-  
-}*/
+.card .card-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.card .card-footer i.icon {
+  cursor: pointer;
+  opacity: 0.65;
+  margin-left: 5px;
+  transition: opacity $transition-fast;
+}
+
+.card .card-footer i:hover,
+.card .card-footer i:active {
+  opacity: 1;
+}
 
 .card .card-progress-bar {
   display: block;
@@ -60,6 +74,7 @@
 
 .card-container > .card {
   display: inline-block;
+  position: relative;
   *display: inline; /* IE 6 */
   zoom: 1;
   vertical-align: top;

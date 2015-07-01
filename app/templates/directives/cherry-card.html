@@ -10,7 +10,10 @@
 	<div class="card-description">{{card.description}}</div>
 	<!--<div class="card-assignee">Unassigned</div>
 	<div class="card-due-date">Due on 07/04/2015</div>-->
-	<button ng-click="show()">Details</button>
   </div>
-  <div class="card-footer"></div>
+  <div class="card-footer">
+	<i class="icon icon-md pe-7s-exapnd2 float-right" ng-click="show()" title="Edit '{{card.title}}'"></i>
+	<i class="icon icon-md pe-7s-graph float-right" title="Reports for '{{card.title}}'"></i>
+	<i class="icon icon-md pe-7s-link float-right" title="Copy link to '{{card.title}}'"></i>
+  </div>
 </div> 
