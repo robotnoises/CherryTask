@@ -1,11 +1,12 @@
 /* Card */
 
+@import 'vars';
+
 .card {
-  height: 300px;
-  width: 300px;
-  margin: 10px;
+  height: $card-dimensions;
+  width: $card-dimensions;
+  margin: $card-margins;
   background: rgba(255, 255, 255, 0.75);
-  /* box-shadow: 0 0 1px 1px rgba(80, 84, 92, 0.05), 0 1px 2px rgba(80, 84, 92, 0.4); */
   border-top: 2px solid #fff;
   border-right: 1px solid rgba(0,0,0,0.1);
   border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -27,3 +28,40 @@
 /*.card .card-footer {
   
 }*/
+
+.card .card-progress-bar {
+  display: block;
+  position: relative;
+  height: 5px;
+  background-color: rgba(0,0,0,0.05);
+  margin: 10px 0 0;
+}
+
+.card .card-progress-bar .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  background-color: $brand-green;
+  transition: width $transition-medium;
+}
+
+/* Container */
+
+.card-container {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  -webkit-transition: width $transition-fast;
+  -moz-transition: width $transition-fast;
+  transition: width $transition-fast;
+}
+
+.card-container > .card {
+  display: inline-block;
+  *display: inline; /* IE 6 */
+  zoom: 1;
+  vertical-align: top;
+}
+
