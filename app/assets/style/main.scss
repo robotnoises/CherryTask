@@ -1,0 +1,222 @@
+/* Base styles */
+
+@import 'vars';
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0; }
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+html, body {
+  /* Background */
+  background-color: $brand-grey;
+
+  /* Fonts */
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: $brand-black;
+  font-weight: 400;
+
+  /* Margins and Padding */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 5em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+h4 {
+  font-size: 1.12em;
+}
+
+h5 {
+  font-size: .83em;
+}
+
+h6 {
+  font-size: .75em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1em 0;
+  font-weight: 600; /* bold */
+}
+
+/* Nav */
+
+.navigation .user {
+  position: absolute;
+  right: 0;
+}
+
+.navigation li > i.icon {
+  line-height: 2.5em;
+  transition: background-color 300ms;
+}
+
+.navigation li > i.icon:hover,
+.navigation li > i.icon:active {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.navigation {
+  // box-shadow: 0 0 1px 1px rgba(80,84,92,0.1),0 1px 2px rgba(80,84,92,0.5);
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+.navigation > .slide-out-menu {
+  height: 0px;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.1);
+  transition: height 300ms;
+}
+
+.navigation > .slide-out-menu.show {
+  height: 200px;
+}
+
+.navigation.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.pure-menu-item {
+  line-height: 4em;
+}
+
+.pure-menu-link {
+  color: #fff;
+  font-weight: 400;
+  transition: background-color 300ms;
+}
+
+.pure-menu-link,
+.pure-menu-disabled,
+.pure-menu-heading {
+  padding: .5em 2em;
+}
+
+.navigation a {
+  text-decoration: none;
+}
+
+/* Messages */
+
+div.messages {
+  position: fixed;
+  top: 5em;
+  bottom: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* Brand */
+
+.brand-red {
+  color: $brand-red;
+}
+
+.brand-blue {
+  color: $brand-blue;
+}
+
+.brand-darkblue {
+  color: $brand-darkblue;
+}
+
+div.brand-red,
+li.brand-red {
+  background-color: $brand-red;
+}
+
+div.brand-blue,
+li.brand-blue  {
+  background-color: $brand-blue;
+}
+
+div.brand-darkblue,
+li.brand-darkblue  {
+  background-color: $brand-darkblue;
+}
+
+div.brand-black,
+li.brand-black  {
+  background-color: $brand-black;
+}
+
+div.brand-white {
+  background-color: $brand-white;
+}
+
+/* Icons */
+
+i.icon-sm {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+i.icon-md {
+  font-size : 2em;
+  font-weight: 400;
+}
+
+i.icon-lg {
+  font-size: 3em;
+  font-weight: 600;
+}
+
+/* Helpers */
+
+::selection:not(input) {
+  background-color: transparent;
+}
+
+.white {
+  color: #fff;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.subtle {
+  opacity: 0.65;
+  transition: opacity $transition-fast;
+}
+
+.subtle:hover,
+.subtle:active {
+  opacity: 1;
+}

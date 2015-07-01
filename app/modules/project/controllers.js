@@ -39,20 +39,20 @@
       });
 
       // Models
-      $scope.task = {
-        title: '',
-        description: '',
-        dateCreated: '',
-        creator: '',
-        assignee: '',
-        stage: '',
-        priority: '',
-        estimation: '',
-        elapsed: '',
-        id: '',
-        progress: 0,
-        projectId: $routeParams.id
-      };
+      // $scope.task = {
+      //   title: '',
+      //   description: '',
+      //   dateCreated: '',
+      //   creator: '',
+      //   assignee: '',
+      //   stage: '',
+      //   priority: '',
+      //   estimation: '',
+      //   elapsed: '',
+      //   id: '',
+      //   progress: 0,
+      //   projectId: $routeParams.id
+      // };
 
       // Scope methods
       // $scope.addTask = function () {

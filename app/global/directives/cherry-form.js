@@ -91,8 +91,10 @@
             var obj = angular.copy(snapshot.val());
             obj.id = snapshot.key();
             if (matchesFormType('task')) {
+              // Todo: this is bad
               obj.projectId = $scope.formData.projectId;
               obj.progress = 0;
+              obj.mood = 50;
             }
             api.update($scope.formData.apiLoc + snapshot.key(), obj, obj.id);
             toggleSubmitOverlay();

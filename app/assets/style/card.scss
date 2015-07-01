@@ -33,14 +33,7 @@
 
 .card .card-footer i.icon {
   cursor: pointer;
-  opacity: 0.65;
   margin-left: 5px;
-  transition: opacity $transition-fast;
-}
-
-.card .card-footer i:hover,
-.card .card-footer i:active {
-  opacity: 1;
 }
 
 .card .card-progress-bar {
