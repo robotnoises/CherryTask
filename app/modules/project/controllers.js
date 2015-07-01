@@ -50,6 +50,7 @@
         estimation: '',
         elapsed: '',
         id: '',
+        progress: 0,
         projectId: $routeParams.id
       };
 

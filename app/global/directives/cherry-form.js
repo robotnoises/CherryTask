@@ -80,6 +80,10 @@
           init();
         });
         
+        $scope.calc = function (value, unit) {
+          return value + unit;
+        };
+        
         $scope.matchesFormType = matchesFormType;
         
         $scope.submit = function () {
@@ -88,6 +92,7 @@
             obj.id = snapshot.key();
             if (matchesFormType('task')) {
               obj.projectId = $scope.formData.projectId;
+              obj.progress = 0;
             }
             api.update($scope.formData.apiLoc + snapshot.key(), obj, obj.id);
             toggleSubmitOverlay();

@@ -2,8 +2,8 @@
 <div class="card">
   <div class="card-header">
 	<div class="card-title">{{card.title}}</div>
-	<div class="card-progress-bar">
-	  <div class="progress"></div>
+	<div ng-if="card.progress !== undefined" class="card-progress-bar">
+	  <div class="progress" ng-style="{width: card.progress + '%'}"></div>
 	</div>
   </div>
   <div class="card-body">
