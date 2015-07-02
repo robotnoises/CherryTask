@@ -1,6 +1,6 @@
 @import 'vars';
 
-/* Material Overrides */
+/* Material overrides */
 
 cherry-form {
   white-space: normal;
@@ -24,4 +24,11 @@ md-content form h1 {
 .md-button {
   margin: 26px 0 6px;
   background-color: rgba(0,0,0,0.03);
+}
+
+/* Pixeden icon overrides */
+
+[class*=" pe-7s-"], 
+[class^=pe-7s-] {
+  line-height: inherit;
 }

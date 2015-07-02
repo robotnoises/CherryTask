@@ -90,9 +90,13 @@ h6 {
 
 /* Nav */
 
+.navigation {
+  padding: 0 1em;
+}
+
 .navigation .user {
   position: absolute;
-  right: 0;
+  right: 1em;
 }
 
 .navigation li > i.icon {
@@ -142,7 +146,12 @@ h6 {
 .menu-link,
 .menu-disabled,
 .menu-heading {
-  padding: .5em 2em;
+  padding-right: 2em;
+}
+
+.menu-icon {
+  padding-top: 1em;
+  padding-left: .5em;
 }
 
 .navigation a {
@@ -205,11 +214,16 @@ i.icon-sm {
 }
 
 i.icon-md {
-  font-size : 2em;
+  font-size : 1.5em;
   font-weight: 400;
 }
 
 i.icon-lg {
+  font-size: 2em;
+  font-weight: 400;
+}
+
+i.icon-jumbo {
   font-size: 3em;
   font-weight: 600;
 }

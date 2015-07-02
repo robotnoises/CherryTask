@@ -21,6 +21,11 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start center', cl
     a(href='#/tasks/{{breadcrumbs.task.value.id}}' class='menu-link') {{breadcrumbs.task.value.title}}
   
   div(ng-if='signedIn', class='menu-item user')
-    a(href='#/account' class='menu-link') Account
+    a(href='', class='menu-icon')
+      i(class='icon icon-lg pe-7s-bell white')
+    a(href='#/account', class='menu-icon') 
+      i(class='icon icon-lg pe-7s-config white')
+    a(href='', class='menu-icon')
+      i(class='icon icon-lg pe-7s-user white')
 div(layout='row', class='slide-out-menu' ng-class='{ show : showMenu }')
   div
