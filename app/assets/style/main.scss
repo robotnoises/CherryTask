@@ -90,13 +90,9 @@ h6 {
 
 /* Nav */
 
-.navigation {
-  padding: 0 1em;
-}
-
 .navigation .user {
   position: absolute;
-  right: 1em;
+  right: 0;
 }
 
 .navigation li > i.icon {
@@ -111,7 +107,7 @@ h6 {
 }
 
 .navigation {
-  border-bottom: 3px solid rgba(0,0,0,0.35);
+  border-bottom: 1px solid rgba(0,0,0,0.75);
 }
 
 .navigation > .slide-out-menu {
@@ -133,8 +129,10 @@ h6 {
   z-index: 1;
 }
 
-.menu-item {
+.menu-item,
+.menu-separator {
   line-height: 4em;
+  margin-left: 1em;
 }
 
 .menu-link {
@@ -143,11 +141,11 @@ h6 {
   transition: background-color 300ms;
 }
 
-.menu-link,
-.menu-disabled,
-.menu-heading {
-  padding-right: 2em;
-}
+// .menu-link,
+// .menu-disabled,
+// .menu-heading {
+//   padding-right: 2em;
+// }
 
 .menu-icon {
   padding-top: 1em;
