@@ -2,14 +2,39 @@
 
 @import 'vars';
 
-*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-body, html { font-size: 100%; padding: 0; margin: 0; }
+*, 
+*:after, 
+*:before { 
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box; 
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+}
+
+body, 
+html { 
+  font-size: 100%; 
+  padding: 0; 
+  margin: 0; 
+}
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
-.clearfix:before, .clearfix:after { content: " "; display: table; }
-.clearfix:after { clear: both; }
+.clearfix:before, 
+.clearfix:after { 
+  content: " "; 
+  display: table; 
+}
 
-html, body {
+.clearfix:after { 
+  clear: both; 
+}
+
+html, 
+body {
   /* Background */
   background-color: $brand-grey;
 
@@ -24,6 +49,7 @@ html, body {
   padding: 0;
 }
 
+/* Clear space under the fixed header */
 body {
   padding-top: 5em;
 }
@@ -81,7 +107,7 @@ h6 {
 }
 
 .navigation {
-  border-bottom: 3px solid rgba(0,0,0,0.75);
+  border-bottom: 3px solid rgba(0,0,0,0.35);
 }
 
 .navigation > .slide-out-menu {
@@ -103,19 +129,19 @@ h6 {
   z-index: 1;
 }
 
-.pure-menu-item {
+.menu-item {
   line-height: 4em;
 }
 
-.pure-menu-link {
+.menu-link {
   color: #fff;
   font-weight: 400;
   transition: background-color 300ms;
 }
 
-.pure-menu-link,
-.pure-menu-disabled,
-.pure-menu-heading {
+.menu-link,
+.menu-disabled,
+.menu-heading {
   padding: .5em 2em;
 }
 

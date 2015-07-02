@@ -8,7 +8,6 @@ html(lang='en', ng-app='myApp')
     link(rel='stylesheet' href='bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css')
     = '\n'
     //Style
-    link(rel='stylesheet', href='//cdn.jsdelivr.net/pure/0.6.0/pure-min.css')
     link(rel='stylesheet' href='//yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css')
     link(rel='stylesheet' href='bower_components/perfect-scrollbar/min/perfect-scrollbar.min.css')
     link(rel='stylesheet', href='dist/app.min.css')
@@ -23,7 +22,7 @@ html(lang='en', ng-app='myApp')
       
       button(class='modal-trigger', data-modal='modal-full') Launch Modal
       
-      div(ng-view, class='pure-g')
+      div(ng-view)
       = '\n'
       include ./partials/modal.jade
     = '\n'

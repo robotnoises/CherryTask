@@ -1,6 +1,6 @@
 div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start center', class='navigation fixed brand-black', ng-controller='breadcrumbController')
-  div(class='pure-menu-item')
-    a(href='#/' class='pure-menu-link') CherryTask
+  div(class='menu-item')
+    a(href='#/' class='menu-link') CherryTask
   div
     i(ng-if='breadcrumbs.project.showing', 
       ng-mouseenter='homeHover = true',
@@ -8,8 +8,8 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start center', cl
       ng-class='homeHover ? "pe-7s-angle-down" : "pe-7s-angle-right"',
       ng-click='toggleMenu()', 
       class='icon icon-md white pe-7s-angle-right')
-  div(ng-if='breadcrumbs.project.showing' class='pure-menu-item')
-    a(href='#/projects/{{breadcrumbs.project.value.id}}' class='pure-menu-link') {{breadcrumbs.project.value.title}}
+  div(ng-if='breadcrumbs.project.showing' class='menu-item')
+    a(href='#/projects/{{breadcrumbs.project.value.id}}' class='menu-link') {{breadcrumbs.project.value.title}}
   div
     i(ng-if='breadcrumbs.task.showing', 
       ng-mouseenter='projHover = true',
@@ -17,10 +17,10 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start center', cl
       ng-class='projHover ? "pe-7s-angle-down" : "pe-7s-angle-right"',
       ng-click='toggleMenu()',  
       class='icon icon-md white pe-7s-angle-right')
-  div(ng-if='breadcrumbs.task.showing' class='pure-menu-item')
-    a(href='#/tasks/{{breadcrumbs.task.value.id}}' class='pure-menu-link') {{breadcrumbs.task.value.title}}
+  div(ng-if='breadcrumbs.task.showing' class='menu-item')
+    a(href='#/tasks/{{breadcrumbs.task.value.id}}' class='menu-link') {{breadcrumbs.task.value.title}}
   
-  div(ng-if='signedIn', class='pure-menu-item user')
-    a(href='#/account' class='pure-menu-link') Account
+  div(ng-if='signedIn', class='menu-item user')
+    a(href='#/account' class='menu-link') Account
 div(layout='row', class='slide-out-menu' ng-class='{ show : showMenu }')
   div

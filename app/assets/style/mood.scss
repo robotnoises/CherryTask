@@ -49,11 +49,11 @@ $feature-thickness: 1px;
 .face .mouth.kinda-sad,
 .face .mouth.sad,
 .face .mouth.super-sad {
-  background-color: transparent !important;
   border: $feature-thickness solid $brand-black;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  background-color: transparent;
 }
 
 .face .mouth.kinda-happy {
@@ -78,6 +78,7 @@ $feature-thickness: 1px;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   border-top: $feature-thickness solid $brand-black;
+  background-color: $brand-black;
 }
 
 .face .mouth.kinda-sad {
@@ -102,5 +103,6 @@ $feature-thickness: 1px;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   border-bottom: $feature-thickness solid $brand-black;
+  background-color: $brand-black;
 }
 
