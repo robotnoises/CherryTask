@@ -92,7 +92,7 @@ h6 {
 
 .navigation .user {
   position: absolute;
-  right: 0;
+  right: 1em;
 }
 
 .navigation li > i.icon {
@@ -140,12 +140,6 @@ h6 {
   font-weight: 400;
   transition: background-color 300ms;
 }
-
-// .menu-link,
-// .menu-disabled,
-// .menu-heading {
-//   padding-right: 2em;
-// }
 
 .menu-icon {
   padding-top: 1em;
