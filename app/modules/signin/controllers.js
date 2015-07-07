@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('myApp.signin')
+  angular.module('cherry.signin')
 
   .controller('SigninCtrl', ['$rootScope', '$scope', 'Auth', '$location', 'fbutil', 'apiService',
     function($rootScope, $scope, Auth, $location, fbutil, api) {

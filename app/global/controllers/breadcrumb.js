@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('myApp.global')
+  angular.module('cherry.global')
 
   .controller('breadcrumbController', ['$scope', '$location', 'breadcrumbService',
     function ($scope, $location, breadcrumbService) {

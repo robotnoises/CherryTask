@@ -5,7 +5,7 @@
   'use strict';
 
   // Account
-  angular.module('myApp.account', [
+  angular.module('cherry.account', [
     'firebase',
     'firebase.auth',
     'firebase.utils',
@@ -13,20 +13,20 @@
   ]);
 
   // Signin
-  angular.module('myApp.signin', [
+  angular.module('cherry.signin', [
     'firebase.auth',
     'firebase.utils',
     'ngRoute'
   ]);
 
   // Project
-  angular.module('myApp.project', [
+  angular.module('cherry.project', [
     'firebase.auth',
     'ngRoute'
   ]);
 
   // Task
-  angular.module('myApp.task', [
+  angular.module('cherry.task', [
     'firebase',
     'firebase.auth',
     'firebase.utils',

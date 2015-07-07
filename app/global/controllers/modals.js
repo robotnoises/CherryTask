@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('myApp.global')
+  angular.module('cherry.global')
 
   .controller('modalsController', ['$scope', '$location', 'perfect_scrollbar',
     function ($scope, $location, perfectScrollbar) {

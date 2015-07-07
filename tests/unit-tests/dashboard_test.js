@@ -1,6 +1,6 @@
 
-describe('myApp.dashboard', function() {
-  beforeEach(module('myApp.dashboard'));
+describe('cherry.dashboard', function() {
+  beforeEach(module('cherry.dashboard'));
 
   describe('DashboardCtrl', function() {
     var dashboardCtrl, $scope;

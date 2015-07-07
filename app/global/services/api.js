@@ -5,7 +5,7 @@
   // TODO: move this into getTenant
   var tenantId;
 
-  angular.module('myApp.global')
+  angular.module('cherry.global')
 
   .factory('apiService', ['fbutil', '$firebaseObject', '$firebaseArray', '$q', 'chUser',
     function(fbutil, $firebaseObject, $firebaseArray, $q, chUser) {

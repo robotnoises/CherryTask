@@ -2,7 +2,7 @@
 
   'use strict';
   
-  angular.module('myApp')
+  angular.module('cherry')
 
   .directive('appVersion', ['version', function(version) {
     return function(scope, elm) {

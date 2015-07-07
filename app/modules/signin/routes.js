@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('myApp.signin')
+  angular.module('cherry.signin')
 
   .config(['$routeProvider', function($routeProvider) {
 

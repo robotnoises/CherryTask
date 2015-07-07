@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('myApp.task')
+  angular.module('cherry.task')
 
   .config(['$routeProvider', function($routeProvider) {
 

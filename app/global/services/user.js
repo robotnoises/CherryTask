@@ -4,7 +4,7 @@
 
   'use strict';
 
-  angular.module('myApp.global')
+  angular.module('cherry.global')
 
   .factory('chUser', [ 'fbutil', '$firebaseObject', 'Auth', function(fbutil, $firebaseObject, Auth) {
 

@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('myApp.task')
+  angular.module('cherry.task')
 
   .controller('taskController', ['$scope', '$routeParams', 'taskService',
     function ($scope, $routeParams, taskService) {

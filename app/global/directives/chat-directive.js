@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('myApp')
+  angular.module('cherry')
 
   .directive('taskChat', function() {
     return {

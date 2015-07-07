@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('myApp.task')
+  angular.module('cherry.task')
 
   .factory('taskService', ['$firebaseObject', 'fbutil', '$q', 'apiService',
     function($firebaseObject, fbutil, $q, api) {

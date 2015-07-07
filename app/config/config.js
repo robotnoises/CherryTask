@@ -3,7 +3,7 @@
   'use strict';
   
   // Declare app level module which depends on filters, and services
-  angular.module('myApp.config', ['firebase.utils'])
+  angular.module('cherry.config', ['firebase.utils'])
   
     .constant('version', '0.0.1')
 

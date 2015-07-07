@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('myApp.account')
+  angular.module('cherry.account')
 
   .controller('AccountCtrl', ['$scope', 'Auth', 'fbutil', 'user', '$location', '$firebaseObject',
     function($scope, Auth, fbutil, user, $location, $firebaseObject) {

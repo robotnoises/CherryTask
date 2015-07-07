@@ -4,7 +4,7 @@
 
   'use strict';
 
-  angular.module('myApp.global')
+  angular.module('cherry.global')
 
   .factory('logger', ['fbutil', 'apiService', function(fbutil, api) {
 	

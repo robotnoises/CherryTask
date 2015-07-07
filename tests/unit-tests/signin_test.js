@@ -1,8 +1,8 @@
 
-describe('myApp.signin', function() {
+describe('cherry.signin', function() {
   beforeEach(function() {
-    module('myApp');
-    module('myApp.signin');
+    module('cherry');
+    module('cherry.signin');
   });
 
   describe('SigninCtrl', function() {

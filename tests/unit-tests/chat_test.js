@@ -1,6 +1,6 @@
 
-describe('myApp.chat', function() {
-  beforeEach(module('myApp.chat'));
+describe('cherry.chat', function() {
+  beforeEach(module('cherry.chat'));
 
   describe('ChatCtrl', function() {
     var chatCtrl, $scope;

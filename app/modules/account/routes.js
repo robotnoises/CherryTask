@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('myApp.account')
+  angular.module('cherry.account')
 
   .config(['$routeProvider', function($routeProvider) {
 

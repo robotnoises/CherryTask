@@ -4,7 +4,7 @@
 
   var loc = 'projects/';
 
-  angular.module('myApp.project')
+  angular.module('cherry.project')
 
   .controller('allProjectsController', ['$scope', '$routeParams', '$timeout', 'apiService',
     function ($scope, $routeParams, $timeout, api) {

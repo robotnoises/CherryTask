@@ -4,7 +4,7 @@
 
   'use strict';
 
-  angular.module('myApp')
+  angular.module('cherry')
 
   .directive('prettyLoader', function() {
     return {

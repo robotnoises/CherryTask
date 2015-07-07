@@ -1,11 +1,11 @@
-// Register all module dependencies here
+// Register all dependencies here
 
 (function (angular) {
 
   'use strict';
 
   // Globals
-  angular.module('myApp.global', [
+  angular.module('cherry.global', [
     'firebase',
     'firebase.auth',
     'firebase.utils'

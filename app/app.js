@@ -2,14 +2,14 @@
 
   'use strict';
 
-  angular.module('myApp', [
-      'myApp.config',
-      'myApp.global',
-      'myApp.security',
-      'myApp.account',
-      'myApp.signin',
-      'myApp.task',
-      'myApp.project',
+  angular.module('cherry', [
+      'cherry.config',
+      'cherry.global',
+      'cherry.security',
+      'cherry.account',
+      'cherry.signin',
+      'cherry.task',
+      'cherry.project',
       'perfect_scrollbar',
       'ngMaterial',
       'ngMessages'

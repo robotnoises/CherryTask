@@ -4,7 +4,7 @@
 
   'use strict';
 
-  angular.module('myApp.global')
+  angular.module('cherry.global')
 
   .factory('breadcrumbService', ['$routeParams', '$timeout', 'apiService', function($routeParams, $timeout, api) {
     

@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('myApp.project')
+  angular.module('cherry.project')
 
   .config(['$routeProvider', function($routeProvider) {
 
