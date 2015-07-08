@@ -8,8 +8,20 @@
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
-var ModalEffects = (function() {
 
+
+(function(window) {
+  
+  var attachedTargets = [];
+  var attachedClosers = [];
+  
+  var hasAttachment = function (el, arr) {
+    for (var i = 0, len = arr.length; i < len; i++) {
+      if (el === arr[i]) return true;
+    }
+    return false;
+  };
+  
 	function init() {
 
 		var overlay = document.querySelector( '.modal-overlay' );
@@ -21,39 +33,52 @@ var ModalEffects = (function() {
 				body = document.getElementsByTagName('body')[0];
 
 			function removeModal( hasPerspective ) {
-				classie.remove( modal, 'modal-show' );
-				classie.remove( body, 'no-scroll');
+				Classie.remove( modal, 'modal-show' );
+				Classie.remove( body, 'no-scroll');
 				
 				if( hasPerspective ) {
-					classie.remove( document.documentElement, 'modal-perspective' );
+					Classie.remove( document.documentElement, 'modal-perspective' );
 				}
 			}
 
 			function removeModalHandler() {
-				removeModal( classie.has( el, 'modal-setperspective' ) ); 
+				removeModal( Classie.has( el, 'modal-setperspective' ) ); 
 			}
+      
+      function targetClickEventHandler(ev) {
+        Classie.add( modal, 'modal-show' );
 
-			el.addEventListener( 'click', function( ev ) {
-				classie.add( modal, 'modal-show' );
-
-				if( classie.has( el, 'modal-setperspective' ) ) {
+				if( Classie.has( el, 'modal-setperspective' ) ) {
 					setTimeout( function() {
-						classie.add( document.documentElement, 'modal-perspective' );
+						Classie.add( document.documentElement, 'modal-perspective' );
 					}, 25 );
 				}
 				
-				classie.add( body, 'no-scroll');
-			});
-
-			close.addEventListener( 'click', function( ev ) {
-				ev.stopPropagation();
+				Classie.add( body, 'no-scroll');
+      }
+      
+      function closeClickEventHandler(ev) {
+        ev.stopPropagation();
 				removeModalHandler();
-			});
+      }
+      
+		  if (!hasAttachment(el, attachedTargets)) {
+        el.addEventListener('click', targetClickEventHandler);
+        attachedTargets.push(el);
+      }
+      
+      if (!hasAttachment(close, attachedClosers)) {
+        close.addEventListener('click', closeClickEventHandler);
+        attachedClosers.push(close);  
+      }
+    	
 
-		} );
+		});
 
 	}
 
 	init();
+  
+  window.ModalEffects = init;
 
-})();
+})(window);

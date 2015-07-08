@@ -1,4 +1,4 @@
-(function (angular) {
+(function (angular, ModalEffects) {
 
   'use strict';
 
@@ -22,8 +22,9 @@
       
       $scope.$on('$routeChangeSuccess', function (e) {
         breadcrumbService.add(getLocation());
+        ModalEffects();
       });
             
     }]);
 
-})(angular);
+})(angular, window.ModalEffects);

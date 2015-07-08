@@ -74,7 +74,7 @@ if ( typeof define === 'function' && define.amd ) {
   define( classie );
 } else {
   // browser global
-  window.classie = classie;
+  window.Classie = classie;
 }
 
 })( window );
