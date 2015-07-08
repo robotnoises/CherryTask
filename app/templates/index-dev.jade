@@ -20,14 +20,13 @@ html(lang='en', ng-app='cherry')
     = '\n'
     //Main
     div(class='main')
-      
       button(class='modal-trigger', data-modal='modal-full') Launch Modal
-      
+      = '\n'
       div(ng-view)
-      = '\n'
-      //Modal
-      include ./partials/modal.jade
-      = '\n'
+    = '\n'
+    //Modal
+    include ./partials/modal.jade
+    = '\n'
     //Library
     script(src='bower_components/jquery/dist/jquery.min.js')
     script(src='bower_components/angular/angular.js')

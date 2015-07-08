@@ -10,6 +10,11 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start', class='na
       class='icon icon-md white pe-7s-angle-right')
   div(ng-if='breadcrumbs.project.showing' class='menu-item')
     a(href='#/projects/{{breadcrumbs.project.value.id}}' class='menu-link') {{breadcrumbs.project.value.title}}
+
+  // Add new project
+  div(ng-if='!breadcrumbs.project.showing' class='menu-item')
+    md-button(class='menu-link add-new modal-trigger', data-modal='modal-full') Add a new Project
+
   div(class='menu-separator')
     i(ng-if='breadcrumbs.task.showing', 
       ng-mouseenter='projHover = true',
@@ -19,7 +24,11 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start', class='na
       class='icon icon-md white pe-7s-angle-right')
   div(ng-if='breadcrumbs.task.showing' class='menu-item')
     a(href='#/tasks/{{breadcrumbs.task.value.id}}' class='menu-link') {{breadcrumbs.task.value.title}}
-  
+
+  // Add new Task
+  div(ng-if='breadcrumbs.project.showing && !breadcrumbs.task.showing' class='menu-item')
+    md-button(class='menu-link add-new modal-trigger', data-modal='modal-full') Add a new Task
+    
   div(ng-if='signedIn', class='menu-item user')
     a(href='', class='menu-icon')
       i(class='icon icon-lg pe-7s-bell white')

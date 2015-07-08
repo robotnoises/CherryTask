@@ -138,7 +138,27 @@ h6 {
 .menu-link {
   color: #fff;
   font-weight: 400;
-  transition: background-color 300ms;
+  transition: color $transition-fast, border $transition-fast;
+}
+
+.menu-link.add-new {
+  color: rgba(255,255,255,0.05);
+  cursor: pointer;
+  border: 1px dashed;
+  transition: background-color $transition-fast;
+  // material overrides Todo: may move this into the overrides partial
+  margin: 0;
+  background-color: transparent;
+  text-transform: none;
+  font-size: 1em;
+  border-radius: 0;
+}
+
+.menu-link.add-new:hover,
+.menu-link.add-new:active {
+  color: $brand-black;
+  border: 1px solid rgba(255,255,255,0);
+  background-color: #fff;
 }
 
 .menu-icon {
