@@ -36,6 +36,8 @@
       $scope.err = null;
       Auth.$authWithPassword({ email: $scope.email, password: $scope.pass }, {rememberMe: true})
         .then(function() {
+          // Todo: this should be in an Auth service somewhere
+          $rootScope.signedIn = true;
           $location.path('/');
         }, function(err) {
           $scope.err = errMessage(err);

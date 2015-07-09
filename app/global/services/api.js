@@ -20,12 +20,11 @@
         return callback('tenants/' + tenantId + '/');
       } else {
         // Else, go get it.
-        cherryUser.get(function (user) {
-          // if (!user) return;
-          var ref = fbutil.ref('users', user.uid, 'authorization');
-          ref.once('value', function (data) {
-            return callback('tenants/' + data.val().tenant + '/');
-          });
+        var user = cherryUser.get();
+        // if (!user) return;
+        var ref = fbutil.ref('users', user.uid, 'authorization');
+        ref.once('value', function (data) {
+          return callback('tenants/' + data.val().tenant + '/');
         });
       }
     };

@@ -10,35 +10,20 @@
 
     var pub = {};
 
-    // Private
-
     var currentUser;
-
-    var getUserFromFirebase = function (callback) {
-      if (currentUser) {
-        return callback(currentUser);
-      } else {
-        Auth.$onAuth(function (user) {
-          currentUser = user;
-          return callback(user);
-        });
-      }
-    };
 
     // Public
 
-    var _get = function (callback) {
-      getUserFromFirebase(function (user) {
-        return callback(user);
-      });
+    var _get = function () {
+      currentUser = currentUser || Auth.$getAuth();
+      return currentUser;
     };
     
     var _getFull = function (callback) {
-      getUserFromFirebase(function (user) {
-        var ref = fbutil.ref('users', user.uid);
-        ref.once('value', function (snapshot) {
-          return callback(snapshot.val());  
-        });
+      currentUser = currentUser || Auth.$getAuth();
+      var ref = fbutil.ref('users', currentUser.uid);
+      ref.once('value', function (snapshot) {
+        return callback(snapshot.val());  
       });
     };
     

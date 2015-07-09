@@ -13,12 +13,13 @@
       'perfect_scrollbar',
       'ngMaterial',
       'ngMessages'
-    ])
+    ]);
 
-    .run(['$rootScope', 'Auth', 'fbutil', function($rootScope, Auth, fbutil) {
-      Auth.$onAuth(function(user) {
-        $rootScope.signedIn = !!user;
-      });
-    }]);
+    // .run(['$rootScope', 'Auth', 'fbutil', function($rootScope, Auth, fbutil) {
+    //   $rootScope.signedIn = true;
+    //   // Auth.$onAuth(function(user) {
+    //   //   $rootScope.signedIn = !!user;
+    //   // });
+    // }]);
 
 })(angular);
