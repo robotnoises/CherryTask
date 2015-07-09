@@ -6,7 +6,7 @@
 
   angular.module('cherry.global')
 
-  .factory('chUser', [ 'fbutil', '$firebaseObject', 'Auth', function(fbutil, $firebaseObject, Auth) {
+  .factory('cherryUser', [ '$q', 'fbutil', '$firebaseObject', 'Auth', function($q, fbutil, $firebaseObject, Auth) {
 
     var pub = {};
 
@@ -41,9 +41,14 @@
         });
       });
     };
+    
+    var reset = function () {
+      currentUser = undefined;
+    };
 
     pub.get = _get;
     pub.getFull = _getFull;
+    pub.reset = reset;
     
     return pub;
   }]);
