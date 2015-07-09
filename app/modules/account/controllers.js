@@ -7,16 +7,20 @@
   .controller('AccountCtrl', ['$scope', 'Auth', 'fbutil', 'user', '$location', '$firebaseObject',
     function($scope, Auth, fbutil, user, $location, $firebaseObject) {
       var unbind;
-
+          
       // create a 3-way binding with the user profile object in Firebase
       var profile = $firebaseObject(fbutil.ref('users', user.uid));
-
-      profile.$bindTo($scope, 'profile').then(function(ub) { unbind = ub; });
+ 
+      profile.$bindTo($scope, 'profile').then(function (ub) { 
+        unbind = ub; 
+      });
 
       // expose logout function to scope
       $scope.logout = function() {
-        if( unbind ) { unbind(); }
-        profile.$destroy();
+        if (unbind) { 
+          unbind(); 
+        }
+        profile.$destroy(); 
         Auth.$unauth();
         $location.path('/signin');
       };
