@@ -7,8 +7,8 @@
 
   angular.module('cherry.global')
 
-  .factory('apiService', ['fbutil', '$firebaseObject', '$firebaseArray', '$q', 'cherryUser',
-    function(fbutil, $firebaseObject, $firebaseArray, $q, cherryUser) {
+  .factory('apiService', ['fbutil', '$firebaseObject', '$firebaseArray', '$q', 'cherryAuth',
+    function(fbutil, $firebaseObject, $firebaseArray, $q, cherryAuth) {
 
     var pub = {};
 
@@ -20,7 +20,7 @@
         return callback('tenants/' + tenantId + '/');
       } else {
         // Else, go get it.
-        var user = cherryUser.get();
+        var user = cherryAuth.get();
         // if (!user) return;
         var ref = fbutil.ref('users', user.uid, 'authorization');
         ref.once('value', function (data) {

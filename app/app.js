@@ -15,11 +15,4 @@
       'ngMessages'
     ]);
 
-    // .run(['$rootScope', 'Auth', 'fbutil', function($rootScope, Auth, fbutil) {
-    //   $rootScope.signedIn = true;
-    //   // Auth.$onAuth(function(user) {
-    //   //   $rootScope.signedIn = !!user;
-    //   // });
-    // }]);
-
 })(angular);
