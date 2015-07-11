@@ -4,7 +4,7 @@
 
   angular.module('cherry.signin')
 
-  .controller('SigninCtrl', ['$rootScope', '$scope', 'Auth', '$location', 'fbutil', 'apiService',
+  .controller('signinController', ['$rootScope', '$scope', 'Auth', '$location', 'fbutil', 'apiService',
     function($rootScope, $scope, Auth, $location, fbutil, api) {
 
     // Redirect signed-in users

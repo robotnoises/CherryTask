@@ -9,8 +9,8 @@
     $routeProvider
 
     .whenAuthenticated('/account', {
-      controller: 'AccountCtrl',
-      templateUrl: 'modules/account/view.html',
+      controller: 'accountController',
+      templateUrl: 'modules/account/views/account.html',
       resolve: {
         user: ['Auth', function (Auth) {
           return Auth.$waitForAuth();

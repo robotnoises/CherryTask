@@ -10,7 +10,7 @@
 
     .whenAuthenticated('/', {
       controller: 'allProjectsController',
-      templateUrl: 'modules/project/views/view-all.html',
+      templateUrl: 'modules/project/views/project-list.html',
       resolve: {
         user: ['Auth', function (Auth) {
           return Auth.$waitForAuth();
@@ -20,7 +20,7 @@
 
     .whenAuthenticated('/projects/:id', {
       controller: 'projectController',
-      templateUrl: 'modules/project/views/view.html',
+      templateUrl: 'modules/project/views/project.html',
       resolve: {
         user: ['Auth', function (Auth) {
           return Auth.$waitForAuth();

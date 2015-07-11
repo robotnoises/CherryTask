@@ -49,40 +49,39 @@ html(lang='en', ng-app='cherry')
     = '\n'
     //Globals
     script(src='global/dependencies.js')
-    script(src='global/services/logger.js')
-    script(src='global/services/cherryAuth.js')
-    script(src='global/services/api.js')
-    script(src='global/services/auth.js')
-    script(src='global/services/firebase.utils.js')
-    script(src='global/services/breadcrumb.js')
-    script(src='global/directives/appversion-directive.js')
-    script(src='global/directives/chat-directive.js')
-    script(src='global/directives/pretty-loader.js')
-    script(src='global/directives/cherry-form.js')
-    script(src='global/directives/cherry-card.js')
+    script(src='global/services/logger-svc.js')
+    script(src='global/services/cherryauth-svc.js')
+    script(src='global/services/api-svc.js')
+    script(src='global/services/auth-svc.js')
+    script(src='global/services/fbutil-svc.js')
+    script(src='global/services/breadcrumb-svc.js')
+    script(src='global/directives/appversion.js')
+    script(src='global/directives/chat.js')
+    script(src='global/directives/cherryform.js')
+    script(src='global/directives/cherrycard.js')
     script(src='global/directives/mood.js')
-    script(src='global/controllers/breadcrumb.js')
-    script(src='global/controllers/modals.js')
+    script(src='global/controllers/breadcrumb-ctrl.js')
+    script(src='global/controllers/modals-ctrl.js')
     script(src='global/config/config.js')
-    script(src='global/config/ngcloak-decorator.js')
+    script(src='global/config/ngcloak.js')
     script(src='global/config/security.js')
     = '\n'
     //Register module dependencies
     script(src='modules/dependencies.js')
     //Project
     script(src='modules/project/routes.js')
-    script(src='modules/project/controllers.js')
+    script(src='modules/project/controllers/project-ctrl.js')
     = '\n'
     //Account
     script(src='modules/account/routes.js')
-    script(src='modules/account/controllers.js')
+    script(src='modules/account/controllers/account-ctrl.js')
     = '\n'
     //Sign in
     script(src='modules/signin/routes.js')
-    script(src='modules/signin/controllers.js')
+    script(src='modules/signin/controllers/signin-ctrl.js')
     = '\n'
     //Task
     script(src='modules/task/routes.js')
-    script(src='modules/task/services.js')
-    script(src='modules/task/controllers.js')
+    script(src='modules/task/services/task-svc.js')
+    script(src='modules/task/controllers/task-ctrl.js')
    

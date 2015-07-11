@@ -10,7 +10,7 @@
 
     .whenAuthenticated('/tasks/:id', {
       controller: 'taskController',
-      templateUrl: 'modules/task/views/view.html',
+      templateUrl: 'modules/task/views/task.html',
       resolve: {
         user: ['Auth', function (Auth) {
           return Auth.$waitForAuth();

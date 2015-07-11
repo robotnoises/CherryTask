@@ -9,8 +9,8 @@
     $routeProvider
 
     .when('/signin', {
-      controller: 'SigninCtrl',
-      templateUrl: 'modules/signin/view.html'
+      controller: 'signinController',
+      templateUrl: 'modules/signin/views/signin.html'
     });
     
   }]);

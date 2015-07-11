@@ -4,8 +4,9 @@
 
   angular.module('cherry.account')
 
-  .controller('AccountCtrl', ['$rootScope', '$scope', 'Auth', 'fbutil', 'user', '$location', '$firebaseObject',
+  .controller('accountController', ['$rootScope', '$scope', 'Auth', 'fbutil', 'user', '$location', '$firebaseObject',
     function($rootScope, $scope, Auth, fbutil, user, $location, $firebaseObject) {
+      
       var unbind;
           
       // create a 3-way binding with the user profile object in Firebase
