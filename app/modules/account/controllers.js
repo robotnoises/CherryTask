@@ -22,8 +22,6 @@
         }
         profile.$destroy(); 
         Auth.$unauth();
-        $rootScope.signedIn = false;
-        $location.path('/signin');
       };
 
       $scope.changePassword = function(pass, confirm, newPass) {

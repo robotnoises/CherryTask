@@ -24,21 +24,14 @@
         ref.once('value', function (snapshot) {
           return callback(snapshot.val());  
         });
-      };
-      
-      var _isAuthenticated = function () {
-        return _currentUser || _get();
-      };
+      };      
       
       var _reset = function () {
-        if (!_currentUser) {
-          _currentUser = undefined;
-        }
+        _currentUser = undefined;
       };
                   
       pub.get = _get;
       pub.getFull = _getFull;
-      pub.isAuthenticated = _isAuthenticated;
       pub.reset = _reset;
             
       return pub;

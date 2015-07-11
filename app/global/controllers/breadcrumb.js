@@ -14,7 +14,7 @@
       
       $scope.showMenu = false;
       $scope.breadcrumbs = breadcrumbService.breadcrumbs;
-            
+      
       $scope.toggleMenu = function () {
         // TODO: get data for nav menu
         $scope.showMenu = !$scope.showMenu;
