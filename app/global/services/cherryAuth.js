@@ -9,29 +9,23 @@
 
       var pub = {};
   
-      var _currentUser;
+      var _currentAuth;
       
       // Public
-  
-      var _get = function () {
-        _currentUser = _currentUser || Auth.$getAuth();
-        return _currentUser;
-      };
-      
-      var _getFull = function (callback) {
-        _currentUser = _currentUser || Auth.$getAuth();
-        var ref = fbutil.ref('users', _currentUser.uid);
+     
+      var _get = function (callback) {
+        _currentAuth = _currentAuth || Auth.$getAuth();
+        var ref = fbutil.ref('users', _currentAuth.uid);
         ref.once('value', function (snapshot) {
           return callback(snapshot.val());  
         });
       };      
       
       var _reset = function () {
-        _currentUser = undefined;
+        _currentAuth = undefined;
       };
                   
       pub.get = _get;
-      pub.getFull = _getFull;
       pub.reset = _reset;
             
       return pub;

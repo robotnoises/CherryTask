@@ -20,9 +20,9 @@
         
         $scope.addMessage = function(newMessage) {
           if (newMessage) {
-            cherryAuth.getFull(function (currentUser) {
+            cherryAuth.get(function (a) {
               $scope.messages.$add({
-                user: '@' + currentUser.name,
+                user: '@' + a.name,
                 text: newMessage,
                 timeStamp: new Date().getTime()
               });

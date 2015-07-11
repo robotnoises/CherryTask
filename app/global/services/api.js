@@ -2,9 +2,6 @@
 
   'use strict';
 
-  // TODO: move this into getTenant
-  var tenantId;
-
   angular.module('cherry.global')
 
   .factory('apiService', ['fbutil', '$firebaseObject', '$firebaseArray', '$q', 'cherryAuth',
@@ -15,18 +12,9 @@
     // Private
 
     var getTenant = function (callback) {
-      // If a tenantId has already been fetched...
-      if (tenantId) {
-        return callback('tenants/' + tenantId + '/');
-      } else {
-        // Else, go get it.
-        var user = cherryAuth.get();
-        // if (!user) return;
-        var ref = fbutil.ref('users', user.uid, 'authorization');
-        ref.once('value', function (data) {
-          return callback('tenants/' + data.val().tenant + '/');
-        });
-      }
+      cherryAuth.get(function (a) {
+        return callback('tenants/' + a.authorization.tenant + '/');
+      });
     };
 
     // Public
