@@ -9,6 +9,7 @@
  * http://www.codrops.com
  */
 
+/* Edited by David Nichols */
 
 (function(window) {
   
@@ -22,15 +23,14 @@
     return false;
   };
   
-	function init() {
+  function init() {
+	var overlay = document.querySelector( '.modal-overlay' );
 
-		var overlay = document.querySelector( '.modal-overlay' );
+	[].slice.call( document.querySelectorAll( '.modal-trigger' ) ).forEach( function( el, i ) {
 
-		[].slice.call( document.querySelectorAll( '.modal-trigger' ) ).forEach( function( el, i ) {
-
-			var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
-				close = overlay.querySelector( '.modal-close' ),
-				body = document.getElementsByTagName('body')[0];
+	var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
+	  close = overlay.querySelector( '.modal-close' ),
+	  body = document.getElementsByTagName('body')[0];
 
 			function removeModal( hasPerspective ) {
 				Classie.remove( modal, 'modal-show' );
@@ -71,11 +71,8 @@
         close.addEventListener('click', closeClickEventHandler);
         attachedClosers.push(close);  
       }
-    	
-
 		});
-
-	}
+  }
 
 	init();
   
