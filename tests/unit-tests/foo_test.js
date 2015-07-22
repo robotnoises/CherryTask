@@ -20,7 +20,7 @@ describe('cherry.account', function() {
 
       inject(function($controller) {
         $scope = {};
-        accountCtrl = $controller('AccountCtrl', {$scope: $scope});
+        accountCtrl = $controller('accountController', {$scope: $scope});
       });
     });
 
