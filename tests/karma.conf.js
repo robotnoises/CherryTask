@@ -9,16 +9,9 @@ module.exports = function(config){
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/mockfirebase/browser/mockfirebase.js',
       'app/bower_components/angularfire/dist/angularfire.js',
-      'test/lib/**/*.js',
-      // Todo need to fix these urls
-      'app/app.js',
-      'app/config.js',
-      'app/components/**/*.js',
-      'app/account/**/*.js',
-      'app/chat/**/*.js',
-      'app/dashboard/**/*.js',
-      'app/signin/**/*.js',
-      'app/config_test.js'
+      'tests/lib/**/*.js',
+      // Todo Unit Tests
+      'tests/unit-tests/foo_test.js'
     ],
 
     autoWatch : true,

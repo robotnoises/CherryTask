@@ -1,18 +1,18 @@
 
-describe('cherry.chat', function() {
-  beforeEach(module('cherry.chat'));
+// describe('cherry.chat', function() {
+//   beforeEach(module('cherry.chat'));
 
-  describe('ChatCtrl', function() {
-    var chatCtrl, $scope;
-    beforeEach(function() {
-      inject(function($controller) {
-        $scope = {};
-        chatCtrl = $controller('ChatCtrl', {$scope: $scope});
-      });
-    });
+//   describe('ChatCtrl', function() {
+//     var chatCtrl, $scope;
+//     beforeEach(function() {
+//       inject(function($controller) {
+//         $scope = {};
+//         chatCtrl = $controller('ChatCtrl', {$scope: $scope});
+//       });
+//     });
 
-    it('creates messages array in scope', function() {
-      expect(Object.prototype.toString.call($scope.messages)).toBe('[object Array]');
-    });
-  });
-});
+//     it('creates messages array in scope', function() {
+//       expect(Object.prototype.toString.call($scope.messages)).toBe('[object Array]');
+//     });
+//   });
+// });

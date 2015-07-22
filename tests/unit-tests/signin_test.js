@@ -1,25 +1,25 @@
 
-describe('cherry.signin', function() {
-  beforeEach(function() {
-    module('cherry');
-    module('cherry.signin');
-  });
+// describe('cherry.signin', function() {
+//   beforeEach(function() {
+//     module('cherry');
+//     module('cherry.signin');
+//   });
 
-  describe('SigninCtrl', function() {
-    var signinCtrl, $scope;
-    beforeEach(function() {
-      inject(function($controller) {
-        $scope = {};
-        signinCtrl = $controller('SigninCtrl', {$scope: $scope});
-      });
-    });
+//   describe('SigninCtrl', function() {
+//     var signinCtrl, $scope;
+//     beforeEach(function() {
+//       inject(function($controller) {
+//         $scope = {};
+//         signinCtrl = $controller('SigninCtrl', {$scope: $scope});
+//       });
+//     });
 
-    it('should define signin function', function() {
-      expect(typeof $scope.signin).toBe('function');
-    });
+//     it('should define signin function', function() {
+//       expect(typeof $scope.signin).toBe('function');
+//     });
 
-    it('should define createAccount function', function() {
-      expect(typeof $scope.createAccount).toBe('function');
-    });
-  });
-});
+//     it('should define createAccount function', function() {
+//       expect(typeof $scope.createAccount).toBe('function');
+//     });
+//   });
+// });
