@@ -4,14 +4,14 @@ module.exports = function(config){
     basePath : './',
 
     files : [
-      'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-route/angular-route.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/bower_components/mockfirebase/browser/mockfirebase.js',
-      'app/bower_components/angularfire/dist/angularfire.js',
-      'tests/lib/**/*.js',
+      './../app/bower_components/angular/angular.js',
+      './../app/bower_components/angular-route/angular-route.js',
+      './../app/bower_components/angular-mocks/angular-mocks.js',
+      './../app/bower_components/mockfirebase/browser/mockfirebase.js',
+      './../app/bower_components/angularfire/dist/angularfire.js',
+      './lib/**/*.js',
       // Todo Unit Tests
-      'tests/unit-tests/foo_test.js'
+      './unit-tests/foo_test.js'
     ],
 
     autoWatch : true,
