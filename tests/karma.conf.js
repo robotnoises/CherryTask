@@ -14,6 +14,7 @@ module.exports = function(config){
       './lib/**/*.js',
       // CherryTask
       './../app/app.js',
+      './../app/modules/*.js',
       './../app/modules/**/*.js',
       './../app/modules/**/**/*.js',
       // Unit Tests
