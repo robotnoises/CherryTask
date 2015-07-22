@@ -1,3 +1,4 @@
+/* global inject */
 /* global expect */
 /* global it */
 /* global beforeEach */
@@ -9,7 +10,7 @@ describe('cherry.account', function() {
     module('cherry.account');
   });
 
-  describe('AccountCtrl', function() {
+  describe('accountController', function() {
     var accountCtrl, $scope;
     beforeEach(function() {
       module(function($provide) {
