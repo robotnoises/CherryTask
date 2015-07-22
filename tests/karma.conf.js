@@ -14,6 +14,8 @@ module.exports = function(config){
       './lib/**/*.js',
       // CherryTask
       './../app/app.js',
+      './../app/modules/**/*.js',
+      './../app/modules/**/**/*.js',
       // Unit Tests
       './unit-tests/foo_test.js'
     ],
@@ -22,10 +24,9 @@ module.exports = function(config){
 
     frameworks: ['jasmine'],
 
-    browsers : ['Chrome'],
+    browsers : ['Firefox'],
 
     plugins : [
-            'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
             'karma-junit-reporter'
