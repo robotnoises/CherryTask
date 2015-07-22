@@ -4,13 +4,17 @@ module.exports = function(config){
     basePath : './',
 
     files : [
+      // Libs
       './../app/bower_components/angular/angular.js',
       './../app/bower_components/angular-route/angular-route.js',
       './../app/bower_components/angular-mocks/angular-mocks.js',
       './../app/bower_components/mockfirebase/browser/mockfirebase.js',
       './../app/bower_components/angularfire/dist/angularfire.js',
+      // Test Libs
       './lib/**/*.js',
-      // Todo Unit Tests
+      // CherryTask
+      './../app/app.js',
+      // Unit Tests
       './unit-tests/foo_test.js'
     ],
 
