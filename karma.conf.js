@@ -14,14 +14,11 @@ module.exports = function(config){
       'tests/lib/**/*.js',
       // CherryTask
       'app/app.js',
-      'app/global/*.js',
-      'app/global/**/*.js',
-      'app/global/**/**/*.js',
       'app/modules/*.js',
-      'app/modules/**/*.js',
+      // 'app/modules/**/*.js',
       'app/modules/**/**/*.js',
       // Unit Tests
-      'tests/unit-tests/foo_test.js'
+      // 'tests/unit-tests/foo_test.js'
     ],
 
     autoWatch : true,
