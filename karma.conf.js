@@ -17,8 +17,6 @@ module.exports = function(config){
       'app/modules/*.js',
       // 'app/modules/**/*.js',
       'app/modules/**/**/*.js',
-      // Unit Tests
-      // 'tests/unit-tests/foo_test.js'
     ],
 
     autoWatch : true,
