@@ -29,7 +29,7 @@ describe('cherry.account', function() {
     // Begin tests
     
     it('should define logout method', function() {
-      expect(typeof $scope.logout).toBe('function');
+      expect(typeof accountCtrl.$scope.logout).toBe('function');
     });
 
   });
