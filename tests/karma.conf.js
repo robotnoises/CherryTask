@@ -5,23 +5,23 @@ module.exports = function(config){
 
     files : [
       // Libs
-      './../app/bower_components/angular/angular.js',
-      './../app/bower_components/angular-route/angular-route.js',
-      './../app/bower_components/angular-mocks/angular-mocks.js',
-      './../app/bower_components/mockfirebase/browser/mockfirebase.js',
-      './../app/bower_components/angularfire/dist/angularfire.js',
+      '../app/bower_components/angular/angular.js',
+      '../app/bower_components/angular-route/angular-route.js',
+      '../app/bower_components/angular-mocks/angular-mocks.js',
+      '../app/bower_components/mockfirebase/browser/mockfirebase.js',
+      '../app/bower_components/angularfire/dist/angularfire.js',
       // Test Libs
-      './lib/**/*.js',
+      'lib/**/*.js',
       // CherryTask
-      './../app/app.js',
-      './../app/global/*.js',
-      './../app/global/**/*.js',
-      './../app/global/**/**/*.js',
-      './../app/modules/*.js',
-      './../app/modules/**/*.js',
-      './../app/modules/**/**/*.js',
+      '../app/app.js',
+      '../app/global/*.js',
+      '../app/global/**/*.js',
+      '../app/global/**/**/*.js',
+      '../app/modules/*.js',
+      '../app/modules/**/*.js',
+      '../app/modules/**/**/*.js',
       // Unit Tests
-      './unit-tests/foo_test.js'
+      'unit-tests/foo_test.js'
     ],
 
     autoWatch : true,

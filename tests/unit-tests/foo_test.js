@@ -5,6 +5,7 @@
 /* global beforeEach */
 
 describe('cherry.account', function() {
+  
   beforeEach(function() {
     module('cherry');
     module('cherry.account');
@@ -12,6 +13,7 @@ describe('cherry.account', function() {
 
   describe('accountController', function() {
     var accountCtrl, $scope;
+    
     beforeEach(function() {
       module(function($provide) {
         // comes from routes.js in the resolve: {} attribute
