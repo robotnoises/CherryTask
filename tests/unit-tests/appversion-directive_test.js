@@ -1,21 +1,21 @@
-'use strict';
+// 'use strict';
 
-/* jasmine specs for directives go here */
+// /* jasmine specs for directives go here */
 
-describe('app-version directive', function() {
-  beforeEach(function() {
-    module('mock.firebase');
-    module('cherry');
-  });
+// describe('app-version directive', function() {
+//   beforeEach(function() {
+//     module('mock.firebase');
+//     module('cherry');
+//   });
 
-  it('should print current version', function() {
-    module(function($provide) {
-      $provide.constant('version', 'TEST_VER');
-    });
-    inject(function($compile, $rootScope) {
-      var element = $compile('<span app-version></span>')($rootScope);
-      expect(element.text()).toEqual('TEST_VER');
-    });
-  });
+//   it('should print current version', function() {
+//     module(function($provide) {
+//       $provide.constant('version', 'TEST_VER');
+//     });
+//     inject(function($compile, $rootScope) {
+//       var element = $compile('<span app-version></span>')($rootScope);
+//       expect(element.text()).toEqual('TEST_VER');
+//     });
+//   });
 
-});
+// });

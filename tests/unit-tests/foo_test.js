@@ -1,12 +1,19 @@
+// /* global it */
+// /* global inject */
+// /* global expect */
+// /* global describe */
+// /* global beforeEach */
 
 // describe('cherry.account', function() {
+  
 //   beforeEach(function() {
 //     module('cherry');
 //     module('cherry.account');
 //   });
 
-//   describe('AccountCtrl', function() {
+//   describe('accountController', function() {
 //     var accountCtrl, $scope;
+    
 //     beforeEach(function() {
 //       module(function($provide) {
 //         // comes from routes.js in the resolve: {} attribute
@@ -15,24 +22,15 @@
 
 //       inject(function($controller) {
 //         $scope = {};
-//         accountCtrl = $controller('AccountCtrl', {$scope: $scope});
+//         accountCtrl = $controller('accountController', {$scope: $scope});
 //       });
 //     });
 
+//     // Begin tests
+    
 //     it('should define logout method', function() {
 //       expect(typeof $scope.logout).toBe('function');
 //     });
 
-//     it('should define changePassword method', function() {
-//       expect(typeof $scope.changePassword).toBe('function');
-//     });
-
-//     it('should define changeEmail method', function() {
-//       expect(typeof $scope.changeEmail).toBe('function');
-//     });
-
-//     it('should define clear method', function() {
-//       expect(typeof $scope.clear).toBe('function');
-//     });
 //   });
 // });
