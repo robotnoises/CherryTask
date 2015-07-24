@@ -14,17 +14,16 @@ describe('cherry.account', function() {
   describe('accountController', function() {
     var ctrl, scope;
     
-    beforeEach(function() {
-      module(function($provide) {
-        // comes from routes.js in the resolve: {} attribute
-        $provide.value('user', {uid: 'test123'});
-      });
-
-      inject(function($rootScope, $controller) {
+    beforeEach(inject(function($rootScope, $controller) {
         scope = $rootScope.$new();
         ctrl = $controller('accountController', { $scope: scope });
-      });
-    });
+    }));
+    
+    // function() {
+    //   module(function($provide) {
+    //     // comes from routes.js in the resolve: {} attribute
+    //     $provide.value('user', { uid: 'test123' });
+    //   });
 
     // Begin tests
     
