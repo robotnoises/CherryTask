@@ -2,15 +2,19 @@
 
 @import 'vars';
 
-.card {
-  height: $card-dimensions;
-  width: $card-dimensions;
-  margin: $card-margins;
+@mixin active () {
   background: rgba(255, 255, 255, 0.75);
   border-top: 2px solid #fff;
   border-right: 1px solid rgba(0,0,0,0.1);
   border-bottom: 1px solid rgba(0,0,0,0.3);
   border-left: 2px solid #fff;
+}
+
+.card {
+  height: $card-dimensions;
+  width: $card-dimensions;
+  margin: $card-margins;
+  @include active();
 }
 
 .card > div {
@@ -71,5 +75,28 @@
   *display: inline; /* IE 6 */
   zoom: 1;
   vertical-align: top;
+}
+
+/* Placeholder */
+
+.card.placeholder {
+  background: rgba(0,0,0,0.01);
+  
+  border-top: 1.5px solid rgba(0,0,0,0.1);
+  border-right: 1px solid rgba(0,0,0,0.02);
+  border-bottom: 1px solid rgba(0,0,0,0.02);
+  border-left: 1.5px solid rgba(0,0,0,0.1);
+  
+  cursor: pointer;
+  
+  margin-left: 4px;
+  margin-right: 4px; // Not sure what the deal is with this, yet
+  
+  transition: background $transition-fast, border $transition-fast;
+}
+
+.card.placeholder:hover,
+.card.placeholder:active {
+  @include active();
 }
 
