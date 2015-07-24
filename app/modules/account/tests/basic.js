@@ -12,7 +12,7 @@ describe('cherry.account', function() {
   });
 
   describe('accountController', function() {
-    var accountCtrl, $scope;
+    var ctrl, scope;
     
     beforeEach(function() {
       module(function($provide) {
@@ -20,16 +20,16 @@ describe('cherry.account', function() {
         $provide.value('user', {uid: 'test123'});
       });
 
-      inject(function($controller) {
-        $scope = {};
-        accountCtrl = $controller('accountController', {$scope: $scope});
+      inject(function($rootScope, $controller) {
+        scope = $rootScope.$new();
+        ctrl = $controller('accountController', { $scope: scope });
       });
     });
 
     // Begin tests
     
     it('should define logout method', function() {
-      expect(typeof accountCtrl.$scope.logout).toBe('function');
+      expect(typeof ctrl.$scope.logout).toBe('function');
     });
 
   });
