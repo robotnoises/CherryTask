@@ -9,26 +9,23 @@ module.exports = function(config){
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/mockfirebase/browser/mockfirebase.js',
       'app/bower_components/angularfire/dist/angularfire.js',
-      'test/lib/**/*.js',
-      // Todo need to fix these urls
+      'tests/lib/*.js',
+      //
       'app/app.js',
-      'app/config.js',
-      'app/components/**/*.js',
-      'app/account/**/*.js',
-      'app/chat/**/*.js',
-      'app/dashboard/**/*.js',
-      'app/signin/**/*.js',
-      'app/config_test.js'
+      'app/global/*.js',
+      'app/global/**/*.js',
+      'app/modules/*.js',
+      'app/modules/**/*.js',
+      'app/modules/**/**/*.js'
     ],
 
     autoWatch : true,
 
     frameworks: ['jasmine'],
 
-    browsers : ['Chrome'],
+    browsers : ['Firefox'],
 
     plugins : [
-            'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
             'karma-junit-reporter'
@@ -37,7 +34,9 @@ module.exports = function(config){
     junitReporter : {
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
-    }
+    },
+    
+    logLevel: 'DEBUG'
 
   });
 };
