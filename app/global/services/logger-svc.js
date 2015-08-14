@@ -10,7 +10,7 @@
 	
 	var writeLog = function (log) {
 	  api.create('activity_log/', log, function (snapshot) {
-		 console.log(snapshot.val());
+		 // console.log(snapshot.val());
 		 // Todo check error
 	  });	
 	};

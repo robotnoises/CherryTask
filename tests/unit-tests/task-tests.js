@@ -24,7 +24,5 @@ describe('cherry.task', function () {
       expect(_taskService.list).toBeDefined();               
     });
     
-    
-    
   });
 });
