@@ -4,8 +4,6 @@ var config = function (grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
-    // clean: ['app/dist'],
-
     // Compile Jade templates
     // Ex: grunt jade --[dev, production]
     
@@ -101,6 +99,7 @@ var config = function (grunt) {
       }  
     },
     
+    // Static analysis
     jshint: {
       files: {
         src: [
@@ -114,6 +113,7 @@ var config = function (grunt) {
       }
     },
     
+    // Compile sass
     sass: {
       dist: {
         files: [{
@@ -123,6 +123,13 @@ var config = function (grunt) {
           dest: 'app/assets/style/compiled',
           ext: '.css'
         }]
+      }
+    },
+    
+    // Test runner
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
       }
     }
     
@@ -135,6 +142,7 @@ var config = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-karma');
   
   // Register custom tasks
   grunt.registerTask('build-dev', ['sass', 'jade:dev']);
