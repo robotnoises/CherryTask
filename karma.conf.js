@@ -1,6 +1,7 @@
-module.exports = function(config){
-  config.set({
-
+module.exports = function (config) {
+  
+  var configuration = {
+    
     basePath : './',
 
     files : [
@@ -34,6 +35,13 @@ module.exports = function(config){
     frameworks: ['jasmine'],
 
     browsers : ['Chrome'],
+    
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
 
     plugins : [
             'karma-chrome-launcher',
@@ -47,6 +55,12 @@ module.exports = function(config){
     },
     
     logLevel: 'DEBUG'
+  };
+  
+  if (process.env.TRAVIS){
+    configuration.browsers = ['Chrome_travis_ci'];
+  }
+  
+  config.set(configuration);
 
-  });
 };
