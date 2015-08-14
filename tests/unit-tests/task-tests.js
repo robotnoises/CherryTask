@@ -17,8 +17,13 @@ describe('cherry.task', function () {
       }); 
     });
     
-    it('should do something.', function() {
-      expect(true).toBe(true);            
+    it('should define get, add, update, and list.', function() {
+      expect(_taskService.get).toBeDefined();
+      expect(_taskService.add).toBeDefined();   
+      expect(_taskService.update).toBeDefined();   
+      expect(_taskService.list).toBeDefined();               
     });
+    
+    
   });
 });
