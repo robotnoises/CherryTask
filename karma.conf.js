@@ -16,6 +16,7 @@ module.exports = function(config){
       'app/bower_components/angularfire/dist/angularfire.js',
       'app/bower_components/firebase/firebase.js',
       'app/bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js',
+      // Test lib
       'tests/lib/*.js',
       // App
       'app/app.js',
