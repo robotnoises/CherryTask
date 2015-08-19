@@ -15,8 +15,11 @@
     <div ng-if="card.mood !== undefined" class="float-left">
       <mood-icon card="card"></mood-icon>
     </div>
-  	<i class="icon icon-lg pe-7s-edit float-right subtle" ng-click="show()" title="Edit '{{card.title}}'"></i>
+  	<i class="icon icon-lg pe-7s-edit float-right subtle" title="Edit '{{card.title}}'"></i>
   	<i class="icon icon-lg pe-7s-graph float-right subtle" title="Reports for '{{card.title}}'"></i>
   	<i class="icon icon-lg pe-7s-link float-right subtle" title="Copy link to '{{card.title}}'"></i>
+  </div>
+  <div class="circle">
+    <div class="inner" ng-click="show()">View {{card.title}}</div>
   </div>
 </div> 
