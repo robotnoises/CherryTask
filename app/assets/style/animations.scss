@@ -1,8 +1,12 @@
+@import 'vars';
+
 @keyframes womp {
   0% {
-    transform: scale(1.25);
+    background-color: $brand-white;
+    transform: scale(1.75);
   }
   100% {
+    background-color: rgba(235,91,91, 0.95);
     transform: scale(1);
   }
 }
@@ -15,11 +19,10 @@
   bottom: 0;
   left: 0;
   opacity: 0;
-  margin: 30px;
-  font-size: 0.9em;
-  background-color: #e74c3c;
+  margin: 60px;
+  font-size: 0.75em;
+  background-color: rgba(235,91,91, 0.95);
   border-radius: 50%;
-  transition: opacity 300ms;
 }
 
 .circle:hover {
@@ -34,10 +37,11 @@
   left: 50%;
   transform: translate(-50%,-50%);
   padding: 6px 6px;
-  color: #fff;
+  color: $brand-white;
   font-weight: bold;
   background: transparent;
   margin: 0 auto;
+  border: 2px solid $brand-white;
   border-radius: 8px;
   text-align: center;
   transition: background 200ms, color 200ms;
@@ -46,6 +50,6 @@
 .circle .inner:hover,
 .circle .inner:active {
   cursor: pointer;
-  background: #fff;
-  color: #e74c3c;
+  background: $brand-white;
+  color: $brand-red;
 }
