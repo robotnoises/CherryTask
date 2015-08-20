@@ -1,5 +1,44 @@
-<div>
-  <div ng-show="!signedIn" id="signin-container">
+<div ng-show="!signedIn" id="signin-container" class="signin-container">
+  
+  <h1>Cherry</h1>
+  
+  <div layout="column">
+    <md-content>
+      <form name="cherrySignin" ng-submit="signin()">
+        <md-input-container>
+          <label>Email</label>
+          <input md-maxlength="100" required name="email" ng-model="email">
+          <div ng-messages="cherrySignin.email.$error">
+            <div ng-message="required">Email is required.</div>
+            <div ng-message="md-maxlength">Email must be less than 100 characters.</div>
+          </div> 
+        </md-input-container>
+        
+        <md-input-container>
+          <label>Password</label>
+          <input md-maxlength="100" required type="password" name="password" ng-model="pass">
+          <div ng-messages="cherrySignin.password.$error">
+            <div ng-message="required">Password is required.</div>
+            <div ng-message="md-maxlength">Password must be less than 100 characters.</div>
+          </div> 
+        </md-input-container>
+        
+        <md-input-container ng-cloak ng-show="createMode">
+          <label>Confirm Password</label>
+          <input md-maxlength="100" type="password" name="password" ng-model="confirm">
+          <!--<div ng-messages="cherrySignin.password.$error">
+            <div ng-message="required">Password is required.</div>
+            <div ng-message="md-maxlength">Password must be less than 100 characters.</div>
+          </div> -->
+        </md-input-container>
+        
+        <md-button class="submit-button" role="submit">Sign in</md-button>
+      </form>
+    </md-content>
+</div>
+</div>
+
+  <!--<div ng-show="!signedIn" id="signin-container">
     <div class="header">
       <h2>Sign in</h2>
     </div>
@@ -25,5 +64,5 @@
         <p ng-show="err" class="error">{{err}}</p>
       </form>
     </div>
-  </div>
-</div>
+  </div>-->
+

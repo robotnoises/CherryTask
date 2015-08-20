@@ -6,6 +6,10 @@ cherry-form {
   white-space: normal;
 }
 
+md-input-container {
+  padding: 0;
+}
+
 md-input-container textarea.md-input {
   height: auto;
   min-height: 0;
