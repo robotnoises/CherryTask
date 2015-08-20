@@ -7,7 +7,18 @@ cherry-form {
 }
 
 md-input-container {
+  
   padding: 0;
+
+  .md-char-counter {
+    padding-right: 5px;
+  }
+
+  label,
+  .md-input,
+  [ng-message]:not(.md-char-counter) {
+    padding-left: 5px !important;
+  }
 }
 
 md-input-container textarea.md-input {
