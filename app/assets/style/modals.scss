@@ -20,7 +20,7 @@ perspective effects (not including the modals and the overlay).
 }
 
 .container {
-  background: $brand-grey;
+  background: $brand-lightgrey;
   min-height: 100%;
 }
 
@@ -56,7 +56,7 @@ perspective effects (not including the modals and the overlay).
   left: 0;
   z-index: 1000;
   opacity: 0;
-  background: $brand-grey;
+  background: $brand-lightgrey;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
@@ -71,7 +71,7 @@ perspective effects (not including the modals and the overlay).
 
 .modal-content {
   color: $brand-black;
-  background: $brand-grey;
+  background: $brand-lightgrey;
   position: relative;
   border-radius: 3px;
   margin: 0 auto;
@@ -130,7 +130,7 @@ perspective effects (not including the modals and the overlay).
 }
 
 .modal-show.modal-effect-full ~ .modal-overlay {
-  background: $brand-grey;
+  background: $brand-lightgrey;
 } 
 
 .modal-effect-full .modal-content h3,
@@ -156,7 +156,7 @@ perspective effects (not including the modals and the overlay).
   bottom: 0;
   left: 0;
   z-index: 2;
-  background-color: $brand-grey;
+  background-color: $brand-lightgrey;
   transition: all 500ms;
 }
 

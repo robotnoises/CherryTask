@@ -7,7 +7,7 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start', class='na
       ng-mouseleave='homeHover = false',
       ng-class='homeHover ? "pe-7s-angle-down" : "pe-7s-angle-right"',
       ng-click='toggleMenu()', 
-      class='icon icon-md white pe-7s-angle-right')
+      class='icon white pe-7s-angle-right')
   div(ng-if='breadcrumbs.project.showing' class='menu-item')
     a(href='#/projects/{{breadcrumbs.project.value.id}}' class='menu-link') {{breadcrumbs.project.value.title}}
 
@@ -21,7 +21,7 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start', class='na
       ng-mouseleave='projHover = false',
       ng-class='projHover ? "pe-7s-angle-down" : "pe-7s-angle-right"',
       ng-click='toggleMenu()',  
-      class='icon icon-md white pe-7s-angle-right')
+      class='icon white pe-7s-angle-right')
   div(ng-if='breadcrumbs.task.showing' class='menu-item')
     a(href='#/tasks/{{breadcrumbs.task.value.id}}' class='menu-link') {{breadcrumbs.task.value.title}}
 

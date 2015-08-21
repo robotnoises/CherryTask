@@ -39,6 +39,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  background-color: $brand-grey;
 }
 
 .card .card-footer i.icon {
@@ -50,7 +51,7 @@
   display: block;
   position: relative;
   height: 5px;
-  background-color: rgba(0,0,0,0.05);
+  background-color: $brand-grey;
   margin: 10px 0 0;
 }
 
@@ -103,7 +104,7 @@
 
 .card:hover,
 .card:active {
-  background: rgba(0,0,0,0.1);
+  background: $brand-grey;
 }
 
 .card.placeholder:hover,

@@ -36,7 +36,7 @@ html {
 html, 
 body {
   /* Background */
-  background-color: $brand-grey;
+  background-color: $brand-lightgrey;
 
   /* Fonts */
   font-size: 16px;
@@ -107,7 +107,7 @@ h6 {
 }
 
 .navigation {
-  border-bottom: 1px solid rgba(0,0,0,0.75);
+  border-bottom: 2px solid rgba(0,0,0,1);
 }
 
 .navigation > .slide-out-menu {
@@ -133,6 +133,10 @@ h6 {
 .menu-separator {
   line-height: 4em;
   margin-left: 1em;
+}
+
+.menu-separator > i {
+  transform: scale(1.75);
 }
 
 .menu-link {
