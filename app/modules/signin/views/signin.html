@@ -7,7 +7,7 @@
       <form name="cherrySignin" ng-submit="signin()">
         <md-input-container>
           <label>Email</label>
-          <input md-maxlength="100" required name="email" ng-model="email">
+          <input md-maxlength="100" name="email" ng-model="email">
           <div ng-messages="cherrySignin.email.$error">
             <div ng-message="required">Email is required.</div>
             <div ng-message="md-maxlength">Email must be less than 100 characters.</div>
@@ -16,7 +16,7 @@
         
         <md-input-container>
           <label>Password</label>
-          <input md-maxlength="100" required type="password" name="password" ng-model="pass">
+          <input md-maxlength="100" minlength="4" type="password" name="password" ng-model="pass">
           <div ng-messages="cherrySignin.password.$error">
             <div ng-message="required">Password is required.</div>
             <div ng-message="md-maxlength">Password must be less than 100 characters.</div>
@@ -32,10 +32,15 @@
           </div> -->
         </md-input-container>
         
-        <md-button class="submit-button" role="submit">Sign in</md-button>
+        <md-button ng-hide="createMode" class="submit-button" role="submit">Sign in</md-button>
+        <md-button ng-hide="!createMode" class="submit-button" ng-click="createAccount()">Register New Account</md-button>
       </form>
     </md-content>
-</div>
+    
+    <p ng-click="createMode = true" ng-hide="createMode" class="fineprint center pointer">Don't have an account?</p>
+    <p ng-click="createMode = false" ng-hide="!createMode" class="fineprint center pointer">Already have an account?</p>
+    
+  </div>
 </div>
 
   <!--<div ng-show="!signedIn" id="signin-container">
