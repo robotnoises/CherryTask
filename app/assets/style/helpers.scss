@@ -12,3 +12,8 @@
 .pointer {
   cursor: pointer;
 }
+
+[ng-cloak], 
+.ng-cloak {
+  display: none;
+}
