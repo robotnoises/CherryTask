@@ -1,15 +1,12 @@
 <div>
-   <p>A single project.</p>
-  
-  <h2>Project</h2>
-  <p>Title: {{project.title}}</p>
-  <p>Description: {{project.description}}</p>
-  
-  <h3>Here are the tasks in this project:</h3>
- 
+  <div class="content-container">
+    <h2>{{project.title}}</h2>
+    <p>{{project.description}}</p>
+  </div>
   <div>
     <div class="card-container">
       <cherry-card class="card" ng-repeat="task in tasks | orderBy: '-dateCreated'" card="task"></cherry-card>
+      <!--<div class="card placeholder"></div>-->
     </div>
   </div>
 </div>

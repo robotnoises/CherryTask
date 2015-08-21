@@ -1,5 +1,16 @@
 @import 'vars';
 
+.content-container {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  -webkit-transition: width $transition-fast;
+  -moz-transition: width $transition-fast;
+  transition: width $transition-fast;
+  padding: 8px;
+}
+
+
 /* Sign in */
 
 .signin-container {

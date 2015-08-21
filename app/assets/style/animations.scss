@@ -2,11 +2,11 @@
 
 @keyframes womp {
   0% {
-    background-color: $brand-white;
+    background-color: rgba(0,0,0,0.1);
     transform: scale(1.75);
   }
   100% {
-    background-color: rgba(235,91,91, 0.95);
+    background-color: rgba(235,91,91, 1);
     transform: scale(1);
   }
 }
@@ -19,9 +19,9 @@
   bottom: 0;
   left: 0;
   opacity: 0;
-  margin: 60px;
+  margin: 65px;
   font-size: 0.75em;
-  background-color: rgba(235,91,91, 0.95);
+  background-color: rgba(235,91,91, 1);
   border-radius: 50%;
 }
 
