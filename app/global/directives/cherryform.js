@@ -50,12 +50,12 @@
         
         var reset = function (timeout) {
                     
-          $scope.cherryForm.$setPristine();
-          $scope.cherryForm.$setUntouched();
+          // $scope.cherryForm.$setPristine();
+          // $scope.cherryForm.$setUntouched();
           
           // Form inputs TODO: there's gotta be a better way than this..
-          $scope.cherryForm.title.$touched = false;
-          $scope.cherryForm.description.$touched = false;
+          // $scope.cherryForm.title.$touched = false;
+          // $scope.cherryForm.description.$touched = false;
           
           $timeout(function () {            
             toggleSubmitOverlay();

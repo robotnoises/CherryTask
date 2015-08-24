@@ -1,6 +1,12 @@
 <div>
   <div class="card-container">
     <cherry-card class="card" ng-repeat="project in projects" card="project"></cherry-card>
+    
+      <div ng-cloak ng-hide="!emptyWorkspace" class="nothing-here">
+        <p>Nothing here, yet</p>
+        <i class="icon pe-7s-cloud" />
+        <p class="fineprint">(click anywhere in this workspace to create a new Project)</p>
+      </div>
     <!-- Placeholder for inline add project -->
     <!--<div class="card placeholder"></div>-->
   </div>

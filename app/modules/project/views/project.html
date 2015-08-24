@@ -1,11 +1,18 @@
 <div>
-  <div class="content-container">
+  <!--<div class="content-container">
     <h2>{{project.title}}</h2>
     <p>{{project.description}}</p>
-  </div>
+  </div>-->
   <div>
     <div class="card-container">
       <cherry-card class="card" ng-repeat="task in tasks | orderBy: '-dateCreated'" card="task"></cherry-card>
+      
+      <div ng-cloak ng-hide="!emptyWorkspace" class="nothing-here">
+        <p>Nothing here yet...</p>
+        <i class="icon pe-7s-cloud" />
+        <p class="fineprint">(click anywhere in this workspace to create a new Task)</p>
+      </div>
+      
       <!--<div class="card placeholder"></div>-->
     </div>
   </div>

@@ -15,9 +15,16 @@
         dateCreated: '',
         id: ''
       };
-
+      
+      $scope.emptyWorkspace = false;
+      $scope.projects = {};
+      
       api.list(loc, 10, function (projects) {
         $scope.projects = projects;
+
+        projects.$loaded().then(function (p) {
+          $scope.emptyWorkspace = (p.length === 0);
+        });
       });
 
     }])
@@ -27,15 +34,23 @@
 
       $scope.project = {};
       $scope.tasks = {};
-
+      $scope.emptyWorkspace = false;
+      
+      function checkFbArrayLength(snap) {
+        $scope.emptyWorkspace = (snap.length === 0);
+      }
+      
       // Project
       api.get(loc, $routeParams.id, function (project) {
         $scope.project = project;
       });
 
       // Tasks in this project
-      api.listBy('tasks/', 'projectId', $routeParams.id, 10, function (tasksInProject) {
-        $scope.tasks = tasksInProject;
+      api.listBy('tasks/', 'projectId', $routeParams.id, 10, function (tasks) {
+        $scope.tasks = tasks;
+        
+        tasks.$loaded().then(checkFbArrayLength);        
+        // tasks.$$updated().then(checkFbArrayLength);
       });
 
       // Models
