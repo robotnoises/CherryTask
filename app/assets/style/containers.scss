@@ -10,6 +10,16 @@
   padding: 8px;
 }
 
+.messages {
+  position: absolute;
+  top: 4em;
+  right: 0;
+  bottom: 0;
+  padding: $cherry-padding;
+  color: $brand-black;
+  background: $brand-white;
+  border-left: 2px solid $brand-black;
+}
 
 /* Sign in */
 
