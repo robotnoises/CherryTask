@@ -11,18 +11,27 @@
   
       var _currentAuth;
       
+      // Private
+      function getAuth() {
+        _currentAuth = _currentAuth || Auth.$getAuth();
+        return _currentAuth;
+      }
+      
       // Public
      
-      var _get = function (callback) {
-        _currentAuth = _currentAuth || Auth.$getAuth();
-        var ref = fbutil.ref('users', _currentAuth.uid);
+      var _get = function () {
+        var d = $q.defer();
+        var ref = fbutil.ref('users', getAuth().uid);
+        
         ref.once('value', function (snapshot) {
-          return callback(snapshot.val());  
+          return d.resolve(snapshot.val());
         });
-      };      
+        
+        return d.promise;
+      };
       
       var _reset = function () {
-        _currentAuth = undefined;
+        _currentAuth = null;
       };
                   
       pub.get = _get;

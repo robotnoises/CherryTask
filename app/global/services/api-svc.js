@@ -12,7 +12,7 @@
     // Private
 
     var getTenant = function (callback) {
-      cherryAuth.get(function (a) {
+      cherryAuth.get().then(function (a) {
         return callback('tenants/' + a.authorization.tenant + '/');
       });
     };
