@@ -65,26 +65,6 @@
   transition: width $transition-medium;
 }
 
-/* Container */
-
-.card-container {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  padding-top: 1em;
-  -webkit-transition: width $transition-fast;
-  -moz-transition: width $transition-fast;
-  transition: width $transition-fast;
-}
-
-.card-container > .card {
-  display: inline-block;
-  position: relative;
-  *display: inline; /* IE 6 */
-  zoom: 1;
-  vertical-align: top;
-}
-
 /* Placeholder */
 
 .card.placeholder {

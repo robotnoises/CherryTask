@@ -1,6 +1,8 @@
 @import 'vars';
 
-.content-container {
+/* General */
+
+.content {
   display: block;
   position: relative;
   margin: 0 auto;
@@ -10,15 +12,34 @@
   padding: 8px;
 }
 
+/* Messages (new name TBA) */
+
 .messages {
-  position: absolute;
-  top: 4em;
-  right: 0;
-  bottom: 0;
   padding: $cherry-padding;
   color: $brand-black;
-  background: $brand-white;
-  border-left: 2px solid $brand-black;
+  background: transparent;
+  width: 450px;
+  border-left: 4px solid $brand-darkgrey;
+}
+
+/* Card */
+
+.card-container {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 1em;
+  -webkit-transition: width $transition-fast;
+  -moz-transition: width $transition-fast;
+  transition: width $transition-fast;
+}
+
+.card-container > .card {
+  display: inline-block;
+  position: relative;
+  *display: inline; /* IE 6 */
+  zoom: 1;
+  vertical-align: top;
 }
 
 /* Sign in */

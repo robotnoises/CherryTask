@@ -11,7 +11,7 @@ $one-wide: ($card-dimensions * 1) + ($card-margins * 2);
 
 @media screen and (min-width: $one-wide) and (max-width: $two-wide - 1) {
   .card-container,
-  .content-container, 
+  .content, 
   .sub-menu {
     width: $one-wide;
   }
@@ -19,7 +19,7 @@ $one-wide: ($card-dimensions * 1) + ($card-margins * 2);
 
 @media screen and (min-width: $two-wide) and (max-width: $three-wide - 1) {
   .card-container, 
-  .content-container,
+  .content,
   .sub-menu {
     width: $two-wide;
   }
@@ -27,7 +27,7 @@ $one-wide: ($card-dimensions * 1) + ($card-margins * 2);
 
 @media screen and (min-width: $three-wide) and (max-width: $four-wide - 1) {
   .card-container,
-  .content-container,
+  .content,
   .sub-menu {
     width: $three-wide;
   }
@@ -35,7 +35,7 @@ $one-wide: ($card-dimensions * 1) + ($card-margins * 2);
 
 @media screen and (min-width: $four-wide) and (max-width: $five-wide - 1) {
   .card-container,
-  .content-container,
+  .content,
   .sub-menu {
     width: $four-wide;
   }
@@ -43,7 +43,7 @@ $one-wide: ($card-dimensions * 1) + ($card-margins * 2);
 
 @media screen and (min-width: $five-wide) and (max-width: $six-wide - 1) {
   .card-container,
-  .content-container,
+  .content,
   .sub-menu {
     width: $five-wide;
   }
@@ -51,8 +51,16 @@ $one-wide: ($card-dimensions * 1) + ($card-margins * 2);
 
 @media screen and (min-width: $six-wide) {
   .card-container,
-  .content-container,
+  .content,
   .sub-menu {
     width: $six-wide;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .messages {
+    position: relative;
+    top: auto;
+    border-left: none;
   }
 }
