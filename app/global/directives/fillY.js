@@ -29,7 +29,7 @@
         
         // Wait 200ms... 
         debounce = true;
-          
+        
         setTimeout(function () {
           // Resize the element
           resize();

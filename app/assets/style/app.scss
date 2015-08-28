@@ -2,7 +2,6 @@
 // Join all of the modules 
 
 @import 'main';
-@import 'helpers';
 @import 'card';
 @import 'loader';
 @import 'modals';
@@ -10,4 +9,6 @@
 @import 'overrides';
 @import 'animations';
 @import 'containers';
+@import 'activity';
+@import 'helpers';
 @import 'media';

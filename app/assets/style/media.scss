@@ -58,7 +58,7 @@ $one-wide: ($card-dimensions * 1) + ($card-margins * 2);
 }
 
 @media screen and (min-width: 0px) and (max-width: 800px) {
-  .messages {
+  .activities {
     position: relative;
     top: auto;
     border-left: none;

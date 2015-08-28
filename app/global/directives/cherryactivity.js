@@ -4,10 +4,10 @@
 
   angular.module('cherry')
 
-  .directive('taskChat', function() {
+  .directive('cherryActivity', function() {
     return {
       restrict: 'E',
-      templateUrl: 'templates/directives/taskChat.html',
+      templateUrl: 'templates/directives/cherry-activity.html',
       controller: ['$scope', '$routeParams', 'fbutil', 'apiService', 'cherryAuth',
       function taskChatController ($scope, $routeParams, fbutil, api, cherryAuth) {
         

@@ -12,18 +12,16 @@
   padding: 8px;
 }
 
-/* Messages (new name TBA) */
+/* Activities */
 
-.messages {
+.activities {
+  width: 450px;
+  overflow: visible;
+  padding-left: 35px;
+  border-left: 4px solid $brand-black;
   color: $brand-black;
   background: transparent;
-  width: 450px;
-  border-left: 4px solid $brand-darkgrey;
 }
-
-// .messages > div {
-//   padding: $cherry-padding;
-// }
 
 /* Card */
 
