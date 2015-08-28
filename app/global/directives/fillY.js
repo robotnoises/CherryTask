@@ -7,16 +7,17 @@
     return function (scope, element, attrs) {
       
       var $w = angular.element($window);
-      var $html = angular.element('html');
-      var $nav = angular.element('.navigation');
-      
+      var $html;
+      var $nav;
+
       var timeout = 200;
+      var offset = 32;
       var debounce = false; 
-      
+     
       function resize() {
 
         element.attr('style', function () {
-          return 'height: ' + ($html[0].offsetHeight - $nav[0].offsetHeight ) + 'px;';
+          return 'height: ' + ($html[0].offsetHeight - $nav[0].offsetHeight - offset) + 'px;';
         });
         
       }
@@ -26,19 +27,27 @@
         // If already handling the resize, exit.
         if (debounce) return;
         
-        // Resize the element
-        resize();
+        // Wait 200ms... 
+        debounce = true;
           
-        // Reset flag
         setTimeout(function () {
+          // Resize the element
+          resize();
           debounce = false;
         }, timeout);
         
       }
       
-      $w.bind('resize', resizeHandler);
+      function init() {
+        $nav = angular.element('.navigation');
+        $html = angular.element('html');
+        resize();
+      }
       
-      resize();
+      // Init when the window is ready
+      $w.ready(init);
+      // Bind resize event to the window
+      $w.bind('resize', resizeHandler);
 
     };
   })

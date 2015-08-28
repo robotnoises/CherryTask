@@ -15,12 +15,15 @@
 /* Messages (new name TBA) */
 
 .messages {
-  padding: $cherry-padding;
   color: $brand-black;
   background: transparent;
   width: 450px;
   border-left: 4px solid $brand-darkgrey;
 }
+
+// .messages > div {
+//   padding: $cherry-padding;
+// }
 
 /* Card */
 
