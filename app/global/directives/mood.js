@@ -9,7 +9,7 @@
       restrict: 'E',
 	  replace: true,
 	  scope: {
-		card: '='  
+		  card: '='  
 	  },
       templateUrl: 'templates/directives/mood.html',
       controller: ['$scope', '$location', '$timeout', '$q', '$routeParams', 'apiService',

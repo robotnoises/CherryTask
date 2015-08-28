@@ -3,9 +3,39 @@
   <button type="submit" ng-click="addMessage(newMessage);newMessage = null;">send</button>
 </form>
 
-<!--ng-show="messages.length"-->
-
 <div id="messages">
+
+  <!-- temp: design phase -->
+  <div class="activity">
+    <div class="badge progress">
+      <span>50</span>
+      <!--<i class="icon pe-7s-comment" />-->
+    </div>
+    
+    <div class="vector progress"></div>
+    
+    <div class="message progress">
+      <strong>{{message.user}}</strong> Changed the progress from <strong>20%</strong> to <strong>50%</strong>
+    </div>
+  </div>
+  
+  <div class="activity">
+    
+    <div class="badge status face">
+      <div class="eye-left"></div>
+      <div class="eye-right"></div>
+      <div class="mouth happy"></div>
+    </div>
+    
+    <div class="vector status"></div>
+    
+    <div class="message status">
+      Things are going well. As long as there aren't any hiccups, I feel like I can finish this on time.
+    </div>
+    
+  </div>
+    
+  <!-- end temp -->
 
   <div class="activity" ng-repeat="message in messages | orderBy: '-timeStamp'">
     <div class="badge comment">
@@ -18,7 +48,7 @@
       <strong>{{message.user}}</strong>: {{message.text}}
     </div>
   </div>
-  
+
 </div>
  
 
