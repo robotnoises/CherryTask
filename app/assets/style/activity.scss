@@ -1,27 +1,21 @@
 @import 'vars';
 
-.activity {
-  height: 50px;
-  width: 50px;
-}
-
 .activities > .activity {
   margin-left: -60px;
   float: left;
 }
 
 .activity > .badge {
-  height: 100%;
-  width: 100%;
-  line-height: 44px;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
   text-align: center;
-  background: $brand-white;
-  border: 3px solid $brand-red;
+  background: $brand-red;
   border-radius: 50%;
 }
 
 .activity > .badge > i.icon {
   font-size: 30px;
   font-weight: 700;
-  color: $brand-red;
+  color: $brand-white;
 }
