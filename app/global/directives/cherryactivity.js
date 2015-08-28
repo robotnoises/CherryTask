@@ -1,7 +1,15 @@
 (function (angular) {
 
   'use strict';
-
+  
+  /* List of activities:
+    
+    event (automated)   icon: pe-7s-gleam
+    comment             icon: pe-7s-comment
+    
+   */
+  
+  
   angular.module('cherry')
 
   .directive('cherryActivity', function() {

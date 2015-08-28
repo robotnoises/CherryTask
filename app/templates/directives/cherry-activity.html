@@ -3,6 +3,22 @@
   <button type="submit" ng-click="addMessage(newMessage);newMessage = null;">send</button>
 </form>
 
-<ul id="messages" ng-show="messages.length">
-  <li ng-repeat="message in messages | orderBy: '-timeStamp'"><strong>{{message.user}}</strong>: {{message.text}}</li>
-</ul>
+<!--ng-show="messages.length"-->
+
+<div id="messages">
+
+  <div class="activity" ng-repeat="message in messages | orderBy: '-timeStamp'">
+    <div class="badge comment">
+      <i class="icon pe-7s-comment" />
+    </div>
+    
+    <div class="vector comment"></div>
+    
+    <div class="message comment">
+      <strong>{{message.user}}</strong>: {{message.text}}
+    </div>
+  </div>
+  
+</div>
+ 
+
