@@ -27,6 +27,15 @@ md-input-container textarea.md-input {
   min-height: 0;
 }
 
+md-input-container:not(.md-input-invalid).md-input-focused {
+  label {
+    color: rgba(0,0,0,0.54);
+  }
+  .md-input {
+    border-color: $brand-black;
+  }
+}
+
 md-content {
   background-color: transparent;
   color: $brand-black;
