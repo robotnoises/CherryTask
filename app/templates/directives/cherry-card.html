@@ -1,25 +1,40 @@
 
 <div class="card">
-  <div class="card-header">
-	<div class="card-title">{{card.title}}</div>
-	<div ng-if="card.progress !== undefined" class="card-progress-bar">
-	  <div class="progress" ng-style="{width: card.progress + '%'}"></div>
-	</div>
+  
+  <!-- Hover zone -->
+  <div class="card-hoverzone">
+    
+    <!-- Header -->
+    <div class="card-header">
+      <!-- Title -->
+      <div class="card-title">{{card.title}}</div>
+      <!-- Progress -->
+      <div ng-if="card.progress !== undefined" class="card-progress-bar">
+        <div class="progress" ng-style="{width: card.progress + '%'}"></div>
+      </div>
+    </div>
+    
+    <!-- Body -->
+    <div class="card-body">
+      <div class="card-description">{{card.description}}</div>
+      <!--<div class="card-assignee">{{card.assignees}}</div>
+      <div class="card-due-date">Due on 07/04/2015</div>-->
+    </div>
+    
+    <div class="circle">
+      <div class="inner" ng-click="show()">View {{card.title}}</div>
+    </div>
+    
   </div>
-  <div class="card-body">
-  	<div class="card-description">{{card.description}}</div>
-  	<!--<div class="card-assignee">Unassigned</div>
-  	<div class="card-due-date">Due on 07/04/2015</div>-->
-  </div>
+  
+  <!-- Footer -->
   <div class="card-footer">
     <div ng-if="card.mood !== undefined" class="float-left">
       <mood-icon card="card"></mood-icon>
     </div>
   	<i class="icon icon-lg pe-7s-edit float-right subtle" title="Edit '{{card.title}}'"></i>
   	<i class="icon icon-lg pe-7s-graph float-right subtle" title="Reports for '{{card.title}}'"></i>
-  	<i class="icon icon-lg pe-7s-link float-right subtle" title="Copy link to '{{card.title}}'"></i>
+  	<!--<i class="icon icon-lg pe-7s-link float-right subtle" title="Copy link to '{{card.title}}'"></i>-->
   </div>
-  <div class="circle">
-    <div class="inner" ng-click="show()">View {{card.title}}</div>
-  </div>
+
 </div>

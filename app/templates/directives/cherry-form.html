@@ -17,7 +17,7 @@
       <!-- Brief description of new Task or new Project -->
       <md-input-container ng-if="matchesFormType(['task','project'])">
         <label>Description of the {{formType == 'project' ? 'Project' : 'Task'}}</label>
-        <textarea rows="1" md-maxlength="500" minlength="1" name="description" ng-model="form.description"></textarea>
+        <textarea rows="1" md-maxlength="250" minlength="1" name="description" ng-model="form.description"></textarea>
         <div ng-messages="cherryForm.description.$error">
           <div ng-message="required">Description is required.</div>
           <div ng-message="md-maxlength">The Description must be less than 100 characters.</div>

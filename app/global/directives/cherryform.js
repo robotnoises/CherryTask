@@ -49,30 +49,34 @@
         };
         
         var reset = function (timeout) {
-                    
+          
+          // Todo : this is bad 
+          $scope.form = {};
+          angular.element('.modal-close').click();
+          
           // $scope.cherryForm.$setPristine();
           // $scope.cherryForm.$setUntouched();
           
           // Form inputs TODO: there's gotta be a better way than this..
           // $scope.cherryForm.title.$touched = false;
           // $scope.cherryForm.description.$touched = false;
-          
-          $timeout(function () {            
-            toggleSubmitOverlay();
-            $scope.form = {};
-            // Todo: bind a click to submit?
-            angular.element('.modal-close').click();
-          }, timeout || 0);
+                    
+          // $timeout(function () {            
+          //   toggleSubmitOverlay();
+          //   $scope.form = {};
+          //   // Todo: bind a click to submit?
+          //   angular.element('.modal-close').click();
+          // }, timeout || 0);
         };
         
-        var toggleSubmitOverlay = function () {
-          var $overlay = angular.element('.submit-overlay');
-          if ($overlay.hasClass('show')) {
-            $overlay.removeClass('show');
-          } else {
-            $overlay.addClass('show');
-          }
-        };
+        // var toggleSubmitOverlay = function () {
+        //   var $overlay = angular.element('.submit-overlay');
+        //   if ($overlay.hasClass('show')) {
+        //     $overlay.removeClass('show');
+        //   } else {
+        //     $overlay.addClass('show');
+        //   }
+        // };
         
         $scope.form = {};
         
@@ -89,16 +93,21 @@
         $scope.submit = function () {
           api.create($scope.formData.apiLoc, $scope.form, function (snapshot) {
             var obj = angular.copy(snapshot.val());
+            
             obj.id = snapshot.key();
+            
             if (matchesFormType('task')) {
               // Todo: this is bad
               obj.projectId = $scope.formData.projectId;
               obj.progress = 0;
               obj.mood = 50;
             }
+            
             api.update($scope.formData.apiLoc + snapshot.key(), obj, obj.id);
-            toggleSubmitOverlay();
-            reset(1000);
+            
+            // toggleSubmitOverlay();
+            
+            reset();
           });
         };
         
