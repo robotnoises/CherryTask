@@ -4,8 +4,8 @@ $feature-thickness: 1px;
 
 .face {
   position: relative;
-  width: 32px;
   height: 32px;
+  width: 32px;
 	border-radius: 50%;
 	background: transparent;
 	border: $feature-thickness solid $brand-black;
@@ -15,7 +15,7 @@ $feature-thickness: 1px;
 .face .eye-left, 
 .face .eye-right {
 	position: absolute;
-  top: 25%;
+  top: 28%;
   width: 3px;
 	height: 3px;
 	background: $brand-black;
@@ -32,7 +32,7 @@ $feature-thickness: 1px;
 
 .face .mouth {
 	position: absolute;
-	bottom: 10px;
+	bottom: 9px;
 	left: 25%;
 	width: 50%;
   height: $feature-thickness;

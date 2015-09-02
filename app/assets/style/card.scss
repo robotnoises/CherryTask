@@ -15,7 +15,6 @@
   height: $card-dimensions;
   width: $card-dimensions;
   margin: $card-margins;
-  transition: $transition-medium;
 }
 
 .card {
@@ -23,16 +22,32 @@
   @include active();
 }
 
-.card > div {
+.card .card-header,
+.card .card-body {
+  padding: 10px 10px 0px;
+}
+
+.card .card-footer {
   padding: 10px;
 }
 
 .card .card-title {
-  font-weight: 600;  
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.25em;
+  font-weight: 700;
 }
 
 .card .card-body {
   font-size: 0.75em;
+}
+
+.card .card-description {
+  line-height: 1.5em;
+  max-height: 7.5em;
+  overflow: hidden;
 }
 
 .card .card-footer {
@@ -40,6 +55,18 @@
   bottom: 0;
   width: 100%;
   background-color: $brand-grey;
+  border-top: 2px solid $brand-darkgrey;
+}
+
+.card .mood {
+  height: 32px;
+  width: 32px;
+  padding: 1px;
+  
+  .face {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .card .card-footer i.icon {
@@ -83,8 +110,17 @@
   transition: background $transition-fast, border $transition-fast;
 }
 
-.card:hover,
-.card:active {
+.card > .card-hoverzone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: background $transition-medium;
+}
+
+.card > .card-hoverzone:hover,
+.card > .card-hoverzone:active {
   background: $brand-grey;
 }
 
@@ -92,4 +128,3 @@
 .card.placeholder:active {
   @include active();
 }
-

@@ -29,11 +29,24 @@
   
   <!-- Footer -->
   <div class="card-footer">
-    <div ng-if="card.mood !== undefined" class="float-left">
+  	<!-- Assignee -->
+    <div ng-if="card.assignee" class="float-left">
+      <div class="avatar-sm subtle pointer">
+        <!--<img src="/path/to/avatar.png">-->
+      </div>
+    </div>
+    
+    <!-- Edit -->
+    <i class="icon icon-lg pe-7s-edit float-right subtle" title="Edit '{{card.title}}'"></i>
+    
+    <!-- Reports -->
+  	<i class="icon icon-lg pe-7s-graph float-right subtle" title="Reports for '{{card.title}}'"></i>
+    
+    <!-- Mood -->
+    <div ng-if="card.mood !== undefined" class="mood float-right">
       <mood-icon card="card"></mood-icon>
     </div>
-  	<i class="icon icon-lg pe-7s-edit float-right subtle" title="Edit '{{card.title}}'"></i>
-  	<i class="icon icon-lg pe-7s-graph float-right subtle" title="Reports for '{{card.title}}'"></i>
+    
   	<!--<i class="icon icon-lg pe-7s-link float-right subtle" title="Copy link to '{{card.title}}'"></i>-->
   </div>
 
