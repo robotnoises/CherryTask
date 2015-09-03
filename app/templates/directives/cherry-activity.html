@@ -1,8 +1,8 @@
 <div id="messages">
   
   <form>
-    <input placeholder="Message..." ng-model="newMessage">
-    <button type="submit" ng-click="addMessage(newMessage);newMessage = null;">send</button>
+    <input placeholder="Message..." ng-model="activity">
+    <button type="submit" ng-click="addActivity(activity);activity = null;">send</button>
   </form>
 
   <!-- temp: design phase -->
@@ -15,7 +15,7 @@
     <div class="vector progress"></div>
     
     <div class="message progress">
-      <strong>{{message.user}}</strong> Changed the progress from <strong>20%</strong> to <strong>50%</strong>
+      Changed the progress from <strong>20%</strong> to <strong>50%</strong>
     </div>
   </div>
   
@@ -39,7 +39,7 @@
     
   <!-- end temp -->
 
-  <div class="activity" ng-repeat="message in messages | orderBy: '-timeStamp'">
+  <div class="activity" ng-repeat="a in activities | orderBy: '-timeStamp'">
     <div class="badge comment">
       <i class="icon pe-7s-comment" />
     </div>
@@ -47,7 +47,7 @@
     <div class="vector comment"></div>
     
     <div class="message comment">
-      <strong>{{message.user}}</strong>: {{message.text}}
+      <strong>{{a.user}}</strong>: {{a.text}}
     </div>
   </div>
 

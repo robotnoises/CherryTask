@@ -13,21 +13,32 @@
         function activityController ($scope, $routeParams, fbutil, api, cherryAuth) {
         
         var taskId = $routeParams.id;
-        var loc = 'tasks/' + taskId + '/messages';
+        var loc = 'tasks/' + taskId + '/activites';
         
-        // $scope.data = {};
-        // $scope.data.mood = 55; // temp!
+        // Enums
         
-        api.list(loc, 10, function (messages) {
-          $scope.messages = messages;
+        var TYPE = Object.freeze({
+          COMMENT: 0,
+          EVENT: 1,
+          PROGRESS: 2,
+          MOOD: 3  
         });
         
-        $scope.addMessage = function(newMessage) {
-          if (newMessage) {
-            cherryAuth.get().then(function (a) {
-              $scope.messages.$add({
-                user: '@' + a.name,
-                text: newMessage,
+        $scope.activityType = TYPE.COMMENT;
+        $scope.activityValue = '';
+        
+        api.list(loc, 10, function (activities) {
+          $scope.activities = activities;
+        });
+        
+        $scope.addActivity = function(activity) {
+          if (activity) {
+            cherryAuth.get().then(function (auth) {
+              $scope.activities.$add({
+                user: '@' + auth.name,  // Todo: need to record the uid and not the name, since names are aliases and can change
+                text: activity,
+                type: $scope.activityType, 
+                value: $scope.activityValue,
                 timeStamp: new Date().getTime()
               });
             });
