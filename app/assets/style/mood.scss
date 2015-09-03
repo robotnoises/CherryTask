@@ -131,25 +131,3 @@ $feature-thickness: 1px;
 .face.crazy-sad:active {
   background-color: $brand-red;
 }
-
-
-.face.badge {
-  border: none;
-  cursor: default;
-  background-color: $brand-green;
-  transform: scale(1.5);
-  margin-left: 8px;
-  
-  .eye-left,
-  .eye-right {
-    background-color: $brand-white;
-    top: 28%;
-  }
-  
-  .mouth {
-    border-color: $brand-white;
-    border-width: 2px;
-    bottom: 7px;
-  }
-  
-}

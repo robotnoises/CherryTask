@@ -32,10 +32,14 @@
   }
 }
 
-.activity > .badge:not(.face) {
+.activity > .badge {
+  border: 3px solid $brand-black;
+}
+
+.activity > .badge {
   height: 48px;
   width: 48px;
-  line-height: 48px;
+  line-height: 42px;
   text-align: center;
   background: $brand-red;
   border-radius: 50%;
@@ -56,7 +60,7 @@
 .activity > .vector {
   height: 3px;
   width: 25px;
-  background-color: $brand-red;
+  background-color: $brand-black;
 }
 
 .activity > .message {
@@ -64,7 +68,7 @@
   padding: 12px 24px;;
   margin-left: 73px;
   background-color: #fff;
-  border: 3px solid $brand-red;
+  border: 3px solid $brand-black;
   border-radius: 24px;
   font-size: 0.85em;
   color: $brand-black;
@@ -74,33 +78,50 @@
 
 // Comments
 
-.activity > .badge.comment,
-.activity > .vector.comment {
+.activity > .badge.comment {
   background-color: $brand-purple;
 }
 
 .activity > .message.comment {
-  border-color: $brand-purple;
+  // border-color: $brand-purple;
 }
 
 // Update progress
 
-.activity > .badge.progress,
-.activity > .vector.progress {
+.activity > .badge.progress {
   background-color: $brand-blue;
 }
 
 .activity > .message.progress {
-  border-color: $brand-blue;
+  // border-color: $brand-blue;
 }
 
 // Update mood/status
 
-.activity > .badge.status,
-.activity > .vector.status {
+.activity > .badge.status {
   background-color: $brand-green;
 }
 
 .activity > .message.status {
-  border-color: $brand-green;
+  // border-color: $brand-green;
+}
+
+.badge .face {
+  border: none;
+  cursor: default;
+  background-color: transparent;
+  transform: scale(1.35);
+  margin: 5px auto;
+
+  .eye-left,
+  .eye-right {
+    background-color: $brand-white;
+    top: 28%;
+  }
+  
+  .mouth {
+    border-color: $brand-white;
+    border-width: 2px;
+    bottom: 7px;
+  }
 }
