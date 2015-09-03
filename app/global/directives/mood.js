@@ -23,13 +23,13 @@
             } else if (mood >= 75 && mood < 100) {
               return 'happy';
             } else if (mood === 100) {
-              return 'super-happy';
+              return 'crazy-happy';
             } else if (mood < 50 && mood > 25) {
               return 'kinda-sad';
             } else if (mood <= 25 && mood > 0) {
               return 'sad';
             } else if (mood === 0) {
-              return 'super-sad';
+              return 'crazy-sad';
             }
           } else {
             return '';

@@ -1,6 +1,7 @@
 // app.scss 
 // Join all of the modules 
 
+@import 'helpers';
 @import 'main';
 @import 'card';
 @import 'loader';
@@ -11,5 +12,4 @@
 @import 'containers';
 @import 'activity';
 @import 'avatar';
-@import 'helpers';
 @import 'media';

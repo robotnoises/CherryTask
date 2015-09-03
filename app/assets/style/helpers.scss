@@ -21,3 +21,10 @@
 .overflow-visible {
   overflow: visible !important;
 }
+
+@mixin transition ($attr, $speed) {
+  transition: $attr $speed;
+  -webkit-transition: $attr $speed;
+  -moz-transition: $attr $speed;
+  -o-transition: $attr $speed;
+}

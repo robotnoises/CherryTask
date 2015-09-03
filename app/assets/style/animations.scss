@@ -2,11 +2,11 @@
 
 @keyframes womp {
   0% {
-    background-color: rgba(0,0,0,0.1);
+    background-color: $brand-grey;
     transform: scale(1.75);
   }
   100% {
-    background-color: rgba(235,91,91, 1);
+    background-color: $brand-white;
     transform: scale(1);
   }
 }
@@ -14,6 +14,7 @@
 .circle {
   position: absolute;
   display: block;
+  cursor: pointer;
   top: 0;
   right: 0;
   bottom: 0;
@@ -21,7 +22,7 @@
   opacity: 0;
   margin: 40px 65px 90px;
   font-size: 0.75em;
-  background-color: rgba(235,91,91, 1);
+  background-color: $brand-white;
   border-radius: 50%;
 }
 
@@ -37,19 +38,11 @@
   left: 50%;
   transform: translate(-50%,-50%);
   padding: 6px 6px;
-  color: $brand-white;
+  color: $brand-black;
   font-weight: bold;
   background: transparent;
   margin: 0 auto;
-  border: 2px solid $brand-white;
   border-radius: 8px;
   text-align: center;
   transition: background 200ms, color 200ms;
-}
-
-.circle .inner:hover,
-.circle .inner:active {
-  cursor: pointer;
-  background: $brand-white;
-  color: $brand-red;
 }

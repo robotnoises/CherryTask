@@ -1,4 +1,5 @@
 @import 'vars';
+@import 'helpers';
 
 $feature-thickness: 1px;
 
@@ -10,6 +11,7 @@ $feature-thickness: 1px;
 	background: transparent;
 	border: $feature-thickness solid $brand-black;
   cursor: pointer;
+  @include transition(background, 300ms);
 }
 
 .face .eye-left, 
@@ -41,14 +43,13 @@ $feature-thickness: 1px;
 }
 
 /* Begin emotions (beware) */
-/* Todo: mixins */
 
-.face .mouth.kinda-happy,
-.face .mouth.happy,
-.face .mouth.super-happy,
-.face .mouth.kinda-sad,
-.face .mouth.sad,
-.face .mouth.super-sad {
+.face.kinda-happy .mouth,
+.face.happy .mouth,
+.face.crazy-happy .mouth,
+.face.kinda-sad .mouth,
+.face.sad .mouth,
+.face.crazy-sad .mouth {
   border: $feature-thickness solid $brand-black;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -56,55 +57,81 @@ $feature-thickness: 1px;
   background-color: transparent;
 }
 
-.face .mouth.kinda-happy {
+@mixin happy() {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-top: 0;
+}
+
+@mixin sad() {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-bottom: 0;
+}
+
+.face.kinda-happy .mouth {
   height: 3px;
-  bottom: 10px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-top: 0;
+  bottom: 8px;
+  @include happy(); 
 }
 
-.face .mouth.happy {
-  height: 7px;
-  bottom: 6px;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  border-top: 0;
+.face.kinda-sad .mouth {
+  height: 3px;
+  bottom: 8px;
+  @include sad();
 }
 
-.face .mouth.super-happy {
+.face.happy .mouth {
   height: 7px;
   bottom: 6px;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
+  @include happy();
+}
+
+.face.sad .mouth {
+  height: 7px;
+  bottom: 6px;
+  @include sad();
+}
+
+.face.crazy-happy .mouth {
+  height: 7px;
+  bottom: 6px;
+  @include happy();
   border-top: $feature-thickness solid $brand-black;
   background-color: $brand-black;
 }
 
-.face .mouth.kinda-sad {
-  height: 3px;
-  bottom: 10px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom: 0;
-}
-
-.face .mouth.sad {
+.face.crazy-sad .mouth {
   height: 7px;
   bottom: 6px;
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-  border-bottom: 0;
-}
-
-.face .mouth.super-sad {
-  height: 7px;
-  bottom: 6px;
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
+  @include sad();
   border-bottom: $feature-thickness solid $brand-black;
   background-color: $brand-black;
 }
+
+.face:hover,
+.face:active {
+  background-color: $brand-white;
+}
+
+.face.kinda-happy:hover,
+.face.kinda-happy:active,
+.face.happy:hover,
+.face.happy:active,
+.face.crazy-happy:hover,
+.face.crazy-happy:active {
+  background-color: $brand-green;
+}
+
+.face.kinda-sad:hover,
+.face.kinda-sad:active,
+.face.sad:hover,
+.face.sad:active,
+.face.crazy-sad:hover,
+.face.crazy-sad:active {
+  background-color: $brand-red;
+}
+
 
 .face.badge {
   border: none;
