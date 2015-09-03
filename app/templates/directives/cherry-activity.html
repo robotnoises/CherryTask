@@ -1,9 +1,9 @@
-<form>
-  <input placeholder="Message..." ng-model="newMessage">
-  <button type="submit" ng-click="addMessage(newMessage);newMessage = null;">send</button>
-</form>
-
 <div id="messages">
+  
+  <form>
+    <input placeholder="Message..." ng-model="newMessage">
+    <button type="submit" ng-click="addMessage(newMessage);newMessage = null;">send</button>
+  </form>
 
   <!-- temp: design phase -->
   <div class="activity">
@@ -20,13 +20,13 @@
   </div>
   
   <div class="activity">
-    
+
     <div class="badge status">
-      <div class="face happy">
+      <div class="face stoic">
         <div class="eye-left"></div>
         <div class="eye-right"></div>
         <div class="mouth"></div>
-      </div>
+      </div>      
     </div>
     
     <div class="vector status"></div>
