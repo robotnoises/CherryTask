@@ -21,11 +21,13 @@
           COMMENT: 0,
           EVENT: 1,
           PROGRESS: 2,
-          MOOD: 3  
+          MOOD: 3
         });
         
-        $scope.activityType = TYPE.COMMENT;
-        $scope.activityValue = '';
+        // Form stuff
+        
+        $scope.activityType = TYPE.COMMENT; // What type of things are we posting?
+        $scope.activityValue = 0;           // Does it have a (number) value? (mood, progress)
         
         api.list(loc, 10, function (activities) {
           $scope.activities = activities;
@@ -37,13 +39,27 @@
               $scope.activities.$add({
                 user: '@' + auth.name,  // Todo: need to record the uid and not the name, since names are aliases and can change
                 text: activity,
-                type: $scope.activityType, 
+                type: parseInt($scope.activityType, 10), 
                 value: $scope.activityValue,
                 timeStamp: new Date().getTime()
               });
             });
           }
         };
+        
+        $scope.badgeStyle = function(aType) {
+          if (aType === TYPE.COMMENT) {
+            return 'comment';
+          } else if (aType === TYPE.EVENT) {
+            return 'event';
+          } else if (aType === TYPE.PROGRESS) {
+            return 'progress';
+          } else if (aType === TYPE.MOOD) {
+            return 'status';
+          } else {
+            return 'cherry;'
+          }
+        }
       }]
     };
   });

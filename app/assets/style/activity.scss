@@ -32,105 +32,150 @@
   }
 }
 
-.activity > .badge {
-  border: 3px solid $brand-black;
-}
-
-.activity > .badge {
-  height: 48px;
-  width: 48px;
-  line-height: 42px;
-  text-align: center;
-  background: $brand-red;
-  border-radius: 50%;
-  
-  span {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: $brand-white;
+.activity {
+  .badge {
+    border: 3px solid $brand-black;  
   }
 }
 
-.activity > .badge > i.icon {
-  font-size: 32px;
-  font-weight: 700;
-  color: $brand-white;
+.activity {
+  .badge {
+    height: 48px;
+    width: 48px;
+    line-height: 42px;
+    text-align: center;
+    background: $brand-red;
+    border-radius: 50%;
+    
+    span {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: $brand-white;
+    }
+  }
 }
 
-.activity > .vector {
-  height: 3px;
-  width: 25px;
-  background-color: $brand-black;
+.activity {
+  .badge {
+    i.icon {
+      font-size: 32px;
+      font-weight: 700;
+      color: $brand-white;
+    }
+  }
 }
 
-.activity > .message {
-  width: 500px;
-  padding: 12px 24px;;
-  margin-left: 73px;
-  background-color: #fff;
-  border: 3px solid $brand-black;
-  border-radius: 24px;
-  font-size: 0.85em;
-  color: $brand-black;
+.activity {
+  .vector {
+    height: 3px;
+    width: 25px;
+    background-color: $brand-black;
+  }
+}
+
+.activity {
+  .message {
+    width: 500px;
+    padding: 12px 24px;;
+    margin-left: 73px;
+    background-color: #fff;
+    border: 3px solid $brand-black;
+    border-radius: 24px;
+    font-size: 0.85em;
+    color: $brand-black;
+  }
 }
 
 // Activity-specific stuff
 
 // Comments
 
-.activity > .badge.comment {
-  background-color: $brand-purple;
+.activity {
+  .badge.comment {
+    background-color: $brand-purple;
+  }
 }
 
-.activity > .message.comment {
-  // border-color: $brand-purple;
-}
+// .activity .message.comment {
+//   // border-color: $brand-purple;
+// }
 
 // Update progress
 
-.activity > .badge.progress {
-  background-color: $brand-blue;
+.activity {
+  .badge.progress {
+    background-color: $brand-blue;
+  }
 }
 
-.activity > .message.progress {
-  // border-color: $brand-blue;
-}
+// .activity .message.progress {
+//   // border-color: $brand-blue;
+// }
 
 // Update mood/status
 
-.activity > .badge.status {
-  background-color: $brand-green;
-}
-
-.activity > .message.status {
-  // border-color: $brand-green;
-}
-
-.badge .face {
-  border: none;
-  cursor: default;
-  background-color: transparent;
-  transform: scale(1.35);
-  margin: 5px auto;
-
-  .eye-left,
-  .eye-right {
-    background-color: $brand-white;
-    top: 28%;
-  }
-  
-  .mouth {
-    border-color: $brand-white;
-    border-width: 2px;
-    bottom: 7px;
+.activity {
+  .badge.status {
+    background-color: $brand-green;
   }
 }
 
-.badge .face.stoic {
+// .activity .message.status {
+//   // border-color: $brand-green;
+// }
+
+// Some Event
+
+.activity {
+  .badge.event {
+    background-color: $brand-red;
+  }
+}
+
+.badge {
+  .face {
+    border: none;
+    cursor: default;
+    background-color: transparent;
+    transform: scale(1.35);
+    margin: 5px auto;
   
-  .mouth {
-    background-color: $brand-white;
-    height: 2px;
-    bottom: 9px;
+    .eye-left,
+    .eye-right {
+      background-color: $brand-white;
+      top: 9px;
+    }
+    
+    .mouth {
+      border-color: $brand-white;
+      border-width: 2px;
+      bottom: 8px;
+    }
+  }
+  
+  .face.crazy-happy,
+  .face.crazy-sad,
+  .face.happy,
+  .face.sad {
+    .mouth {
+      bottom: 7px;
+    }
+  }
+  
+  .face.crazy-happy,
+  .face.crazy-sad {
+    .mouth {
+      background-color: $brand-white;  
+    }
+  }
+}
+
+.badge {
+  .face.stoic {
+    .mouth {
+      background-color: $brand-white;
+      height: 2px;
+      bottom: 9px;
+    }
   }
 }

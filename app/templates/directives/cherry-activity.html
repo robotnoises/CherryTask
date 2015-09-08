@@ -1,47 +1,38 @@
 <div id="messages">
   
+  <!-- This submit form is extremely temporary -->
   <form>
     <input placeholder="Message..." ng-model="activity">
+    
     <button type="submit" ng-click="addActivity(activity);activity = null;">send</button>
+    
+    <select ng-model="activityType">
+      <option value="0">Comment</option>
+      <option value="1">Event</option>
+      <option value="2">Progress</option>
+      <option value="3">Mood</option>
+    </select>
   </form>
 
-  <!-- temp: design phase -->
-  <div class="activity">
-    <div class="badge progress">
-      <span>50</span>
-      <!--<i class="icon pe-7s-comment" />-->
-    </div>
-    
-    <div class="vector progress"></div>
-    
-    <div class="message progress">
-      Changed the progress from <strong>20%</strong> to <strong>50%</strong>
-    </div>
-  </div>
-  
-  <div class="activity">
-
-    <div class="badge status">
-      <div class="face stoic">
-        <div class="eye-left"></div>
-        <div class="eye-right"></div>
-        <div class="mouth"></div>
-      </div>      
-    </div>
-    
-    <div class="vector status"></div>
-    
-    <div class="message status">
-      Things are going well. As long as there aren't any hiccups, I feel like I can finish this on time.
-    </div>
-    
-  </div>
-    
-  <!-- end temp -->
-
   <div class="activity" ng-repeat="a in activities | orderBy: '-timeStamp'">
-    <div class="badge comment">
-      <i class="icon pe-7s-comment" />
+    <div class="badge" ng-class="badgeStyle(a.type)">
+      <!-- Comments -->
+      <div ng-if="a.type === 0">
+        <i class="icon pe-7s-comment" />
+      </div>
+      <!-- Events -->
+      <div ng-if="a.type === 1">
+        <i class="icon pe-7s-gleam" />
+      </div>
+      <!-- Progress -->
+      <div ng-if="a.type === 2">
+        <span>{{a.value}}</span>
+      </div>
+      <!-- Status/Mood -->
+      <div ng-if="a.type === 3">
+        <mood-icon mood="a.value"></mood-icon>
+      </div>
+      
     </div>
     
     <div class="vector comment"></div>

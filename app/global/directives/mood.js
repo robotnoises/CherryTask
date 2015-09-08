@@ -9,15 +9,15 @@
       restrict: 'E',
 	    replace: true,
 	    scope: {
-		    data: '='  
+		    mood: '=mood'  
 	    },
       templateUrl: 'templates/directives/mood.html',
       controller: ['$scope', '$location', '$timeout', '$q', '$routeParams', 'apiService',
       function moodController ($scope, $location, $timeout, $q, $routeParams, api) {
   
         $scope.getMood = function () {
-          if (typeof $scope.data.mood !== 'undefined' && $scope.data.mood !== 50) {
-            var mood = $scope.data.mood;
+          if (typeof $scope.mood !== 'undefined' && $scope.mood !== 50) {
+            var mood = $scope.mood;
             if (mood > 50 && mood < 75) {
               return 'kinda-happy';
             } else if (mood >= 75 && mood < 100) {

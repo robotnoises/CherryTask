@@ -43,8 +43,8 @@
   	<i class="icon icon-lg pe-7s-graph float-right subtle" title="Reports for '{{card.title}}'"></i>
     
     <!-- Mood -->
-    <div ng-if="card.mood !== undefined" class="mood float-right">
-      <mood-icon data="card"></mood-icon>
+    <div ng-if="card.mood !== undefined" class="mood subtle float-right">
+      <mood-icon mood="card.mood"></mood-icon>
     </div>
     
   	<!--<i class="icon icon-lg pe-7s-link float-right subtle" title="Copy link to '{{card.title}}'"></i>-->
