@@ -24,10 +24,21 @@
           MOOD: 3
         });
         
+        // Private
+        
+        function formatNumber(input) {
+          if (typeof input === 'string') {
+            return parseInt(input, 10);
+          } else {
+            return input;
+          }
+        }
+        
         // Form stuff
         
         $scope.activityType = TYPE.COMMENT; // What type of things are we posting?
         $scope.activityValue = 0;           // Does it have a (number) value? (mood, progress)
+        $scope.currentActivity = TYPE.COMMENT;
         
         api.list(loc, 10, function (activities) {
           $scope.activities = activities;
@@ -48,6 +59,9 @@
         };
         
         $scope.badgeStyle = function(aType) {
+          
+          aType = formatNumber(aType);
+          
           if (aType === TYPE.COMMENT) {
             return 'comment';
           } else if (aType === TYPE.EVENT) {
@@ -60,6 +74,13 @@
             return 'cherry;'
           }
         }
+        
+        $scope.showSelections = false;
+        
+        $scope.toggleSelected = function (aType) {
+          $scope.currentActivity = aType;
+        }
+        
       }]
     };
   });

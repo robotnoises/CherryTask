@@ -13,7 +13,7 @@
   display: block;
   position: relative;
   overflow: hidden;
-  margin-top: 48px;
+  margin-bottom: 48px;
   margin-left: -24px;
 }
 
@@ -32,13 +32,15 @@
   }
 }
 
-.activity {
+.activity,
+.activity-input {
   .badge {
     border: 3px solid $brand-black;  
   }
 }
 
-.activity {
+.activity,
+.activity-input {
   .badge {
     height: 48px;
     width: 48px;
@@ -55,7 +57,8 @@
   }
 }
 
-.activity {
+.activity,
+.activity-input {
   .badge {
     i.icon {
       font-size: 32px;
@@ -75,8 +78,8 @@
 
 .activity {
   .message {
-    width: 500px;
-    padding: 12px 24px;;
+    width: 475px;
+    padding: 12px 24px;
     margin-left: 73px;
     background-color: #fff;
     border: 3px solid $brand-black;
@@ -86,11 +89,59 @@
   }
 }
 
+.activity-input {
+  
+  background: $brand-black;
+  
+  textarea {
+    margin-top: 1em;
+    padding-left: 24px;
+    width: 100%;
+    height: 5em;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    resize: none;
+  }
+  
+  .badge-selector {
+    position: absolute;
+    margin-top: 2em;
+    margin-left: -24px;
+    
+    .badge {
+      position: absolute;
+      float: left;
+      opacity: 0;
+      z-index: 1;
+      
+      transition: margin $transition-fast;
+      transition: opacity $transition-fast;
+    }
+    
+    .badge.selected {
+      z-index: 2;
+      opacity: 1;
+      cursor: default;
+    }
+  }
+  
+  .badge-selector.select {
+    .badge {
+      position: static;
+      margin-right: 12px;
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+
 // Activity-specific stuff
 
 // Comments
 
-.activity {
+.activity,
+.activity-input {
   .badge.comment {
     background-color: $brand-purple;
   }
@@ -102,7 +153,8 @@
 
 // Update progress
 
-.activity {
+.activity,
+.activity-input {
   .badge.progress {
     background-color: $brand-blue;
   }
@@ -114,7 +166,8 @@
 
 // Update mood/status
 
-.activity {
+.activity,
+.activity-input {
   .badge.status {
     background-color: $brand-green;
   }
@@ -126,7 +179,8 @@
 
 // Some Event
 
-.activity {
+.activity,
+.activity-input {
   .badge.event {
     background-color: $brand-red;
   }
@@ -150,6 +204,10 @@
       border-color: $brand-white;
       border-width: 2px;
       bottom: 8px;
+    }
+    
+    .face:hover {
+      border: none;
     }
   }
   

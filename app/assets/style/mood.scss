@@ -10,7 +10,6 @@ $feature-thickness: 1px;
 	border-radius: 50%;
 	background: transparent;
 	border: $feature-thickness solid $brand-black;
-  cursor: pointer;
   @include transition(background, 300ms);
 }
 

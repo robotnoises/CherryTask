@@ -11,13 +11,13 @@
       var $nav;
 
       var timeout = 200;
-      var offset = 32;
+      var padding = 5;
       var debounce = false; 
      
       function resize() {
 
         element.attr('style', function () {
-          return 'height: ' + ($html[0].offsetHeight - $nav[0].offsetHeight - offset) + 'px;';
+          return 'height: ' + ($html[0].offsetHeight - $nav[0].offsetHeight + padding) + 'px;';
         });
         
       }

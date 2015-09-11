@@ -51,6 +51,17 @@ md-content form h1 {
   background-color: rgba(0,0,0,0.03);
 }
 
+/* Bricks */
+
+.wall:after {
+  content: none;
+  clear: none;
+}
+
+.brick {
+  vertical-align: top;
+}
+
 /* Pixeden icon overrides */
 
 [class*=" pe-7s-"], 
