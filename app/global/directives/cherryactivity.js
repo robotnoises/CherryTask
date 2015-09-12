@@ -9,11 +9,16 @@
       restrict: 'E',
       replace: true,
       templateUrl: 'templates/directives/cherry-activity.html',
-      controller: ['$scope', '$routeParams', 'fbutil', 'apiService', 'cherryAuth',
-        function activityController ($scope, $routeParams, fbutil, api, cherryAuth) {
+      controller: ['$scope', '$routeParams', '$timeout', 'fbutil', 'apiService', 'cherryAuth',
+        function activityController ($scope, $routeParams, $timeout, fbutil, api, cherryAuth) {
         
         var taskId = $routeParams.id;
         var loc = 'tasks/' + taskId + '/activites';
+        
+        // Constants
+        
+        var placeholder_comment = 'Say something...';
+        var placeholder_status = 'How are things going?';
         
         // Enums
         
@@ -23,6 +28,14 @@
           PROGRESS: 2,
           MOOD: 3
         });
+        
+        // Scope
+        
+        $scope.activityType = TYPE.COMMENT;           // What type of things are we posting?
+        $scope.activityValue = 0;                     // Does it have a (number) value? (mood, progress)
+        $scope.placeholderText = placeholder_comment; // Display an appropriate placeholder
+        $scope.transitioning = false;                 // Flag to enable/disable hover on badge selector                
+        $scope.showSelections = false;                // Flag to show/hide badge selections
         
         // Private
         
@@ -34,15 +47,27 @@
           }
         }
         
-        // Form stuff
+        function setPlaceholder(aType) {
+          if (aType === TYPE.EVENT || aType === TYPE.PROGRESS) {
+            return '';
+          } else if (aType === TYPE.COMMENT) {
+            return placeholder_comment;
+          } else if (aType === TYPE.MOOD) {
+            return placeholder_status;
+          } else {
+            return '';
+          }
+        }
         
-        $scope.activityType = TYPE.COMMENT; // What type of things are we posting?
-        $scope.activityValue = 0;           // Does it have a (number) value? (mood, progress)
-        $scope.currentActivity = TYPE.COMMENT;
+        // Get all the activities
         
         api.list(loc, 10, function (activities) {
           $scope.activities = activities;
         });
+        
+        $scope.doTransition = function (force) {
+          $scope.transitioning = force || !$scope.transitioning;
+        };
         
         $scope.addActivity = function(activity) {
           if (activity) {
@@ -75,10 +100,10 @@
           }
         }
         
-        $scope.showSelections = false;
-        
         $scope.toggleSelected = function (aType) {
-          $scope.currentActivity = aType;
+          $scope.doTransition();
+          $scope.activityType = aType;
+          $scope.placeholderText = setPlaceholder(aType);
         }
         
       }]

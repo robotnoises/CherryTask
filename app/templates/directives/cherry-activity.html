@@ -1,31 +1,24 @@
 <div id="activities">
   
-  <div class="activity-input">
+  <div class="activity-input" ng-style="(showSelections && !transitioning) && {'background-color':'#999'}">
     
-    <div class="badge-selector" ng-class="showSelections ? 'select' : ''" ng-mouseenter="showSelections = true" ng-mouseleave="showSelections = false">
+    <div class="badge-selector" ng-class="(showSelections ? 'select' : '') + ' ' + (transitioning ? 'transitioning' : '')" ng-mouseenter="showSelections = true" ng-mouseleave="showSelections = false">
       
-      <div class="badge comment" ng-class="{selected: currentActivity === 0}" ng-click="toggleSelected(0)">
+      <div class="badge comment" ng-class="{selected: activityType === 0}" ng-click="toggleSelected(0)">
         <!-- Comments -->
         <div>
           <i class="icon pe-7s-comment" />
         </div>
       </div>
-      
-      <div class="badge event" ng-class="{selected: currentActivity === 1}" ng-click="toggleSelected(1)">
-        <!-- Events -->
-        <div>
-          <i class="icon pe-7s-gleam" />
-        </div>
-      </div>
-      
-      <div class="badge progress" ng-class="{selected: currentActivity === 2}" ng-click="toggleSelected(2)">
+
+      <div class="badge progress" ng-class="{selected: activityType === 2}" ng-click="toggleSelected(2)">
         <!-- Progress -->
         <div>
           <span>50</span>
         </div>
       </div>
       
-      <div class="badge status" ng-class="{selected: currentActivity === 3}" ng-click="toggleSelected(3)">
+      <div class="badge status" ng-class="{selected: activityType === 3}" ng-click="toggleSelected(3)">
         <!-- Status/Mood -->
         <div>
           <mood-icon mood="75"></mood-icon>
@@ -33,18 +26,13 @@
       </div>
     
     </div>
+
+    <textarea placeholder="{{placeholderText}}" ng-model="activity" eval-on-enter="addActivity(activity);activity = null;" />
     
-    <div>
-      <textarea placeholder="Message..." ng-model="activity" eval-on-enter="addActivity(activity);activity = null;" />
-      
-      <select ng-model="activityType">
-        <option value="0">Comment</option>
-        <option value="1">Event</option>
-        <option value="2">Progress</option>
-        <option value="3">Mood</option>
-      </select>
-    </div>
-  
+    <!--<div class="activity-input-bar">
+      &nbsp;
+    </div>-->
+    
   </div>
   
   <div class="activity" ng-repeat="a in activities | orderBy: '-timeStamp'">
@@ -69,9 +57,7 @@
       
     </div>
     
-    <div class="vector comment"></div>
-    
-    <div class="message comment">
+    <div class="message">
       <strong>{{a.user}}</strong>: {{a.text}}
     </div>
   </div>

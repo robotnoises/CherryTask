@@ -68,3 +68,22 @@ md-content form h1 {
 [class^=pe-7s-] {
   line-height: inherit;
 }
+
+/* Placeholder text */
+
+/* do not group these rules */
+*::-webkit-input-placeholder {
+    color: $brand-darkgrey;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: $brand-darkgrey;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: $brand-darkgrey;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $brand-darkgrey;
+}

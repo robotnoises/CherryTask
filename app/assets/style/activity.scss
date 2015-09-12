@@ -13,7 +13,6 @@
   display: block;
   position: relative;
   overflow: hidden;
-  margin-bottom: 48px;
   margin-left: -24px;
 }
 
@@ -24,9 +23,6 @@
 }
 
 .activity > {
-  .vector {
-    @include center-vertical(48px);  
-  }
   .badge {
     @include center-vertical(0px);
   }
@@ -35,7 +31,7 @@
 .activity,
 .activity-input {
   .badge {
-    border: 3px solid $brand-black;  
+    border: 3px solid $brand-white;  
   }
 }
 
@@ -78,27 +74,30 @@
 
 .activity {
   .message {
-    width: 475px;
-    padding: 12px 24px;
-    margin-left: 73px;
+    width: 100%;
+    padding: 32px 24px 32px 48px;
+    margin-left: 24px;
     background-color: #fff;
-    border: 3px solid $brand-black;
-    border-radius: 24px;
     font-size: 0.85em;
-    color: $brand-black;
+    color: #444;
   }
 }
 
+// .activity:nth-child(odd) .message {
+//   background-color: $brand-lightgrey;
+// }
+
 .activity-input {
   
-  background: $brand-black;
+  background: $brand-white;
+  transition: background $transition-medium;
   
   textarea {
     margin-top: 1em;
-    padding-left: 24px;
+    padding-left: 48px;
     width: 100%;
-    height: 5em;
-    color: #fff;
+    height: 4em;
+    color: $brand-black;
     background-color: transparent;
     border: none;
     resize: none;
@@ -106,37 +105,45 @@
   
   .badge-selector {
     position: absolute;
-    margin-top: 2em;
+    margin-top: 1em;
     margin-left: -24px;
+    width: 48px;
     
     .badge {
       position: absolute;
+      margin-right: -24px;
       float: left;
-      opacity: 0;
       z-index: 1;
       
       transition: margin $transition-fast;
-      transition: opacity $transition-fast;
     }
     
     .badge.selected {
-      z-index: 2;
-      opacity: 1;
       cursor: default;
+      z-index: 2;
     }
   }
   
-  .badge-selector.select {
+  .badge-selector.select:not(.transitioning) {
+    
+    width: auto;
+    
     .badge {
       position: static;
       margin-right: 12px;
-      opacity: 1;
       cursor: pointer;
     }
   }
+      
+  // .activity-input-bar {
+  //   height: 2em;
+  //   background-color: $brand-darkgrey;
+  // }
 }
 
-// Activity-specific stuff
+  /////////////////////////////////////////////////
+ // Activity-specific stuff
+/////////////////////////////////////////////////
 
 // Comments
 
@@ -147,11 +154,7 @@
   }
 }
 
-// .activity .message.comment {
-//   // border-color: $brand-purple;
-// }
-
-// Update progress
+// Progress
 
 .activity,
 .activity-input {
@@ -160,11 +163,7 @@
   }
 }
 
-// .activity .message.progress {
-//   // border-color: $brand-blue;
-// }
-
-// Update mood/status
+// Mood/Status
 
 .activity,
 .activity-input {
@@ -173,11 +172,7 @@
   }
 }
 
-// .activity .message.status {
-//   // border-color: $brand-green;
-// }
-
-// Some Event
+// Events
 
 .activity,
 .activity-input {
