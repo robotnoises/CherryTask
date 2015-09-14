@@ -33,7 +33,7 @@
 
       var _list = function (callback) {
         var loc = 'tasks/';
-        api.list(loc, 10, function (tasks) {
+        api.list(loc, 10).then(function (tasks) {
           callback(tasks);
         });
       };

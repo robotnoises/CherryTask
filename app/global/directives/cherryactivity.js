@@ -61,7 +61,7 @@
         
         // Get all the activities
         
-        api.list(loc, 10, function (activities) {
+        api.list(loc, 10).then(function (activities) {
           $scope.activities = activities;
         });
         

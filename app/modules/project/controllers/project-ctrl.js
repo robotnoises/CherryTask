@@ -19,7 +19,7 @@
       $scope.emptyWorkspace = false;
       $scope.projects = {};
       
-      api.list(loc, 10, function (projects) {
+      api.list(loc, 10).then(function (projects) {
         $scope.projects = projects;
 
         projects.$loaded().then(function (p) {

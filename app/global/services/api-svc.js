@@ -19,11 +19,15 @@
 
     // Public
 
-    var _getList = function (loc, limit, callback) {
+    var _getList = function (loc, limit) {
+      var d = $q.defer();
+      
       getTenant(function (tenant) {
         var ref = fbutil.ref(tenant + loc).limitToLast(limit);
-        return callback($firebaseArray(ref));
+        d.resolve($firebaseArray(ref));
       });
+      
+      return d.promise;
     };
 
     var _getListBy = function (loc, key, value, limit, callback) {
