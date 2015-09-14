@@ -9,8 +9,8 @@
       restrict: 'E',
       replace: true,
       templateUrl: 'templates/directives/cherry-activity.html',
-      controller: ['$scope', '$routeParams', '$timeout', 'fbutil', 'apiService', 'cherryAuth', 'datetimeService',
-        function activityController ($scope, $routeParams, $timeout, fbutil, api, cherryAuth, datetime) {
+      controller: ['$scope', '$routeParams', '$timeout', 'fbutil', 'apiService', 'activityService',
+        function activityController ($scope, $routeParams, $timeout, fbutil, api, activity) {
         
         var taskId = $routeParams.id;
         var loc = 'tasks/' + taskId + '/activites';
@@ -69,23 +69,13 @@
           $scope.transitioning = force || !$scope.transitioning;
         };
         
-        $scope.addActivity = function(activity) {
-          if (activity) {
-            cherryAuth.get().then(function (auth) {
-              
-              var timeStamp = new Date().getTime();
-              var timeStamp_readable = datetime.toReadable(timeStamp);
-              
-              $scope.activities.$add({
-                user: '@' + auth.name,  // Todo: need to record the uid and not the name, since names are aliases and can change
-                text: activity,
-                type: parseInt($scope.activityType, 10), 
-                value: $scope.activityValue,
-                timeStamp: timeStamp,
-                date: timeStamp_readable
-              });
-            });
-          }
+        $scope.addActivity = function(text) {
+          activity.make(text, $scope.activityType, $scope.activityValue).then(function (activity) {
+            $scope.activities.$add(activity);  
+          })
+          .catch(function (err) {
+            // Todo: log this
+          });          
         };
         
         $scope.badgeStyle = function(aType) {
