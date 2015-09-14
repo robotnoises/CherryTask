@@ -36,14 +36,14 @@
       </div>
     </div>
     
-    <!-- Edit -->
-    <i class="icon icon-lg pe-7s-edit float-right subtle" title="Edit '{{card.title}}'"></i>
+    <!-- Settings -->
+    <i class="icon icon-lg pe-7s-config float-right subtle" title="Edit Settings for {{card.title}}'"></i>
     
     <!-- Reports -->
-  	<i class="icon icon-lg pe-7s-graph float-right subtle" title="Reports for '{{card.title}}'"></i>
+  	<i class="icon icon-lg pe-7s-graph float-right subtle" title="View Reports for '{{card.title}}'"></i>
     
     <!-- Mood -->
-    <div ng-if="card.mood !== undefined" class="mood subtle float-right">
+    <div ng-if="card.mood !== undefined" class="mood subtle float-right" title="">
       <mood-icon mood="card.mood"></mood-icon>
     </div>
     
