@@ -106,10 +106,6 @@ h6 {
   background-color: rgba(0,0,0,0.1);
 }
 
-.navigation {
-  // border-bottom: 2px solid rgba(0,0,0,1);
-}
-
 .navigation > .slide-out-menu {
   height: 0px;
   width: 100%;
@@ -255,6 +251,13 @@ i.icon-jumbo {
   font-size: 3em;
   font-weight: 400;
 }
+
+/* Task */
+
+.task-view {
+  padding: 0 1em 1em;
+}
+
 
 /* Helpers */
 

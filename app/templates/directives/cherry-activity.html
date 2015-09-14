@@ -4,21 +4,21 @@
     
     <div class="badge-selector" ng-class="(showSelections ? 'select' : '') + ' ' + (transitioning ? 'transitioning' : '')" ng-mouseenter="showSelections = true" ng-mouseleave="showSelections = false">
       
-      <div class="badge comment" ng-class="{selected: activityType === 0}" ng-click="toggleSelected(0)">
+      <div class="badge comment" ng-class="{selected: activityType === 0}" ng-click="toggleSelected(0)" ng-mouseenter="transitioning = false">
         <!-- Comments -->
         <div>
           <i class="icon pe-7s-comment" />
         </div>
       </div>
 
-      <div class="badge progress" ng-class="{selected: activityType === 2}" ng-click="toggleSelected(2)">
+      <div class="badge progress" ng-class="{selected: activityType === 2}" ng-click="toggleSelected(2)" ng-mouseenter="transitioning = false">
         <!-- Progress -->
         <div>
           <span>50</span>
         </div>
       </div>
       
-      <div class="badge status" ng-class="{selected: activityType === 3}" ng-click="toggleSelected(3)">
+      <div class="badge status" ng-class="{selected: activityType === 3}" ng-click="toggleSelected(3)" ng-mouseenter="transitioning = false">
         <!-- Status/Mood -->
         <div>
           <mood-icon mood="75"></mood-icon>
