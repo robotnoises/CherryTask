@@ -12,7 +12,7 @@
 .activities .activity {
   display: block;
   position: relative;
-  border-top: 3px solid $brand-lightgrey;
+  border-bottom: 3px solid $brand-lightgrey;
   overflow: hidden;
   margin-left: -24px;
 }
@@ -38,6 +38,7 @@
 
 .activity,
 .activity-input {
+  border-bottom: 3px solid $brand-lightgrey;
   .badge {
     height: 48px;
     width: 48px;
@@ -81,6 +82,16 @@
     background-color: #fff;
     font-size: 0.85em;
     color: #444;
+    
+    p {
+      margin: 0;
+    }
+    
+    p.meta {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+    }
   }
 }
 
