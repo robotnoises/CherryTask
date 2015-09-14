@@ -12,6 +12,7 @@
 .activities .activity {
   display: block;
   position: relative;
+  border-top: 3px solid $brand-lightgrey;
   overflow: hidden;
   margin-left: -24px;
 }

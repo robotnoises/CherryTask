@@ -3,8 +3,9 @@
 @import 'vars';
 
 @mixin active () {
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid $brand-darkgrey;
+  background: $brand-white;
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+  // border: 2px solid $brand-darkgrey;
   // border-top: 2px solid #fff;
   // border-right: 1px solid rgba(0,0,0,0.1);
   // border-bottom: 1px solid rgba(0,0,0,0.3);
@@ -55,7 +56,7 @@
   bottom: 0;
   width: 100%;
   background-color: $brand-grey;
-  border-top: 2px solid $brand-darkgrey;
+  // border-top: 2px solid $brand-darkgrey;
 }
 
 .card .mood {
