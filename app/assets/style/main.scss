@@ -255,14 +255,31 @@ i.icon-jumbo {
 
 /* Task */
 
-.task-view {
-  padding: 0 1em 1em;
+.task {
+  padding: 0 2em 1em 1em;
+  
+  .card-progress-bar {
+    display: block;
+    position: relative;
+    height: 5px;
+    background-color: $brand-grey;
+    margin: 10px 0 0;
+  }
+  
+  .card-progress-bar .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    background-color: $brand-green;
+    transition: width $transition-medium;
+  }
 }
-
 
 /* Helpers */
 
-::selection:not(input) {
+::selection:not(input):not(textarea) {
   background-color: transparent;
 }
 

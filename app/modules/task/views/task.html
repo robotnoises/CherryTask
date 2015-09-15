@@ -1,9 +1,36 @@
 <div class="wall">
   
-  <div class="brick task-view">
-    <h2>{{task.title}}</h2>
+  <!-- Task -->
+  <div class="brick task">
+    <div class="task-header">
+      <!-- Title -->
+      <h2>{{task.title}}</h2>
+      
+      <!-- Progress -->
+      <h4>Progress</h4>
+      <div ng-if="task.progress !== undefined" class="card-progress-bar">
+        <div class="progress" ng-style="{width: task.progress + '%'}"></div>
+      </div>
+      
+      <!-- Description -->
+      <h4>Description</h4>
+      <p>{{task.description}}</p>
+    </div>
+    
+    <div class="task-body">
+      <h4>Participants</h4>
+      <div>
+        <!-- A few messages if there is no data yet -->
+        <p ng-hide="isAssigned() || isWatched()">Nobody is involved yet...</p>
+        <p ng-hide="isAssigned()"><a ng-click="assign()">Assign yourself?</a></p>
+        <!-- Assignee -->
+        <!--<p ng-if="isAssigned()">{{getAssignedUser(task.assignee)}} is working hard on this task.</p>-->
+      </div>
+    </div>
+    
   </div>
   
+  <!-- Activity Feed -->
   <div class="brick activities overflow-visible" fill-y>
     <cherry-activity></cherry-activity>
   </div>

@@ -61,6 +61,7 @@
             createTenant(function (tenantData) {
               // create a user profile in our data store
               var ref = fbutil.ref('users', user.uid);
+              // Todo: this needs to go somewhere else...
               var model = {
                 email: email,
                 name: name || firstPartOfEmail(email),

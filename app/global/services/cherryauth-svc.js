@@ -19,9 +19,10 @@
       
       // Public
      
-      var _get = function () {
+      var _get = function (uid) {
         var d = $q.defer();
-        var ref = fbutil.ref('users', getAuth().uid);
+        var id = uid || getAuth().uid;
+        var ref = fbutil.ref('users', id);
         
         ref.once('value', function (snapshot) {
           return d.resolve(snapshot.val());
