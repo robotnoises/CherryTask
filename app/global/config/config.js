@@ -9,6 +9,8 @@
 
     .constant('loginRedirectPath', '/signin')
     
+    .constant('AVATAR_PLACEHOLDER', 'placeholder.png')
+    
     .constant('FBURL', 'https://09sdfgs.firebaseio.com/');
   
 })(angular);
