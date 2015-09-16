@@ -19,6 +19,7 @@
   overflow: visible;
   color: $brand-black;
   background: $brand-white;
+  @include left-shadow();
 }
 
 /* Card */

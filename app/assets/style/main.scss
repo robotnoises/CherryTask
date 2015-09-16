@@ -90,6 +90,11 @@ h6 {
 
 /* Nav */
 
+.navigation {
+  border-bottom: 1px solid #333;
+  @include bottom-shadow();
+}
+
 .navigation .user {
   position: absolute;
   right: 1em;

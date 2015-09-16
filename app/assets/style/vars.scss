@@ -20,3 +20,21 @@ $card-dimensions: 300px;
 $card-margins: 8px;
 
 $cherry-padding: 10px;
+
+// Mixins
+
+@mixin left-shadow () {
+  -webkit-box-shadow: -2px 0 1px rgba(0,0,0,0.11);
+  -moz-box-shadow: -2px 0 1px rgba(0,0,0,0.11);
+  -ms-box-shadow: -2px 0 1px rgba(0,0,0,0.11);
+  -o-box-shadow: -2px 0 1px rgba(0,0,0,0.11);
+  box-shadow: -2px 0 1px rgba(0,0,0,0.11);
+}
+
+@mixin bottom-shadow () {
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.33);
+  -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.33);
+  -ms-box-shadow: 0px 1px 2px rgba(0,0,0,0.33);
+  -o-box-shadow: 0px 1px 2px rgba(0,0,0,0.33);
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.33);
+}
