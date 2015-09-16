@@ -14,7 +14,7 @@
       <div class="badge progress" ng-class="{selected: activityType === 2}" ng-click="toggleSelected(2)" ng-mouseenter="transitioning = false">
         <!-- Progress -->
         <div>
-          <span>50</span>
+          <span>{{currentProgress}}</span>
         </div>
       </div>
       
@@ -27,12 +27,11 @@
     
     </div>
 
-    <textarea placeholder="{{placeholderText}}" ng-model="activity" eval-on-enter="addActivity(activity);activity = null;" />
-    
-    <!--<div class="activity-input-bar">
-      &nbsp;
-    </div>-->
-    
+    <div class="input-container">
+      <textarea ng-if="activityType !== 2" placeholder="{{placeholderText}}" ng-model="activity" eval-on-enter="addActivity(activity);activity = null;" />
+      <md-slider ng-hide="activityType !== 2" ng-model="currentProgress" min="0" max="99" aria-label="progress" eval-on-enter="addActivity(activity, currentProgress);activity = null;"></md-slider>  
+    </div>
+
   </div>
   
   <div class="activity" ng-repeat="a in activities | orderBy: '-time_stamp'">

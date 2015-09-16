@@ -108,15 +108,24 @@
     
   // @include left-shadow();
   
-  textarea {
-    margin-top: 1em;
-    padding-left: 48px;
-    width: 100%;
-    height: 4em;
-    color: $brand-black;
-    background-color: transparent;
-    border: none;
-    resize: none;
+  .input-container {
+    
+    height: 5em;
+    
+    textarea {
+      margin-top: 1em;
+      padding-left: 48px;
+      width: 100%;
+      height: 4em;
+      color: $brand-black;
+      background-color: transparent;
+      border: none;
+      resize: none;
+    }
+      
+    md-slider {
+      padding: 16px 48px;
+    }
   }
   
   .badge-selector {
@@ -124,6 +133,7 @@
     margin-top: 1em;
     margin-left: -24px;
     width: 48px;
+    z-index: 1;
     
     .badge {
       position: absolute;

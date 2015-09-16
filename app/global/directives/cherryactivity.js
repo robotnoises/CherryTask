@@ -8,6 +8,9 @@
     return {
       restrict: 'E',
       replace: true,
+      scope: {
+        task: '='
+      },
       templateUrl: 'templates/directives/cherry-activity.html',
       controller: ['$scope', '$routeParams', '$timeout', 'fbutil', 'apiService', 'activityService',
         function activityController ($scope, $routeParams, $timeout, fbutil, api, activity) {
@@ -31,11 +34,11 @@
         
         // Scope
         
-        $scope.activityType = TYPE.COMMENT;           // What type of things are we posting?
-        $scope.activityValue = 0;                     // Does it have a (number) value? (mood, progress)
-        $scope.placeholderText = placeholder_comment; // Display an appropriate placeholder
-        $scope.transitioning = false;                 // Flag to enable/disable hover on badge selector                
-        $scope.showSelections = false;                // Flag to show/hide badge selections
+        $scope.activityType = TYPE.COMMENT;             // What type of thing are we posting?
+        $scope.placeholderText = placeholder_comment;   // Display an appropriate placeholder
+        $scope.transitioning = false;                   // Flag to enable/disable hover on badge selector                
+        $scope.showSelections = false;                  // Flag to show/hide badge selections
+        $scope.currentProgress = 0;                     // Progress from parent task scope
         
         // Private
         
@@ -69,9 +72,30 @@
           $scope.transitioning = force || !$scope.transitioning;
         };
         
-        $scope.addActivity = function(text) {
-          activity.make(text, $scope.activityType, $scope.activityValue).then(function (activity) {
-            $scope.activities.$add(activity);  
+        $scope.addActivity = function(text, value) {
+          
+          var taskPropertyForValue = 'progress';
+          
+          value = value || 0;
+          
+          if ($scope.activityType === TYPE.PROGRESS) {
+            // Handle setting the text for progress changes.
+            text = 'Changed progress from ' + $scope.task.progress + ' to ' + $scope.currentProgress;
+          } else if ($scope.activityType === TYPE.MOOD) {
+            // Handle setting the text for status/mood changes.
+            taskPropertyForValue = 'mood';
+          }
+          
+          activity.make(text, $scope.activityType, value).then(function (activity) {
+            return $scope.activities.$add(activity);  
+          })
+          .then(function () {
+            if (value) {
+              $scope.task[taskPropertyForValue] = value;
+              return $scope.task.$save();
+            } else {
+              return;
+            }
           })
           .catch(function (err) {
             // Todo: log this
