@@ -100,7 +100,8 @@ h6 {
   right: 1em;
 }
 
-.navigation li > i.icon {
+.navigation li > i.icon,
+.navigation li > img {
   line-height: 2.5em;
   transition: background-color 300ms;
 }

@@ -35,6 +35,7 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start', class='na
     a(href='#/account', class='menu-icon') 
       i(class='icon icon-lg pe-7s-config white')
     a(href='', class='menu-icon')
-      i(class='icon icon-lg pe-7s-user white')
+      div(class="avatar-nav")
+        img(src, cherry-avatar)
 div(layout='row', class='slide-out-menu' ng-class='{ show : showMenu }')
   div

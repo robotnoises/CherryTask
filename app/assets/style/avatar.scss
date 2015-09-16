@@ -8,8 +8,24 @@ div[class*="avatar-"] {
   height: 30px;
   width: 30px;
   border: 1px solid $brand-black;
+  border-radius: 50%;
+  line-height: 30px;
   overflow: hidden !important;
   
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.avatar-nav {
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  border: 1px solid $brand-white;
+  line-height: 28px;
+  overflow: hidden !important;
   img {
     height: 100%;
     width: 100%;
