@@ -39,7 +39,8 @@
         $scope.placeholderText = placeholder_comment;   // Display an appropriate placeholder
         $scope.transitioning = false;                   // Flag to enable/disable hover on badge selector                
         $scope.showSelections = false;                  // Flag to show/hide badge selections
-        $scope.taskProgress = 0;                        // Progress from parent task scope
+        $scope.activityProgress = 0;                    // Activity feed progress
+        $scope.activityMood = 0;                        // Activity feed mood
         
         // Private
         
@@ -79,7 +80,7 @@
           
           if ($scope.activityType === TYPE.PROGRESS) {
             // Handle setting the text for progress changes.
-            text = 'Changed progress from ' + $scope.task.progress + ' to ' + $scope.taskProgress;
+            text = 'Changed progress from ' + $scope.task.progress + ' to ' + $scope.activityProgress;
           } else if ($scope.activityType === TYPE.MOOD) {
             // Handle setting the text for status/mood changes.
             taskPropertyForValue = 'mood';
@@ -136,7 +137,8 @@
               // Awesome!
               init = true;
               // Get stuff
-              $scope.taskProgress = snapshot.progress;
+              $scope.activityProgress = snapshot.progress;
+              $scope.activityMood = snapshot.mood;
             });
           }
         });
