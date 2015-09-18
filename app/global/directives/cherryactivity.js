@@ -17,6 +17,7 @@
         
         var taskId = $routeParams.id;
         var loc = 'tasks/' + taskId + '/activites';
+        var init = false;
         
         // Constants
         
@@ -32,13 +33,13 @@
           MOOD: 3
         });
         
-        // Scope
+        // Directive scope
         
         $scope.activityType = TYPE.COMMENT;             // What type of thing are we posting?
         $scope.placeholderText = placeholder_comment;   // Display an appropriate placeholder
         $scope.transitioning = false;                   // Flag to enable/disable hover on badge selector                
         $scope.showSelections = false;                  // Flag to show/hide badge selections
-        $scope.currentProgress = 0;                     // Progress from parent task scope
+        $scope.taskProgress = 0;                        // Progress from parent task scope
         
         // Private
         
@@ -76,11 +77,9 @@
           
           var taskPropertyForValue = 'progress';
           
-          value = value || 0;
-          
           if ($scope.activityType === TYPE.PROGRESS) {
             // Handle setting the text for progress changes.
-            text = 'Changed progress from ' + $scope.task.progress + ' to ' + $scope.currentProgress;
+            text = 'Changed progress from ' + $scope.task.progress + ' to ' + $scope.taskProgress;
           } else if ($scope.activityType === TYPE.MOOD) {
             // Handle setting the text for status/mood changes.
             taskPropertyForValue = 'mood';
@@ -90,7 +89,8 @@
             return $scope.activities.$add(activity);  
           })
           .then(function () {
-            if (value) {
+            // Todo: potential race condition with parent task scope loading
+            if (value && $scope.task[taskPropertyForValue] !== value) {
               $scope.task[taskPropertyForValue] = value;
               return $scope.task.$save();
             } else {
@@ -99,6 +99,7 @@
           })
           .catch(function (err) {
             // Todo: log this
+            console.error(err);
           });          
         };
         
@@ -124,6 +125,21 @@
           $scope.activityType = aType;
           $scope.placeholderText = setPlaceholder(aType);
         }
+        
+        // Init
+        
+        $scope.$watch('task', function (t) {
+          // $scope.task alive?
+          if (t && !init) {
+            // Nice... ok, has the FirebaseObject loaded?
+            t.$loaded(function (snapshot) {
+              // Awesome!
+              init = true;
+              // Get stuff
+              $scope.taskProgress = snapshot.progress;
+            });
+          }
+        });
         
       }]
     };
