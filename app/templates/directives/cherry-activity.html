@@ -10,7 +10,7 @@
           <i class="icon pe-7s-comment" />
         </div>
       </div>
-
+      
       <div class="badge progress" ng-class="{selected: activityType === 2}" ng-click="toggleSelected(2)" ng-mouseenter="transitioning = false">
         <!-- Progress -->
         <div>
@@ -24,7 +24,14 @@
           <mood-icon mood="activityMood"></mood-icon>
         </div>
       </div>
-    
+      
+      <div class="badge media" ng-class="{selected: activityType === 4}" ng-click="toggleSelected(4)" ng-mouseenter="transitioning = false">
+        <!-- Upload media -->
+        <div>
+          <i class="icon pe-7s-upload" />
+        </div>
+      </div>
+
     </div>
 
     <div class="input-container">
@@ -52,6 +59,10 @@
       <!-- Status/Mood -->
       <div ng-if="a.type === 3">
         <mood-icon mood="a.value"></mood-icon>
+      </div>
+      <!-- Upload media -->
+      <div ng-if="a.type === 4">
+        <i class="icon pe-7s-upload" />
       </div>
       
     </div>
