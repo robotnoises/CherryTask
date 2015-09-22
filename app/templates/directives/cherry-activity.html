@@ -35,8 +35,9 @@
     </div>
 
     <div class="input-container">
-      <textarea ng-if="activityType !== 2" placeholder="{{placeholderText}}" ng-model="activity" eval-on-enter="addActivity(activity);activity = null;" />
+      <textarea ng-if="activityType === 0 || activityType === 3" placeholder="{{placeholderText}}" ng-model="activity" eval-on-enter="addActivity(activity);activity = null;" />
       <md-slider ng-hide="activityType !== 2" ng-model="activityProgress" min="0" max="100" aria-label="progress" eval-on-enter="addActivity(activity, activityProgress);activity = null;"></md-slider>
+      <div ng-if="activityType === 4" class="cherry-dropzone" cherry-dropzone></div>
     </div>
 
   </div>

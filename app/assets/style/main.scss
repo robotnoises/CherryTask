@@ -281,6 +281,53 @@ i.icon-jumbo {
     background-color: $brand-green;
     transition: width $transition-medium;
   }
+  
+  .media {
+    
+    .task-thumbnail {
+      display: inline-block;
+      height: 100px;
+      width: 100px;
+      overflow: hidden;
+      border: 2px solid $brand-black;
+      text-align: center;
+      margin-right: 5px;
+      
+      img {
+        height: 100%;
+      }
+    
+    }
+    
+  }
+}
+
+/* Dropzone */
+
+.cherry-dropzone {
+  position: relative;
+  background: $brand-white;
+  height: 100%;
+  width: 100%;
+  content: ' ';
+}
+
+.cherry-dragzone {
+  transition: background $transition-fast;
+  height: 100%;
+}
+
+.cherry-dropzone-over {
+  background: $brand-yellow;
+}
+
+.cherry-dropzone-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0%;
+  background-color: $brand-yellow;
 }
 
 /* Helpers */
