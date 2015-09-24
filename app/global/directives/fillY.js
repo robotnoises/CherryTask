@@ -1,9 +1,9 @@
 (function (angular) {
+  
   'use strict';
   
-  angular.module('cherry')
-  
-  .directive('fillY', function ($window) {
+  angular.module('cherry').directive('fillY', ['$window', function ($window) {
+    
     return function (scope, element, attrs) {
       
       var $w = angular.element($window);
@@ -50,6 +50,6 @@
       $w.bind('resize', resizeHandler);
 
     };
-  })
+  }])
     
 })(angular);
