@@ -73,6 +73,16 @@
         
       };
       
+      // Media
+      
+      var loc = taskId + '/media';
+      
+      $scope.media = {};
+      
+      taskService.get(loc, function(mediaItems) {
+        $scope.media = mediaItems;
+      });
+      
     }]);
 
 })(angular);

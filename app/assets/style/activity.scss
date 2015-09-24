@@ -198,6 +198,15 @@
   }
 }
 
+// Upload media
+
+.activity,
+.activity-input {
+  .badge.media {
+    background-color: $brand-yellow;
+  }
+}
+
 // Events
 
 .activity,

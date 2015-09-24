@@ -30,7 +30,8 @@
           COMMENT: 0,
           EVENT: 1,
           PROGRESS: 2,
-          MOOD: 3
+          MOOD: 3,
+          MEDIA: 4
         });
         
         // Directive scope
@@ -116,6 +117,8 @@
             return 'progress';
           } else if (aType === TYPE.MOOD) {
             return 'status';
+          } else if(aType === TYPE.MEDIA) {
+            return 'media';
           } else {
             return 'cherry;'
           }
