@@ -67,7 +67,7 @@ var config = function (grunt) {
             src: [
               // main module
               'app/app.js',
-              // any additional lib files not managed by bower
+              // any additional lib files not managed by bower or npm
               'app/assets/js/lib/*.js',
               // global controllers/directives/services
               'app/global/*.js',
@@ -126,6 +126,23 @@ var config = function (grunt) {
       }
     },
     
+    
+    // Copy files
+    copy: {
+      production: {
+        files: [
+          // includes files within path
+          { 
+            expand: true, 
+            src: ['app/assets/style/lib/*.css'], 
+            dest: 'app/dist/assets/style/lib/', 
+            flatten: true, 
+            filter: 'isFile'
+          },
+        ],
+      },
+    },
+    
     // Test runner
     karma: {
       unit: {
@@ -142,11 +159,12 @@ var config = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-karma');
   
   // Register custom tasks
   grunt.registerTask('build-dev', ['sass', 'jade:dev']);
-  grunt.registerTask('build-prod', ['sass', 'cssmin:production', 'jade:production', 'uglify:production']);
+  grunt.registerTask('build-prod', ['sass', 'cssmin:production', 'jade:production', 'uglify:production', 'copy:production']);
     
 };
 
