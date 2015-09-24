@@ -11,8 +11,8 @@
       template: '<div class="cherry-dragzone" nv-file-over over-class="cherry-dropzone-over" nv-file-drop uploader="fileUploader">' +
         '<div class="cherry-dropzone-progress" ng-style="{height: progress.formatted()}"></div>' + '</div>',
       
-      controller: ['$scope', 'FileUploader', 'imageService', 'apiService',
-        function ($scope, FileUploader, imageService, api) {
+      controller: ['$scope', 'FileUploader', 'mediaService', 'apiService',
+        function ($scope, FileUploader, mediaService, api) {
 
           $scope.progress = {
             value: 0,
@@ -23,20 +23,23 @@
           
           $scope.fileUploader = new FileUploader();
           
+          var taskId = $scope.task.id;
+          var projectId = $scope.task.projectId;
+          
           // Private
           
           var loc = 'tasks/' + $scope.task.id + '/media/';
           
-          // This is all extremely temporary
+          // This is all extremely temporary, should prob be abstracted into the media service
           function saveImage(imageData) {
             
             var data = {
-              type: 'image',
-              name: imageData.file_name,
+              type: imageData.type,
+              name: imageData.name,
               timestamp: new Date().getDate(),
               urls: {
-                full: imageData.url.full,
-                thumbnail: imageData.url.small
+                full: imageData.url,
+                thumbnail: imageData.url // Todo
               }
             };
             
@@ -66,7 +69,7 @@
             // file.upload();
             
             // Todo: This is probably temporary
-            imageService.upload(file._file).then(function (response) {
+            mediaService.upload(file._file, projectId, taskId).then(function (response) {
               if (response.status === 200) {
                 saveImage(response.data);
               } else {

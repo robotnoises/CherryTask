@@ -11,6 +11,8 @@
     
     .constant('AVATAR_PLACEHOLDER', 'placeholder.png')
     
+    .constant('S3_BUCKET', 'cherrytask')
+    
     .constant('FBURL', 'https://09sdfgs.firebaseio.com/');
   
 })(angular);
