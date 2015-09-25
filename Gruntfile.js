@@ -126,7 +126,6 @@ var config = function (grunt) {
       }
     },
     
-    
     // Copy files
     copy: {
       production: {
@@ -134,8 +133,8 @@ var config = function (grunt) {
           // includes files within path
           { 
             expand: true, 
-            src: ['app/assets/style/lib/*.css'], 
-            dest: 'app/dist/assets/style/lib/', 
+            src: ['node_modules/bricks-css/dist/bricks.min.css', 'node_modules/doorman-js/dist/doorman.min.js'], 
+            dest: 'app/dist/assets/', 
             flatten: true, 
             filter: 'isFile'
           },
