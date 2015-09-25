@@ -65,14 +65,37 @@
         });
       });
     };
+    
+    var _remove = function (loc) {
+      
+      var d = $q.defer();
+      
+      getTenant(function (tenant) {
+        
+        var ref = fbutil.ref(tenant, loc);
+        
+        ref.remove(function (error) {
+          if (error) {
+            d.reject(error);
+          } else {
+            d.resolve('Removed ' + loc);
+          }
+        })
+        
+      });
+      
+      return d.promise;
+    };
 
     pub.list = _getList;
     pub.listBy = _getListBy;
     pub.get = _getSingle;
     pub.create = _create;
     pub.update = _update;
+    pub.remove = _remove;
 
     return pub;
+    
   }]);
 
 })(angular);
