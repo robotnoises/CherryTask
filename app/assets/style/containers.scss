@@ -42,6 +42,43 @@
   vertical-align: top;
 }
 
+.card-menu {
+  display: none;
+  position: absolute;
+  top: $card-dimensions + 1px;
+  right: 0;
+  z-index: 1;
+  max-width: $card-dimensions;
+  
+  @include active-card();
+  
+  div.card-menu-item {
+    height: 2.5em;
+    line-height: 2.5em;
+    font-size: 0.8em;
+    padding: 0px 10px;
+    cursor: pointer;
+    
+    i {
+      margin-right: 5px;
+    }
+  }
+  
+  div.card-menu-item:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  div.card-menu-item:hover,
+  div.card-menu-item:active {
+    background-color: $brand-grey;
+  }
+}
+
+
+.card-menu.show {
+  display: block;
+}
+
 /* Sign in */
 
 .signin-container {

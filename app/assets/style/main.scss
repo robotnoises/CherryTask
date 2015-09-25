@@ -358,6 +358,7 @@ i.icon-jumbo {
 }
 
 .subtle:hover,
-.subtle:active {
+.subtle:active,
+.subtle.selected {
   opacity: 1;
 }

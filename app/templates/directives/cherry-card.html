@@ -37,7 +37,7 @@
     </div>
     
     <!-- Settings -->
-    <i class="icon icon-lg pe-7s-config float-right subtle" title="Edit Settings for {{card.title}}'"></i>
+    <i class="icon icon-lg pe-7s-config float-right subtle" title="Edit Settings for {{card.title}}'" ng-class="{selected: menuShowing}" ng-click="toggleShowMenu()"></i>
     
     <!-- Reports -->
   	<i class="icon icon-lg pe-7s-graph float-right subtle" title="View Reports for '{{card.title}}'"></i>
@@ -48,6 +48,31 @@
     </div>
     
   	<!--<i class="icon icon-lg pe-7s-link float-right subtle" title="Copy link to '{{card.title}}'"></i>-->
+  </div>
+
+  <!-- Menu for settings -->
+  <div class="card-menu" ng-class="{show: menuShowing}">
+    
+    <div class="card-menu-item">
+      <i class="icon pe-7s-look"></i>
+      View {{card.title}}?
+    </div>
+    
+    <div class="card-menu-item">
+      <i class="icon pe-7s-bell"></i>
+      Subscribe to {{card.title}}?
+    </div>
+    
+    <div class="card-menu-item">
+      <i class="icon pe-7s-share"></i>
+      Share {{card.title}}?
+    </div>
+    
+    <div class="card-menu-item">
+      <i class="icon pe-7s-trash"></i>
+      Remove {{card.title}}?
+    </div>
+    
   </div>
 
 </div>

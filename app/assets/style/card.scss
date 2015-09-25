@@ -2,35 +2,9 @@
 
 @import 'vars';
 
-@mixin active () {
-  background: $brand-white;
-  // box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
-  
-  
-  background: $brand-white;
-  
-  -webkit-box-shadow: 0 0 0 1px rgba(14,41,57,0.09),0 1px 3px rgba(14,41,57,0.33),inset 0 -1px 2px rgba(14,41,57,0.11);
-  -moz-box-shadow: 0 0 0 1px rgba(14,41,57,0.09),0 1px 3px rgba(14,41,57,0.33),inset 0 -1px 2px rgba(14,41,57,0.11);
-  -ms-box-shadow: 0 0 0 1px rgba(14,41,57,0.09),0 1px 3px rgba(14,41,57,0.33),inset 0 -1px 2px rgba(14,41,57,0.11);
-  -o-box-shadow: 0 0 0 1px rgba(14,41,57,0.09),0 1px 3px rgba(14,41,57,0.33),inset 0 -1px 2px rgba(14,41,57,0.11);
-  box-shadow: 0 0 0 1px rgba(14,41,57,0.09),0 1px 3px rgba(14,41,57,0.33),inset 0 -1px 2px rgba(14,41,57,0.11);
-  
-  // border: 2px solid $brand-darkgrey;
-  // border-top: 2px solid #fff;
-  // border-right: 1px solid rgba(0,0,0,0.1);
-  // border-bottom: 1px solid rgba(0,0,0,0.3);
-  // border-left: 2px solid #fff;
-}
-
-@mixin card () {
-  height: $card-dimensions;
-  width: $card-dimensions;
-  margin: $card-margins;
-}
-
 .card {
   @include card();
-  @include active();
+  @include active-card();
 }
 
 .card .card-header,
@@ -138,5 +112,5 @@
 
 .card.placeholder:hover,
 .card.placeholder:active {
-  @include active();
+  @include active-card();
 }
