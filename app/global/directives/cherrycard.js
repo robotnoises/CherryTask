@@ -26,7 +26,12 @@
         };
         
         $scope.toggleShowMenu = function (force) {
+          
           $scope.menuShowing = force || !$scope.menuShowing;
+          
+          if ($scope.removeConfirming) {
+            $scope.toggleConfirmRemove(false);  
+          }
         };
         
         // Menu Actions
