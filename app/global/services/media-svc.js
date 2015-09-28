@@ -2,7 +2,7 @@
   
   'use strict';
   
-  angular.module('cherry')
+  angular.module('cherry.global')
   
   .factory('mediaService', ['$q', 'fbutil', '$firebaseObject', 'cherryAuth', 'apiService', 'S3_BUCKET', function ($q, fbutil, $firebaseObject, cherryAuth, api, bucket) {
     

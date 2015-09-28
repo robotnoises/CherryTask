@@ -2,7 +2,7 @@
   
   'use strict';
   
-  angular.module('cherry')
+  angular.module('cherry.global')
   
   .factory('activityService', ['$q', 'cherryAuth', 'datetimeService', function ($q, cherryAuth, datetime) {
     
