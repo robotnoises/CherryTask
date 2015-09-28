@@ -40,12 +40,23 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start', class='na
   div(class='card-menu nav arrow-up' ng-class='{show: menuShowing}')
     // div(class='card-menu-item header') Menu 
     div(class='card-menu-item')
-      a(href='#/account') Profile Settings
-    div(class='card-menu-item') Application Settings
+      a(href='#/account')
+        //i(class='icon pe-7s-user')
+        span Profile Settings
+    div(class='card-menu-item')
+      a(href='#/settings')
+        //i(class='icon pe-7s-edit')
+        span Application Settings
     // div(class='divider')
-    div(class='card-menu-item') Report an Issue
+    div(class='card-menu-item')
+      a(href='')
+        //i(class='icon pe-7s-speaker')
+        span Report an Issue
     // div(class="divider")
-    div(class='card-menu-item') Sign Out
+    div(class='card-menu-item')
+      a(href='')
+        //i(class='icon pe-7s-power')
+        span Sign Out
 
 // Slide-out Menu
 div(layout='row', class='slide-out-menu' ng-class='{ show : slideoutShowing }')
