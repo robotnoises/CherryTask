@@ -4,7 +4,7 @@
 
   angular.module('cherry.global')
 
-  .controller('breadcrumbController', ['$scope', '$location', 'breadcrumbService',
+  .controller('navController', ['$scope', '$location', 'breadcrumbService',
     function ($scope, $location, breadcrumbService) {
       
       var getLocation = function () {
@@ -12,12 +12,17 @@
         return path.filter(function (e) { return e; })[0];
       };
       
-      $scope.showMenu = false;
+      $scope.slideoutShowing = false;
+      $scope.menuShowing = false;
       $scope.breadcrumbs = breadcrumbService.breadcrumbs;
       
-      $scope.toggleMenu = function () {
+      $scope.toggleMenu = function (force) {
+        $scope.menuShowing = force || !$scope.menuShowing;
+      };      
+      
+      $scope.toggleSlideout = function (force) {
         // TODO: get data for nav menu
-        $scope.showMenu = !$scope.showMenu;
+        $scope.slideoutShowing = force || !$scope.slideoutShowing;
       };
       
       $scope.$on('$routeChangeSuccess', function (e) {

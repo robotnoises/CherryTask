@@ -56,7 +56,7 @@
     height: 2.5em;
     line-height: 2.5em;
     font-size: 0.8em;
-    padding: 0px 3px 0 10px;
+    padding: 0 10px;
     cursor: pointer;
     
     transition: background $transition-fast, color $transition-fast;
@@ -75,6 +75,36 @@
   div.card-menu-item:hover,
   div.card-menu-item:active {
     background-color: $brand-grey;
+  }
+  
+  div.card-menu-item.header {
+    background-color: $brand-black;
+    color: $brand-white;
+    cursor: default;
+  }
+  
+  .divider {
+    width: 100%;
+    content: ' ';
+    height: 2px;
+    background: $brand-grey;
+  }
+
+}
+
+.card-menu.nav {
+  right: 5px;
+  top: 70px;
+  max-width: none;
+    
+  div.card-menu-item {
+    font-size: 1.25em;
+    padding: 0 16px;
+  }
+  
+  a {
+    font-weight: 400;
+    color: $brand-black;
   }
 }
 

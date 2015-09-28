@@ -1,4 +1,4 @@
-div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start', class='navigation fixed brand-black', ng-controller='breadcrumbController')
+div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start', class='navigation fixed brand-black', ng-controller='navController')
   div(class='menu-item')
     a(href='#/' class='menu-link') CherryTask
   div(class='menu-separator')
@@ -6,7 +6,7 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start', class='na
       ng-mouseenter='homeHover = true',
       ng-mouseleave='homeHover = false',
       ng-class='homeHover ? "pe-7s-angle-down" : "pe-7s-angle-right"',
-      ng-click='toggleMenu()', 
+      ng-click='toggleSlideout()', 
       class='icon white pe-7s-angle-right')
   div(ng-if='breadcrumbs.project.showing' class='menu-item')
     a(href='#/projects/{{breadcrumbs.project.value.id}}' class='menu-link') {{breadcrumbs.project.value.title}}
@@ -20,7 +20,7 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start', class='na
       ng-mouseenter='projHover = true',
       ng-mouseleave='projHover = false',
       ng-class='projHover ? "pe-7s-angle-down" : "pe-7s-angle-right"',
-      ng-click='toggleMenu()',  
+      ng-click='toggleSlideout()',  
       class='icon white pe-7s-angle-right')
   div(ng-if='breadcrumbs.task.showing' class='menu-item')
     a(href='#/tasks/{{breadcrumbs.task.value.id}}' class='menu-link') {{breadcrumbs.task.value.title}}
@@ -32,10 +32,21 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start', class='na
   div(ng-if='signedIn', class='menu-item user')
     a(href='', class='menu-icon')
       i(class='icon icon-lg pe-7s-bell white')
-    a(href='#/account', class='menu-icon') 
-      i(class='icon icon-lg pe-7s-config white')
-    a(href='', class='menu-icon')
+    a(href='', class='menu-icon' ng-click='toggleMenu()')
       div(class="avatar-nav")
         img(src, cherry-avatar)
-div(layout='row', class='slide-out-menu' ng-class='{ show : showMenu }')
+  
+  // Settings Menu
+  div(class='card-menu nav arrow-up' ng-class='{show: menuShowing}')
+    // div(class='card-menu-item header') Menu 
+    div(class='card-menu-item')
+      a(href='#/account') Profile Settings
+    div(class='card-menu-item') Application Settings
+    // div(class='divider')
+    div(class='card-menu-item') Report an Issue
+    // div(class="divider")
+    div(class='card-menu-item') Sign Out
+
+// Slide-out Menu
+div(layout='row', class='slide-out-menu' ng-class='{ show : slideoutShowing }')
   div
