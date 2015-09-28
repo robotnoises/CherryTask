@@ -358,6 +358,24 @@ i.icon-jumbo {
 }
 
 .subtle:hover,
-.subtle:active {
+.subtle:active,
+.subtle.selected {
   opacity: 1;
+}
+
+.danger-zone {
+  background-color: $brand-red !important;
+  color: $brand-white !important;
+  font-weight: bold;
+}
+
+.choice {
+  background: rgba(0,0,0,0.1);
+  border-radius: 2px;
+  padding: 0 3px;
+  transition: background $transition-fast;
+}
+
+.choice:hover {
+  background: rgba(0,0,0,0.2);
 }
