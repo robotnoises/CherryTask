@@ -374,8 +374,35 @@ i.icon-jumbo {
   border-radius: 2px;
   padding: 0 3px;
   transition: background $transition-fast;
+  margin-left: 3px;
 }
 
 .choice:hover {
   background: rgba(0,0,0,0.2);
+}
+
+.arrow-up:before {
+	position: absolute;
+  top: -12px;
+  right: 14px;
+  z-index: 2;
+  content: ' ';
+  width: 0; 
+	height: 0; 
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-bottom: 12px solid $brand-white;
+}
+
+.arrow-down:after {
+  position: absolute;
+  bottom: -12px;
+  right: 14px;
+  z-index: 2;
+  content: ' ';
+  width: 0; 
+	height: 0; 
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 12px solid $brand-white;
 }

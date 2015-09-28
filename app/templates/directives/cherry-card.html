@@ -51,7 +51,7 @@
   </div>
 
   <!-- Menu for settings -->
-  <div class="card-menu" ng-class="{show: menuShowing}">
+  <div class="card-menu arrow-up" ng-class="{show: menuShowing}">
     
     <div class="card-menu-item">
       <i class="icon pe-7s-look"></i>
@@ -71,7 +71,7 @@
     <div class="card-menu-item" ng-click="toggleConfirmRemove()" ng-class="{'danger-zone': removeConfirming}">
       <i class="icon pe-7s-trash"></i>
       <span ng-if="!removeConfirming">Remove {{card.title}}?</span>
-      <span ng-if="removeConfirming"><strong>You sure?</strong> <span ng-click="remove()" class="choice">Yes!</span> <span ng-click="toggleShowMenu()" class="choice">No, sorry.</span> </span>
+      <span ng-if="removeConfirming"><strong>You sure?</strong> <span ng-click="toggleShowMenu()" class="choice float-right">No, sorry.</span> <span ng-click="remove()" class="choice float-right">Yes!</span></span>
     </div>
     
   </div>

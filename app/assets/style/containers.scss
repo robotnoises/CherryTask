@@ -45,7 +45,7 @@
 .card-menu {
   display: none;
   position: absolute;
-  top: $card-dimensions + 1px;
+  top: $card-dimensions + 5px;
   right: 0;
   z-index: 1;
   max-width: $card-dimensions;
@@ -56,11 +56,13 @@
     height: 2.5em;
     line-height: 2.5em;
     font-size: 0.8em;
-    padding: 0px 10px;
+    padding: 0px 3px 0 10px;
     cursor: pointer;
     
     transition: background $transition-fast, color $transition-fast;
     
+    @include ellipsis;
+        
     i {
       margin-right: 5px;
     }

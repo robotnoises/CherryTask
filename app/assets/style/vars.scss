@@ -47,6 +47,12 @@ $cherry-padding: 10px;
   margin: $card-margins;
 }
 
+@mixin ellipsis () {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 
 @mixin active-card () {
   background: $brand-white;
