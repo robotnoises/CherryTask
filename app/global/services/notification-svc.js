@@ -27,13 +27,17 @@
       }
       
       if (Array.isArray(uids)) {
-        _(uids).forEach(function (uid, index, array) {
+        
+        _.forEach(uids, function (uid) {
+          
           // Create a ref for each user
           var userNotifications = ref.child(uid).child('notifications');
           var promise = userNotifications.push(notification);
+          
           // Push that promise onto the array of promises
-          promises.push(ref.push(promise));
+          promises.push(promise);
         });
+        
       } else {
         d.reject(new TypeError('parameter uids is not an Array.'));
       }
