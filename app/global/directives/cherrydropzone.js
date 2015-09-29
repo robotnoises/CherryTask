@@ -44,31 +44,13 @@
             };
             
             api.create(loc, data, function () {
-              console.log('Image uploaded!');
+              // console.log('Image uploaded!');
             })
           }
           
-          // Todo: once I use a better service 
-          
-          // $scope.fileUploader = new FileUploader({
-          //   url: url,
-          //   alias: 'files',
-          //   headers: {
-          //     'Content-Type': undefined,
-          //     'Accept': 'application/json'
-          //   }
-          // });
-          
           $scope.fileUploader.onAfterAddingFile = function (file) {
-            // console.log(file);
-
-            // var fd = new FormData();
-            // fd.append('files', file._file);
             
-            // file.formData.push(fd);
-            // file.upload();
-            
-            // Todo: This is probably temporary
+            // Wraps an managed upload from the AWS SDK
             mediaService.upload(file._file, projectId, taskId).then(function (response) {
               if (response.status === 200) {
                 saveImage(response.data);
@@ -80,27 +62,7 @@
               console.log(ex);
             });
           };
-          
-          // $scope.fileUploader.onErrorItem = function(fileItem, response, status, headers) {
-          //   console.info('onErrorItem', fileItem, response, status, headers);
-          // };
-          
-          // $scope.fileUploader.onProgressAll = function (progress) {
-          //   $scope.progress.value = progress || 0;
-          // };
-          
-          // $scope.fileUploader.onProgressItem = function (fileItem, progress) {
-          //   console.info('onProgressItem', fileItem, progress);
-          // };
-          
-          // $scope.fileUploader.onSuccessItem = function (fileItem, response, status, headers) {
-          //   console.info('onSuccessItem', fileItem, response, status, headers);
-          // };
-          
-          $scope.fileUploader.onCompleteAll = function () {
-            console.log('done');
-          };
-          
+           
           // Todo: this is kinda dumb
           angular.element('.cherry-dropzone').bind('dragleave', function (e) {
             angular.element(e.target).removeClass('cherry-dropzone-over');

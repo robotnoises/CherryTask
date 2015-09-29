@@ -46,7 +46,7 @@
       return d.promise;
     };
     
-    // Format a Notification object
+    // Notification object factory
     var _create = function (what, where) {
       
       var d = $q.defer();

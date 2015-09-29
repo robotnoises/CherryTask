@@ -68,11 +68,11 @@
         // Todo: better name...
         function getNotificationWhat() {
           if ($scope.activityType === TYPE.COMMENT) {
-            return 'commented on ' + $scope.task.title;
+            return 'commented on: ' + $scope.task.title;
           } else if ($scope.activityType === TYPE.MOOD) {
-            return 'updated the status of ' + $scope.task.title;
+            return 'updated the status for: ' + $scope.task.title;
           } else if ($scope.activityType === TYPE.PROGRESS) {
-            return 'updated the progress of ' + $scope.task.title;
+            return 'changed the progress of: ' + $scope.task.title + ' to: ' + $scope.task.progress + '%';
           } else if ($scope.activityType === TYPE.MEDIA) {
             return 'added some images to ' + $scope.task.title;
           }
