@@ -27,6 +27,17 @@
         <p ng-if="isAssigned()">
           <span class="avatar-sm avatar-inline"><img src="" cherry-avatar="{{task.assignee}}"></span> is working hard on this task.
         </p>
+        
+        <p>
+          <i class="icon pe-7s-star icon-md watch-icon" ng-class="{watching: currentUserIsWatching}" ng-click="toggleWatch()" />
+        </p>
+        
+        <h5>Watching this task</h5>
+        
+        <div ng-repeat="w in task.watchers">
+          <span>&bull;</span>
+        </div>
+        
         <div class="media">
           <div class="task-thumbnail" ng-repeat="m in media">
             <img src="{{m.urls.thumbnail}}" />

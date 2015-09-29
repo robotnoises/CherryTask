@@ -13,7 +13,7 @@
       
       // Private
       function getAuth() {
-        _currentAuth = _currentAuth || Auth.$getAuth();
+        _currentAuth = _currentAuth || Auth.$getAuth(); // .getAuth() is synchronous
         return _currentAuth;
       }
       
