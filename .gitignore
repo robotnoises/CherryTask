@@ -59,6 +59,7 @@ $RECYCLE.BIN/
 
 .settings/
 .vscode/
+typings/
 
 #############
 # Secure Stuff
