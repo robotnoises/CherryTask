@@ -7,7 +7,7 @@
   .directive('cherryAvatar', ['$parse', 'cherryAuth', 'AVATAR_PLACEHOLDER', function($parse, cherryAuth, avatarPlaceholder) {
   return function(scope, element, attrs) {
         
-    var uid = $parse(attrs.id)(scope);
+    var uid = $parse(attrs.uid)(scope);
     var path = 'assets/images/avatars/';
 
     attrs.$set('src', path + avatarPlaceholder);

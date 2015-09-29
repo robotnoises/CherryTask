@@ -25,7 +25,7 @@
         <p ng-hide="isAssigned()"><a ng-click="assign()">Assign yourself?</a></p>
         <!-- Assignee -->
         <p ng-if="isAssigned()">
-          <span class="avatar-sm avatar-inline"><img src="" cherry-avatar="{{task.assignee}}"></span> is working hard on this task.
+          <span class="avatar-sm avatar-inline"><img src="" cherry-avatar uid="{{'task.assignee'}}"></span> is working hard on this task.
         </p>
         
         <p>
