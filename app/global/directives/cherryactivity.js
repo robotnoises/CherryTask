@@ -76,7 +76,7 @@
           } else if ($scope.activityType === TYPE.MEDIA) {
             return 'added some images to ' + $scope.task.title;
           }
-          // Todo event?
+          // Todo generic event?
         }
         
         function notify() {
@@ -104,7 +104,7 @@
           
           if ($scope.activityType === TYPE.PROGRESS) {
             // Handle setting the text for progress changes.
-            text = 'Changed progress from ' + $scope.task.progress + ' to ' + $scope.activityProgress;
+            text = 'Changed progress from ' + $scope.task.progress + '% to ' + $scope.activityProgress + '%';
           } else if ($scope.activityType === TYPE.MOOD) {
             // Handle setting the text for status/mood changes.
             taskPropertyForValue = 'mood';
@@ -112,7 +112,7 @@
           
           activity.make(text, $scope.activityType, value).then(function (activity) {
             // Add the activity
-            return $scope.activities.$add(activity);            
+            return $scope.activities.$add(activity);
           }).then(function () {
             // Todo: potential race condition with parent task scope loading
             if (value && $scope.task[taskPropertyForValue] !== value) {
