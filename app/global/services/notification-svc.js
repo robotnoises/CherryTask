@@ -22,10 +22,6 @@
       var d = $q.defer();
       var promises = [];
       
-      function finish() {
-        d.resolve();
-      }
-      
       if (Array.isArray(uids)) {
         
         _.forEach(uids, function (uid) {
@@ -43,7 +39,9 @@
       }
       
       // Resolve when everything is settled
-      $q.all(promises).then(finish);
+      $q.all(promises).then(function () {
+        d.resolve();
+      });
       
       return d.promise;
     };
@@ -63,13 +61,18 @@
       
       // Get current user
       cherryAuth.get().then(function (a) {
+        
         // Add the current user
-        notification.who = a.uid;   
+        notification.who = a.uid;
+           
         // Resolve
         d.resolve(notification);
+        
       }).catch(function (err) {
+        
         // Todo: log this
         d.reject(err);
+        
       });
       
       return d.promise;

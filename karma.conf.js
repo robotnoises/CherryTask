@@ -5,6 +5,7 @@ module.exports = function (config) {
     basePath : './',
 
     files : [
+      
       // Dependencies
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-animate/angular-animate.js',
@@ -17,10 +18,13 @@ module.exports = function (config) {
       'app/bower_components/angularfire/dist/angularfire.js',
       'app/bower_components/firebase/firebase.js',
       'app/bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js',
-      'app/bower_compenents/angular-file-upload/dist/angular-file-upload.min.js',
+      'app/bower_components/angular-file-upload/dist/angular-file-upload.min.js',
+      'app/bower_components/aws-sdk-js/dist/aws-sdk.js',
+      'app/bower_components/lodash/lodash.min.js',
       
       // Test lib
       'tests/lib/*.js',
+      
       // App
       'app/app.js',
       'app/global/*.js',
@@ -28,6 +32,7 @@ module.exports = function (config) {
       'app/modules/*.js',
       'app/modules/**/*.js',
       'app/modules/**/**/*.js',
+      
       // Unit Tests
       'tests/unit-tests/*.js'
     ],
