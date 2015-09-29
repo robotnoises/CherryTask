@@ -20,12 +20,18 @@
       // Public
      
       var _get = function (uid) {
+        
         var d = $q.defer();
         var id = uid || getAuth().uid;
         var ref = fbutil.ref('users', id);
         
         ref.once('value', function (snapshot) {
-          return d.resolve(snapshot.val());
+          // Get current user
+          var auth = snapshot.val();
+          // Pop-on that uid, just for fun
+          auth.uid = id;
+          // Resolve
+          return d.resolve(auth);
         });
         
         return d.promise;

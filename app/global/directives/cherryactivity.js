@@ -12,8 +12,8 @@
         task: '='
       },
       templateUrl: 'templates/directives/cherry-activity.html',
-      controller: ['$scope', '$routeParams', '$timeout', 'fbutil', 'apiService', 'activityService',
-        function activityController ($scope, $routeParams, $timeout, fbutil, api, activity) {
+      controller: ['$scope', '$routeParams', '$location', '$timeout', 'fbutil', 'apiService', 'activityService', 'notificationService',
+        function activityController ($scope, $routeParams, $location, $timeout, fbutil, api, activity, notification) {
         
         var taskId = $routeParams.id;
         var loc = 'tasks/' + taskId + '/activites';
@@ -65,6 +65,29 @@
           }
         }
         
+        // Todo: better name...
+        function getNotificationWhat() {
+          if ($scope.activityType === TYPE.COMMENT) {
+            return 'commented on ' + $scope.task.title;
+          } else if ($scope.activityType === TYPE.MOOD) {
+            return 'updated the status of ' + $scope.task.title;
+          } else if ($scope.activityType === TYPE.PROGRESS) {
+            return 'updated the progress of ' + $scope.task.title;
+          } else if ($scope.activityType === TYPE.MEDIA) {
+            return 'added some images to ' + $scope.task.title;
+          }
+          // Todo event?
+        }
+        
+        function notify() {
+          // create a notification
+          notification.create(getNotificationWhat(), $location.path()).then(function (n) {
+            return notification.pushTo($scope.task.watchers, n);
+          }).catch(function (err) {
+            console.log(err);
+          });
+        }
+        
         // Get all the activities
         
         api.list(loc, 10).then(function (activities) {
@@ -88,9 +111,9 @@
           }
           
           activity.make(text, $scope.activityType, value).then(function (activity) {
-            return $scope.activities.$add(activity);  
-          })
-          .then(function () {
+            // Add the activity
+            return $scope.activities.$add(activity);            
+          }).then(function () {
             // Todo: potential race condition with parent task scope loading
             if (value && $scope.task[taskPropertyForValue] !== value) {
               $scope.task[taskPropertyForValue] = value;
@@ -98,8 +121,9 @@
             } else {
               return;
             }
-          })
-          .catch(function (err) {
+          }).then(function () {
+            return notify();
+          }).catch(function (err) {
             // Todo: log this
             console.error(err);
           });          
@@ -133,13 +157,13 @@
         // Init
         
         $scope.$watch('task', function (t) {
-          // $scope.task alive?
+          // Is $scope.task alive?
           if (t && !init) {
             // Nice... ok, has the FirebaseObject loaded?
             t.$loaded(function (snapshot) {
               // Awesome!
               init = true;
-              // Get stuff
+              // Set stuff
               $scope.activityProgress = snapshot.progress;
               $scope.activityMood = snapshot.mood;
             });
