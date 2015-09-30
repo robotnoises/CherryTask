@@ -9,7 +9,7 @@
     return {
       restrict: 'E',
       replace: true,
-      template: '<div class="card-menu notifications arrow-up"><div ng-repeat="n in notifications"><div class="card-menu-item">{{n.what}}</div></div></div>',
+      template: '<div class="card-menu notifications arrow-up"><div ng-repeat="n in notifications"><div class="card-menu-item">{{n.data.what}}</div></div></div>',
       
       link: function (scope, el, attr) {
         

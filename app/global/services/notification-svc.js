@@ -21,14 +21,14 @@
       
       var d = $q.defer();
       var promises = [];
-      
+            
       if (Array.isArray(uids)) {
         
         _.forEach(uids, function (uid) {
           
           // Create a ref for each user
-          var userNotifications = ref.child(uid).child('notifications');
-          var promise = userNotifications.push(notification);
+          var userNotifications = ref.child(uid).child('notifications').push();
+          var promise = userNotifications.setWithPriority(notification, -notification.priority);
           
           // Push that promise onto the array of promises
           promises.push(promise);
@@ -50,20 +50,25 @@
     var _create = function (what, where) {
       
       var d = $q.defer();
+      var now = new Date().getTime();
       
       // Model for a notification
       var notification = {
-        who: '',                    // Who is responsible for the action
-        what: what,                 // What kind of notification is this?
-        where: where,               // Where did this originate?
-        when: new Date().getTime()  // When did this get pushed?
+        data: {
+          who: '',        // Who is responsible for the action
+          what: what,     // What kind of notification is this?
+          where: where,   // Where did this originate?
+          when: now       // When did this get pushed?
+        },
+        read: false,      // Unread by default
+        priority: now     // Sort queries
       }
       
       // Get current user
       cherryAuth.get().then(function (a) {
         
         // Add the current user
-        notification.who = a.uid;
+        notification.data.who = a.uid;
            
         // Resolve
         d.resolve(notification);
