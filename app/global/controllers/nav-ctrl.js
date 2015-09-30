@@ -14,11 +14,16 @@
       
       $scope.slideoutShowing = false;
       $scope.menuShowing = false;
+      $scope.notificationsShowing = false;
       $scope.breadcrumbs = breadcrumbService.breadcrumbs;
       
       $scope.toggleMenu = function (force) {
         $scope.menuShowing = force || !$scope.menuShowing;
-      };      
+      };
+      
+      $scope.toggleNotifications = function (force) {
+        $scope.notificationsShowing = force || !$scope.notificationsShowing;
+      };
       
       $scope.toggleSlideout = function (force) {
         // TODO: get data for nav menu

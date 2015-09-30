@@ -92,15 +92,8 @@
 
 }
 
-.card-menu.nav {
-  right: 5px;
-  top: 70px;
+@mixin card-large () {
   max-width: none;
-    
-  div.card-menu-item {
-    font-size: 1.25em;
-    padding: 0 16px;
-  }
   
   a {
     font-weight: 400;
@@ -111,6 +104,31 @@
     font-weight: 700;
     margin-right: 12px;
   }
+  
+}
+
+.card-menu.nav {
+  top: 70px;
+  right: 5px;
+
+  div.card-menu-item {
+    font-size: 1.25em;
+    padding: 0 16px;
+  }
+  
+  @include card-large();
+}
+
+.card-menu.notifications {
+  top: 70px;  
+  right: 46px;
+  
+  div.card-menu-item {
+    font-size: 1em;
+    padding: 0 12px;
+  }
+  
+  @include card-large();
 }
 
 .card-menu.show {

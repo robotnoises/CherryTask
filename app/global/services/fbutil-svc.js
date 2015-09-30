@@ -2,8 +2,11 @@
 // a simple wrapper on Firebase and AngularFire to simplify deps and keep things DRY
 angular.module('firebase.utils', ['firebase', 'cherry.config'])
    .factory('fbutil', ['$rootScope', '$window', 'FBURL', '$q', function($rootScope, $window, FBURL, $q) {
+      
       'use strict';
-    
+      
+      // Private
+      
       function firebaseRef(path) {
         var ref = new $window.Firebase(FBURL);
         var args = Array.prototype.slice.call(arguments);
