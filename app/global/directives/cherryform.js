@@ -14,7 +14,7 @@
         var getFormType = function (uri) {
           var $deferred = $q.defer();
           
-          if (uri == '') {
+          if (uri === '') {
             $deferred.resolve({ key: 'project', apiLoc: 'projects/' });
           } else if (uri == 'projects' ) {
             $deferred.resolve({ key: 'task', apiLoc: 'tasks/', projectId: $routeParams.id });
@@ -88,7 +88,7 @@
             // Todo
           }).catch(function (err) {
             console.error(err);
-          })
+          });
             
           reset();
           

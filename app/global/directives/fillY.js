@@ -50,6 +50,6 @@
       $w.bind('resize', resizeHandler);
 
     };
-  }])
+  }]);
     
 })(angular);

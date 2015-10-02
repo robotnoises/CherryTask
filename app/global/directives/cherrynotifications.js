@@ -30,9 +30,9 @@
           
         }).catch(function (err) {
           console.error(err);
-        })
+        });
       }
-    }
+    };
   }]);
   
-})(angular, _)
+})(angular, _);

@@ -32,7 +32,7 @@
       
       $scope.$on('$routeChangeSuccess', function (e) {
         breadcrumbService.add(getLocation());
-        ModalEffects();
+        new ModalEffects();
       });
             
     }]);

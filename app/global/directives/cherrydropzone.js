@@ -19,7 +19,7 @@
             formatted: function () {
               return this.value.toString() + '%';
             }
-          }
+          };
           
           $scope.fileUploader = new FileUploader();
           
@@ -69,10 +69,9 @@
           angular.element('.cherry-dropzone').bind('dragleave', function (e) {
             angular.element(e.target).removeClass('cherry-dropzone-over');
           });
-         
         }
       ]
     };
-  })
+  });
   
 })(angular);

@@ -144,15 +144,15 @@
           } else if(aType === TYPE.MEDIA) {
             return 'media';
           } else {
-            return 'cherry;'
+            return 'cherry;';
           }
-        }
+        };
         
         $scope.toggleSelected = function (aType) {
           $scope.doTransition();
           $scope.activityType = aType;
           $scope.placeholderText = setPlaceholder(aType);
-        }
+        };
         
         // Init
         

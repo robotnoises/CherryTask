@@ -62,7 +62,7 @@
         },
         read: false,      // Unread by default
         priority: now     // Sort queries
-      }
+      };
       
       // Get current user
       cherryAuth.get().then(function (a) {

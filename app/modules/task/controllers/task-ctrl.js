@@ -38,7 +38,7 @@
         } else {
           return false;
         }
-      };
+      }
       
       // Sync the task state with firebase (We assume you have updated the scope at this point)
       function syncTask () {
@@ -58,7 +58,7 @@
           throw new Error('The task is not loaded.');
         }
 
-      };
+      }
       
       function isCurrentUserWatching () {
         
@@ -76,11 +76,10 @@
         }).catch(function (err) {
           console.error(err);
           d.reject(false);
-        })
+        });
         
         return d.promise;
-        
-      };
+      }
       
       function watch (watcher) {
         

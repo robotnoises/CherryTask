@@ -82,6 +82,6 @@
     
     return _imageService;
     
-  }])
+  }]);
   
 })(angular, AWS);

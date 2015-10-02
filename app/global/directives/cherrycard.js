@@ -47,7 +47,7 @@
             console.log(msg);
           }).catch(function(err) {
             console.error(err);
-          })
+          });
         };
                       
       }]

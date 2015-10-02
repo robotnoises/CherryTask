@@ -89,8 +89,7 @@
           } else {
             d.resolve('Removed ' + loc);
           }
-        })
-        
+        });
       });
       
       return d.promise;
