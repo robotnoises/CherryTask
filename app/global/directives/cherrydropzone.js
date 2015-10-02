@@ -43,9 +43,11 @@
               }
             };
             
-            api.create(loc, data, function () {
-              // console.log('Image uploaded!');
-            })
+            api.create(loc, data).then(function (snap) {
+              // Todo
+            }).catch(function (err) {
+              console.error(err);
+            });
           }
           
           $scope.fileUploader.onAfterAddingFile = function (file) {

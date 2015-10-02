@@ -13,10 +13,11 @@
     // Private
     
     var writeLog = function (log) {
-      api.create('activity_log/', log, function (snapshot) {
+      api.create('activity_log/', log).then(function (snap) {
       // console.log(snapshot.val());
-      // Todo check error
-      });	
+      }).catch(function (err) {
+        console.error(err);
+      });
     };
     
     // Public

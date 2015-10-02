@@ -13,6 +13,7 @@
         
         var getFormType = function (uri) {
           var $deferred = $q.defer();
+          
           if (uri == '') {
             $deferred.resolve({ key: 'project', apiLoc: 'projects/' });
           } else if (uri == 'projects' ) {
@@ -20,11 +21,14 @@
           } else {
             $deferred.reject();
           }
+          
           return $deferred.promise;
         };
         
         var init = function () {
+          
           var uri = $location.$$path.split('/').filter(function(s){ return s !== ''; })[0];
+          
           var $promise = getFormType(uri || '');
           
           $promise.then(function (formData) {
@@ -32,6 +36,8 @@
               $scope.form.type = $scope.formType = formData.key;
               $scope.formData = formData;
             },0);
+          }).catch(function (err) {
+            console.error(err);
           });
         };
         
@@ -54,30 +60,8 @@
           $scope.form = {};
           angular.element('.modal-close').click();
           
-          // $scope.cherryForm.$setPristine();
-          // $scope.cherryForm.$setUntouched();
-          
-          // Form inputs TODO: there's gotta be a better way than this..
-          // $scope.cherryForm.title.$touched = false;
-          // $scope.cherryForm.description.$touched = false;
-                    
-          // $timeout(function () {            
-          //   toggleSubmitOverlay();
-          //   $scope.form = {};
-          //   // Todo: bind a click to submit?
-          //   angular.element('.modal-close').click();
-          // }, timeout || 0);
         };
-        
-        // var toggleSubmitOverlay = function () {
-        //   var $overlay = angular.element('.submit-overlay');
-        //   if ($overlay.hasClass('show')) {
-        //     $overlay.removeClass('show');
-        //   } else {
-        //     $overlay.addClass('show');
-        //   }
-        // };
-        
+                
         $scope.form = {};
         
         $scope.$on('$routeChangeSuccess', function (e) {
@@ -91,26 +75,26 @@
         $scope.matchesFormType = matchesFormType;
         
         $scope.submit = function () {
-          api.create($scope.formData.apiLoc, $scope.form, function (snapshot) {
-            var obj = angular.copy(snapshot.val());
+          
+          var $form = $scope.form;
+          
+          if (matchesFormType('task')) {
+            $form.projectId = $scope.formData.projectId;
+            $form.progress = 0;
+            $form.mood = 50;
+          }
+          
+          api.create($scope.formData.apiLoc, $form).then(function (snap) {
+            // Todo
+          }).catch(function (err) {
+            console.error(err);
+          })
             
-            obj.id = snapshot.key();
-            
-            if (matchesFormType('task')) {
-              // Todo: this is bad
-              obj.projectId = $scope.formData.projectId;
-              obj.progress = 0;
-              obj.mood = 50;
-            }
-            
-            api.update($scope.formData.apiLoc + snapshot.key(), obj, obj.id);
-            
-            // toggleSubmitOverlay();
-            
-            reset();
-          });
+          reset();
+          
         };
         
+        // Init the form
         init();
         
       }]

@@ -21,8 +21,10 @@
       var _add = function (task, callback) {
         var loc = 'tasks/';
         task.dateCreated = new Date().getTime();
-        api.create(loc, task, function (createdTask) {
+        api.create(loc, task).then(function (createdTask) {
           return callback(createdTask);
+        }).catch(function(err) {
+          console.error(err);
         });
       };
 

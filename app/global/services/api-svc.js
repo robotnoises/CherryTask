@@ -46,13 +46,22 @@
     };
 
     var _create = function (loc, data, callback) {
+      
+      var d = $q.defer();
+      
       getTenant(function (tenant) {
+        
         var ref = fbutil.ref(tenant + loc);
-        ref.push(data);
-        ref.once('child_added', function (snapshot) {
-          return callback(snapshot);
-        });
-      });
+        var created = ref.push();
+        
+        data.id = created.key();
+        created.set(data);
+        
+        d.resolve($firebaseObject(created));
+        
+     });
+      
+      return d.promise;
     };
 
     var _update = function (loc, data, priority) {
