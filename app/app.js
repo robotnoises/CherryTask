@@ -17,5 +17,6 @@ angular.module('cherry', [
   'perfect_scrollbar',
   'ngMaterial',
   'ngMessages',
-  'angularFileUpload'
+  'angularFileUpload',
+  '720kb.tooltips'
 ]);

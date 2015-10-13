@@ -32,7 +32,7 @@ div(ng-hide='!signedIn', ng-cloak, layout='row', layout-align='start', class='na
   div(ng-if='signedIn', class='menu-item user')
     a(href='', class='menu-icon', ng-click='toggleNotifications()')
       i(class='icon icon-lg pe-7s-bell white')
-    a(href='', class='menu-icon', ng-click='toggleMenu()')
+    a(href='', class='menu-icon', ng-click='toggleMenu()', tooltips, tooltip-title='David Nichols', tooltip-side='left', tooltip-try='false')
       div(class="avatar-nav")
         img(src, cherry-avatar)
   
