@@ -80,6 +80,9 @@
         }
         
         function notify() {
+          
+          if (!Array.isArray($scope.task.watchers)) return;
+          
           // create a notification
           notification.create(getNotificationWhat(), $location.path()).then(function (n) {
             return notification.pushTo($scope.task.watchers, n);
